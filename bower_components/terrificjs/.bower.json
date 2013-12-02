@@ -1,0 +1,14 @@
+{
+  "name": "terrificjs",
+  "_cacheHeaders": {
+    "ETag": "\"3330397-84e3-4c95a579d2a40\"",
+    "Last-Modified": "Mon, 10 Sep 2012 15:09:21 GMT",
+    "Content-Length": "34019",
+    "Content-Type": "application/x-javascript"
+  },
+  "_release": "e-tag:3330397-8",
+  "main": "index.js",
+  "_source": "http://terrifically.org/downloads/terrific-2.0.1.js",
+  "_target": "*",
+  "_originalSource": "http://terrifically.org/downloads/terrific-2.0.1.js"
+}
