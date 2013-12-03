@@ -1,8 +1,0 @@
-{
-    "name":  "Wordpress Awesome Theme",
-    "version": "1.0.0",
-    "dependencies": {
-        "jquery": "latest",
-        "terrificjs": "http://terrifically.org/downloads/terrific-2.0.1.js"
-    }
-}

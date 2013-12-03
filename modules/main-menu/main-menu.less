@@ -1,0 +1,97 @@
+.modMainMenu {
+
+	.column(7);
+
+
+	//
+	// Hauptmenu
+	//
+
+
+	//
+	// All
+
+	.current > a {
+		color: @hilite;
+	}
+
+
+	//
+	// Lvl1
+
+	.nav-list-l1 {
+		position: relative;
+	}
+
+		.nav-item-l1 {
+
+			#typo > .headline-l();
+
+			float: left;
+			margin-top: @spacing / 2;
+			margin-right: @spacing * 1.5;
+
+			&:hover {
+
+			}
+
+			&.current > a {
+				color: @hilite;
+			}
+			
+			&.hasChildren {
+				position: relative;
+			}
+		}
+
+
+	//
+	// Lvl 2
+	
+	.nav-list-l2 {
+		display: none;
+		position: absolute;
+		width: 300px;
+	}
+
+	.active .nav-list-l2 {
+		display: block;
+	}
+
+		.nav-item-l2 {
+
+			#typo > .headline-m();
+
+			float: left;
+			margin-top: @spacing / 2;
+			margin-right: @spacing;
+
+	//
+	//		display: none;
+	//
+	//		position: absolute;
+	//		top: 32px;
+	//
+	//		> li {
+	//			border-bottom: 2px solid @white;
+	//			background-color: @hilite;
+	//		}
+	//
+	//		span {
+	//
+	//			#typo > .copy(@hilite);
+	//
+	//			display: inline-block;
+	//			min-width: 120px;
+	//			padding: @spacing / 6 @spacing / 4;
+	//			text-transform: none;
+	//
+	//			&:hover {
+	//				color: @hilite;
+	//			}
+	//		}
+	//	}
+	//
+	}
+
+}

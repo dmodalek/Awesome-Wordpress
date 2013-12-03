@@ -1,0 +1,11 @@
+<?php
+
+	$mainmenu =  Wp\Walker\NavWalker::generateMenu('mainmenu', 2);
+	$mod->param('mainmenu', $mainmenu);
+
+?>
+<div class="inner">
+	<ul class="menu">
+		<?= $mainmenu ?>
+	</ul>
+</div>

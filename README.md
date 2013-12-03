@@ -8,7 +8,6 @@ A starter theme for wordpress. Based on...
 - Terrific Micro Wordpress Integration (https://github.com/Epicuri0us/terrific-micro-integration-wordpress)
 
 - Terrific JS (https://github.com/brunschgi/terrificjs)
-- Bower
 - Mobile Boilerplate
 - Wordpress Default Theme 2014
 
@@ -18,3 +17,8 @@ It provides the following features:
 - Asset Pipeline with Grunt
 - PHP Console Logging
 - Grid Background & Vertical Rythm
+- Tests
+- Webserver via Grunt
+- JS Snippet for Grid Toggling on/off
+
+- Not: Bower

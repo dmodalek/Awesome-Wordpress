@@ -1,0 +1,42 @@
+.modFactsList {
+
+	#facts-table {
+		width: 100%;
+		text-align: left;
+
+		th, td {
+			padding-right: @spacing;
+		}
+
+		thead {
+
+			tr {
+				height: 80px;
+			}
+
+			.sort {
+				color: @hilite;
+			}
+		}
+
+		tbody {
+			tr {
+				border-bottom: 1px solid @white;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	.sort {
+		cursor: pointer;
+	}
+
+	.search {
+		text-align: center;
+	}
+
+
+}

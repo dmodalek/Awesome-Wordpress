@@ -1,0 +1,407 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Swisscom ITC Blog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-04 16:35+0100\n"
+"PO-Revision-Date: 2013-09-04 16:37+0100\n"
+"Last-Translator: Dominic Modalek <dominic@modalek.ch>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,1;_c;_x:2c,1\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: options.php:32
+msgid "One"
+msgstr ""
+
+#: options.php:33
+msgid "Two"
+msgstr ""
+
+#: options.php:34
+msgid "Three"
+msgstr ""
+
+#: options.php:35
+msgid "Four"
+msgstr ""
+
+#: options.php:36
+msgid "Five"
+msgstr ""
+
+#: options.php:41
+msgid "French Toast"
+msgstr ""
+
+#: options.php:42
+msgid "Pancake"
+msgstr ""
+
+#: options.php:43
+msgid "Omelette"
+msgstr ""
+
+#: options.php:44
+msgid "Crepe"
+msgstr ""
+
+#: options.php:45
+msgid "Waffle"
+msgstr ""
+
+#: options.php:105
+msgid "Basic Settings"
+msgstr ""
+
+#: options.php:109
+msgid "Input Text Mini"
+msgstr ""
+
+#: options.php:110
+msgid "A mini text input field."
+msgstr ""
+
+#: options.php:117
+msgid "Input Text"
+msgstr ""
+
+#: options.php:118
+msgid "A text input field."
+msgstr ""
+
+#: options.php:124
+msgid "Textarea"
+msgstr ""
+
+#: options.php:125
+msgid "Textarea description."
+msgstr ""
+
+#: options.php:131
+msgid "Input Select Small"
+msgstr ""
+
+#: options.php:132
+msgid "Small Select Box."
+msgstr ""
+
+#: options.php:140
+msgid "Input Select Wide"
+msgstr ""
+
+#: options.php:141
+msgid "A wider select box."
+msgstr ""
+
+#: options.php:148
+msgid "Select a Category"
+msgstr ""
+
+#: options.php:149
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#: options.php:155
+msgid "Select a Tag"
+msgstr ""
+
+#: options.php:156
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#: options.php:162
+msgid "Select a Page"
+msgstr ""
+
+#: options.php:163
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#: options.php:169
+msgid "Input Radio (one)"
+msgstr ""
+
+#: options.php:170
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#: options.php:177
+msgid "Example Info"
+msgstr ""
+
+#: options.php:178
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#: options.php:182
+msgid "Input Checkbox"
+msgstr ""
+
+#: options.php:183
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#: options.php:189
+msgid "Advanced Settings"
+msgstr ""
+
+#: options.php:193
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#: options.php:194
+msgid "Click here and see what happens."
+msgstr ""
+
+#: options.php:199
+msgid "Hidden Text Input"
+msgstr ""
+
+#: options.php:200
+msgid "This option is hidden unless activated by a checkbox click."
+msgstr ""
+
+#: options.php:207
+msgid "Uploader Test"
+msgstr ""
+
+#: options.php:208
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#: options.php:225
+msgid "Example Background"
+msgstr ""
+
+#: options.php:226
+msgid "Change the background CSS."
+msgstr ""
+
+#: options.php:232
+msgid "Multicheck"
+msgstr ""
+
+#: options.php:233
+msgid "Multicheck description."
+msgstr ""
+
+#: options.php:240
+msgid "Colorpicker"
+msgstr ""
+
+#: options.php:241
+msgid "No color selected by default."
+msgstr ""
+
+#: options.php:246
+msgid "Typography"
+msgstr ""
+
+#: options.php:247
+msgid "Example typography."
+msgstr ""
+
+#: options.php:253
+msgid "Custom Typography"
+msgstr ""
+
+#: options.php:254
+msgid "Custom typography options."
+msgstr ""
+
+#: options.php:261
+msgid "Text Editor"
+msgstr ""
+
+#: options.php:279
+msgid "Default Text Editor"
+msgstr ""
+
+#: options.php:280
+#, php-format
+msgid ""
+"You can also pass settings to the editor.  Read more about wp_editor in <a "
+"href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
+msgstr ""
+
+#: src/Theme/Helper.php:54
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: src/Theme/Helper.php:235
+#, php-format
+msgid "%s post"
+msgid_plural "%s post"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Theme/Helper.php:259
+msgid "Pingback:"
+msgstr ""
+
+#: src/Theme/Helper.php:259
+msgid "(Edit)"
+msgstr ""
+
+#: src/Theme/Helper.php:274
+msgid "Post author"
+msgstr ""
+
+#: src/Theme/Helper.php:280
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: src/Theme/Helper.php:286
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: src/Theme/Helper.php:291
+msgid "Edit"
+msgstr ""
+
+#: src/Theme/Helper.php:295
+msgid "Antworten"
+msgstr ""
+
+#: src/Theme/Module/ShowMore/Ctrl.php:26
+msgid "Lade mehr Inhalte"
+msgstr "Load more posts"
+
+#: src/Theme/Module/ShowMore/Ctrl.php:28
+msgid "Keine weiteren Inhalte"
+msgstr "No more posts"
+
+#: src/Theme/Wp/Filter.php:268
+msgid "Name*"
+msgstr ""
+
+#: src/Theme/Wp/Tax/Language.php:46
+msgid "language-slug"
+msgstr ""
+
+#: src/Theme/Module/ArticleTeaser/tpl.phtml:12
+#: src/Theme/Module/ArticleTeaser/tpl.phtml:20
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:19
+msgid "Einen Kommentar hinterlassen"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:20
+#, php-format
+msgid "Einen Kommentar für %s hinterlassen"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:21
+msgid "Abbrechen"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:22
+msgid "Absenden"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:25
+#, php-format
+msgid ""
+"Eingeloggt als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Ausloggen"
+"\">Ausloggen?</a>"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:26
+msgctxt "noun"
+msgid "Kommentar"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:40
+msgid "Comment navigation"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:43
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:44
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: src/Theme/Module/Comments/tpl.phtml:53
+msgid "Comments are closed."
+msgstr ""
+
+#: src/Theme/Module/Filter/tpl-search.phtml:7
+#, php-format
+msgid "Suche nach \"%s\" ergab %s Treffer"
+msgstr "Search for \"%s\" has %s Results"
+
+#: src/Theme/Module/Filter/tpl-single.phtml:7
+msgid "Zurück zur Übersicht"
+msgstr "Back to the Overview"
+
+#: src/Theme/Module/Filter/tpl.phtml:7
+msgid "Filter"
+msgstr "Filter"
+
+#: src/Theme/Module/Footer/tpl.phtml:3
+msgid "Die geballte Innovationskraft einer starken Region auf einen Klick!"
+msgstr "The concentrated innovative power of a strong region with one click!"
+
+#: src/Theme/Module/Footer/tpl.phtml:4
+msgid ""
+"«nanuu» ist eine neue internetplattform auf der sich firmen und "
+"institutionen aus der region ulm und neu-ulm mit projekten aus forschung und "
+"entwicklung präsentieren können. ziel ist es, die potenziale der region "
+"sichtbar, transparenter und damit auch attraktiver zu machen sowie die "
+"kooperation von wirtschaft und wissenschaft nachhaltig zu fördern."
+msgstr ""
+"«Nanuu\" is a new Internet platform where the companies and institutions "
+"from the region ulm and neu-ulm can present themselves with projects of "
+"research and development. the goal is to make the potential of the region "
+"visible, transparent and thus to make more attractive and the cooperation of "
+"industry and science to promote sustainability."
+
+#: src/Theme/Module/Join/tpl.phtml:2
+msgid "Mitmachen"
+msgstr "Join"
+
+#: src/Theme/Module/Profile/tpl-article.phtml:34
+#: src/Theme/Module/Profile/tpl-sidebar.phtml:34
+msgid "Alle Beiträge von"
+msgstr "All Articles from"
+
+#: src/Theme/Module/Searchbar/tpl.phtml:7
+msgid "Suche"
+msgstr "Search"
+
+#~ msgid "Über Nanuuu"
+#~ msgstr "About Nanuuu"
+
+#~ msgid ""
+#~ "Nanuuu ist ein Projekt Bacon ipsum dolor sit amet ham hock ham spare ribs "
+#~ "sirloin shoulder, biltong jowl doner strip steak short ribs sausage "
+#~ "hamburger swine prosciutto ribeye. Ball tip pork pork loin biltong "
+#~ "meatloaf, rump pastrami ham hock sirloin pork chop chicken. Meatloaf "
+#~ "frankfurter tri-tip brisket rump."
+#~ msgstr ""
+#~ "Nanuuu is a project bacon ipsum dolor sit amet ham hock ham spare ribs "
+#~ "sirloin shoulder, biltong jowl doner strip steak short ribs sausage "
+#~ "hamburger swine prosciutto ribeye. Ball tip pork pork loin biltong "
+#~ "meatloaf, rump pastrami ham hock sirloin pork chop chicken. Meatloaf "
+#~ "frankfurter tri-tip brisket rump."
+
+#~ msgid "Kommentare"
+#~ msgstr "Comments"
+
+#~ msgid "Read more"
+#~ msgstr "Weiterlesen"
