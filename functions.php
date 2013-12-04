@@ -81,7 +81,7 @@ function module($name, $template = null, $skin = null, $attr = array()) {
         }
     }
     echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
-    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.html';
+    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
     echo "\n</div>";
 }
 
@@ -92,15 +92,16 @@ function module($name, $template = null, $skin = null, $attr = array()) {
  */
 function theme_scripts() {
 
-	// theme.css
+	// jQuery CDN
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true); // Can't add without protocol 'cause of WordPress
+	wp_enqueue_script('jquery');
+
+	// theme.min.css
 	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, all);
 	wp_enqueue_style('theme-styles');
 
-	// Enqueue Script: theme-head.js
-	wp_register_script('theme-head', get_template_directory_uri() . '/dist/theme-head.min.js', array(), false, false);
-	wp_enqueue_script('theme-head');
-
-	// Enqueue Script: theme.js
+	// theme.min.js
 	wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
 	wp_enqueue_script('theme');
 }
@@ -114,9 +115,7 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
  */
 function theme_body_classes( $classes ) {
 
-	if (is_home()) {
-		$classes[] = 'skinLayoutHome';
-	}
+	$classes[] = 'mod-layout';
 
 	return $classes;
 }

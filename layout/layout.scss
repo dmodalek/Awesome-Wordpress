@@ -1,0 +1,27 @@
+.mod-layout {
+
+	.site-wrapper {
+
+		@extend .centered;
+		width: $total-width;
+		margin-top: $spacing;
+	}
+
+		.site-header {
+			@extend .cf;
+			padding: $spacing 0 $spacing * 2 0;
+			margin-bottom: $spacing * 2;
+			border-bottom: 1px solid $white;
+		}
+
+		.site-main {
+		  @extend .cf;
+			margin-bottom: $spacing * 2;
+		}
+
+		.site-footer {
+		  	@extend .cf;
+			padding: $spacing 0;
+			border-top: 1px solid $white;
+		}
+}

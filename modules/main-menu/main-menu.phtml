@@ -1,7 +1,6 @@
 <?php
 
-	$mainmenu =  Wp\Walker\NavWalker::generateMenu('mainmenu', 2);
-	$mod->param('mainmenu', $mainmenu);
+	$mainmenu =  Theme\Walker\Nav::generateMenu('mainmenu', 2);
 
 ?>
 <div class="inner">

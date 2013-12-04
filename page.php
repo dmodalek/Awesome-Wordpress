@@ -6,35 +6,23 @@
  * Please note that this is the WordPress construct of pages and that other 'pages'
  * on your WordPress site will use a different template.
  *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
  */
 
 get_header(); ?>
 
-<div id="main-content" class="main-content">
+	<div id="main-content" class="main-content" role="main">
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<?php
+		while (have_posts()) :
+			the_post();
 
-			<?php
-				while ( have_posts() ) :
-					the_post();
+			module('content');
 
-					get_template_part( 'content', 'page' );
+		endwhile;
+		?>
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				endwhile;
-			?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-	<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
+		<?php get_sidebar('content'); ?>
+	</div>
 
 <?php
 get_sidebar();

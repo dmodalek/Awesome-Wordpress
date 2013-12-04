@@ -14,17 +14,25 @@ module.exports = function (grunt) {
 
 			// Styles
 			styles: [
-				'css/all.scss'
+				'css/*.scss',
+				'modules/*/*.scss',
+				'modules/*/skins/*.scss',
+				'layout/*.scss',
+				'layout/skins/*.scss',
+			],
+
+
+			sass: [
+				'css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
 			],
 
 			// Scripts
-			scriptsHead: [
-				'js/head/*.js',
-			],
 			scripts: [
-				'js/*,js',
+				'js/*.js',
 				'modules/*/*.js',
-				'modules/*/skins/*.js'
+				'modules/*/skins/*.js',
+				'layout/*.js',
+				'layout/skins/*.js'
 			]
 		},
 
@@ -44,32 +52,23 @@ module.exports = function (grunt) {
 //		},
 
 		sass: {
-		    dist: {
+			dist: {
 				options: {
 					style: 'compressed',
 					sourcemap: true,
 					require: 'sass-globbing'
-			  	},
+				},
 				files: {
-					'dist/<%= pkg.name %>.min.css': 'css/import.scss'
+					'dist/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
 				}
-		    }
-		  },
+			}
+		},
 
 		uglify: {
 			options: {
-				banner: '<%= banner %>'
-			},
-			scriptsHead: {
-				options: {
-					sourceMap: 'dist/<%= pkg.name %>-head.min.map.js',
-					sourceMapRoot: '/',
-					sourceMapPrefix: 2,
-					sourceMappingURL: '<%= pkg.name %>-head.min.map.js'
-				},
-				files: {
-					'dist/<%= pkg.name %>-head.min.js': ['<%=dirs.scriptsHead%>']
-				}
+				banner: '<%= banner %>',
+				beautify: true
+
 			},
 			scripts: {
 				options: {
@@ -83,8 +82,7 @@ module.exports = function (grunt) {
 					'dist/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
 				}
 			}
-		}
-
+		},
 
 //		jshint: {
 //			files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -98,10 +96,13 @@ module.exports = function (grunt) {
 //				}
 //			}
 //		},
-//		watch: {
-//			files: ['<%= jshint.files %>'],
-//			tasks: ['jshint', 'qunit']
-//		}
+		watch: {
+			options: {
+				livereload: true
+			},
+			files: ['Gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>'],
+			tasks: ['sass', 'uglify']
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -113,7 +114,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('test', ['jshint', 'mocha']);
 
 //	grunt.registerTask('default', ['jshint', 'mocha', 'concat', 'uglify']);
-	grunt.registerTask('default', ['sass', 'uglify']);
+	grunt.registerTask('default', ['sass', 'uglify', 'watch']);
 
 
 };
