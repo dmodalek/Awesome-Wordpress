@@ -6,6 +6,8 @@
  */
 
 .cf {
+	clear: both;
+
     &:after{
         content:"";
         display:table;
@@ -14,16 +16,39 @@
 }
 
 
-//
-//Centered
+/**
+ * Image replacement
+ */
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
+}
+
+/*
+ * Centered
+ */
+
 .centered {
 	margin: 0 auto;
 }
 
 
-//
-// Column Shortcode
+/**
+ * Floats and alignment
+ */
 
-.one_fifth {
-//	margin-bottom: $spacing;
+.fr { float:right; }
+.fl { float:left; }
+
+.text-center {
+	text-align:center;
 }

@@ -1,15 +1,7 @@
-<div class="inner base">
-	<?php while (have_posts()) : the_post(); ?>
-
-		<div clas="hd">
-			<h1 class="title"><?php the_title(); ?></h1>
-			<?php the_post_thumbnail('profile-picture'); ?>
-		</div>
-		<div class="bd base">
-			<?php the_content(); ?>
-		</div>
-
-
-	<?php endwhile; ?>
+<div clas="hd">
+	<h1 class="title"><?php the_title(); ?></h1>
+	<?php the_post_thumbnail('profile-picture'); ?>
 </div>
-
+<div class="bd base">
+	<?php the_content(); ?>
+</div>

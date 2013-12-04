@@ -1,19 +1,17 @@
 .mod-lang-menu {
 
 	@include column(1);
+	margin-top: 18px;
 
-	margin-top: $spacing / 2;
-
-	a {
+	.nav-item-link {
 		float: right;
-//	  	ir();
 	}
 
-	.de a:before {
-	  	content: '';
-	  	display: inline-block;
+	// Flag
+	.de .nav-item-link {
+		@extend .ir;
 	  	width: 33px;
 	  	height: 19px;
-	  	//background-image: url('${imgPath}/modules/lang-menu-flag-de.png');
+	  	background-image: url('../images/modules/lang-menu-flag-de.png');
 	}
 }

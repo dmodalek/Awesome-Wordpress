@@ -4,24 +4,26 @@
 
 		@extend .centered;
 		width: $total-width;
-		margin-top: $spacing;
+		margin-top: $base-spacing-unit;
 	}
 
 		.site-header {
 			@extend .cf;
-			padding: $spacing 0 $spacing * 2 0;
-			margin-bottom: $spacing * 2;
+			margin-top: $double-spacing-unit;
+			margin-bottom: $base-spacing-unit;
 			border-bottom: 1px solid $white;
 		}
 
 		.site-main {
-		  @extend .cf;
-			margin-bottom: $spacing * 2;
+			@extend .cf;
+			@include column(11);
+			@include push(1);
+			margin-bottom: $base-spacing-unit * 2;
 		}
 
 		.site-footer {
 		  	@extend .cf;
-			padding: $spacing 0;
+			padding: $base-spacing-unit 0;
 			border-top: 1px solid $white;
 		}
 }

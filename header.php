@@ -48,4 +48,4 @@
 			<? module('lang-menu'); ?>
 		</header>
 
-		<div class="site-main">
+		<div class="site-main" role="main">

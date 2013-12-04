@@ -8,22 +8,13 @@
  *
  */
 
-get_header(); ?>
+get_header();
 
-	<div id="main-content" class="main-content" role="main">
+	while (have_posts()) :
+		the_post();
 
-		<?php
-		while (have_posts()) :
-			the_post();
+		module('content');
 
-			module('content');
+	endwhile;
 
-		endwhile;
-		?>
-
-		<?php get_sidebar('content'); ?>
-	</div>
-
-<?php
-get_sidebar();
 get_footer();

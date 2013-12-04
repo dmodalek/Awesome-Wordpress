@@ -21,15 +21,11 @@ function theme_setup() {
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style('css/editor-style.css');
 
-	// Enable support for Post Thumbnails, and declare two sizes.
-	add_theme_support('post-thumbnails' );
-	set_post_thumbnail_size( 672, 372, true );
-	add_image_size('theme-full-width', 1038, 576, true);
-
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary'   => __( 'Top primary menu', 'theme' ),
-		'secondary' => __( 'Secondary menu in left sidebar', 'theme' ),
+		'main-menu'   => __( 'Main Menu', 'theme' ),
+		'lang-menu' => __( 'Lang Menu', 'theme' ),
+		'footer-menu' => __( 'Footer Menu', 'theme' ),
 	));
 
 	/*
@@ -48,23 +44,39 @@ function theme_setup() {
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
 	));
 
-	// This theme allows users to set a custom background.
-	add_theme_support( 'custom-background', apply_filters( 'twentyfourteen_custom_background_args', array(
-		'default-color' => 'f5f5f5',
-	)));
+	// Enable support for Post Thumbnails, and declare two sizes.
+	add_theme_support('post-thumbnails' );
+	add_image_size('theme-sidebar', 250, 200, false);
 
-	// Add support for featured content.
-	add_theme_support( 'featured-content', array(
-    	'additional_post_types' => 'page',
-	));
+	if (class_exists('MultiPostThumbnails')) {
+		$types = array('page');
+		foreach($types as $type) {
+			new MultiPostThumbnails(array(
+				'label' => 'Secondary Image',
+				'id' => 'secondary-image',
+				'post_type' => $type
+				)
+			);
+			new MultiPostThumbnails(array(
+				'label' => 'Third Image',
+				'id' => 'third-image',
+				'post_type' => $type
+				)
+			);
+		}
+	}
 }
 endif; // theme_setup
 add_action( 'after_setup_theme', 'theme_setup' );
 
 /**
- * Terrific module markup
+ * Terrific Module
+ *
+ * @param string $name
+ * @param string $template
+ * @param string $skin
+ * @param array $attr
  */
-
 function module($name, $template = null, $skin = null, $attr = array()) {
     $flat = strtolower($name);
     $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));

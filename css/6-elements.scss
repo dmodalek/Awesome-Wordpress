@@ -1,0 +1,89 @@
+/**
+ * Global Elements
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
+	color: $white;
+    overflow-y:scroll;
+    min-height:100%;
+}
+
+body {
+	padding: 0;
+  	margin: 0;
+	background: linear-gradient(to right top, rgb(126, 154, 201) 2%, rgb(14, 30, 49) 86%);
+	background-attachment: fixed;
+}
+
+
+/**
+ * Typography
+ */
+
+h1, .alpha{
+	@include font-size($h1-size);
+	font-weight: normal;
+}
+h2, .beta{
+	@include font-size($h2-size);
+	font-weight: normal;
+}
+h3, .gamma{
+	@include font-size($h3-size);
+	font-weight: normal;
+}
+h4, .delta{
+	@include font-size($h4-size);
+	font-weight: normal;
+}
+h5, .epsilon{
+	@include font-size($h5-size);
+	font-weight: normal;
+}
+h6, .zeta{
+    @include font-size($h6-size);
+	font-weight: normal;
+}
+
+.giga {
+    @include font-size($giga-size);
+}
+.mega {
+    @include font-size($mega-size);
+}
+.kilo {
+    @include font-size($kilo-size);
+}
+
+.small {
+    @include font-size($small-size);
+}
+
+.micro{
+    @include font-size($micro-size);
+}
+
+
+/**
+ * Links
+ */
+
+a {
+	&,
+    &:hover,
+    &:active,
+    &:focus{
+		color: $hilite;
+        text-decoration:underline;
+    }
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}

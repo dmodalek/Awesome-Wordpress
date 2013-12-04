@@ -21,7 +21,6 @@ module.exports = function (grunt) {
 				'layout/skins/*.scss',
 			],
 
-
 			sass: [
 				'css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
 			],
@@ -33,6 +32,13 @@ module.exports = function (grunt) {
 				'modules/*/skins/*.js',
 				'layout/*.js',
 				'layout/skins/*.js'
+			],
+
+			// Markup
+			markup: [
+				'*.php',
+				'modules/*/*.phtml',
+				'inc/*.php'
 			]
 		},
 
@@ -66,13 +72,10 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				banner: '<%= banner %>',
-				beautify: true
-
+				banner: '<%= banner %>'
 			},
 			scripts: {
 				options: {
-					report: 'gzip',
 					sourceMap: 'dist/<%= pkg.name %>.min.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.min.map.js'
@@ -100,7 +103,7 @@ module.exports = function (grunt) {
 			options: {
 				livereload: true
 			},
-			files: ['Gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>'],
+			files: ['Gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>', '<%= dirs.markup %>'],
 			tasks: ['sass', 'uglify']
 		}
 	});

@@ -2,21 +2,9 @@
 
 	@include column(7);
 
+	height: 80px;
+	margin-top: 12px;
 
-	//
-	// Hauptmenu
-	//
-
-
-	//
-	// All
-
-	.current > a {
-		color: $hilite;
-	}
-
-
-	//
 	// Lvl1
 
 	.nav-list-l1 {
@@ -27,71 +15,29 @@
 
 			@include headline-l();
 
-			float: left;
-			margin-top: $spacing / 2;
-			margin-right: $spacing * 1.5;
-
-			&:hover {
-
-			}
-
-			&.current > a {
+			&.active > a {
 				color: $hilite;
 			}
-			
+
 			&.hasChildren {
 				position: relative;
 			}
 		}
 
-
-	//
 	// Lvl 2
-	
+
 	.nav-list-l2 {
 		display: none;
-		position: absolute;
-		width: 300px;
+		margin-top: 6px;
 	}
 
-	.active .nav-list-l2 {
-		display: block;
-	}
+		.active .nav-list-l2 {
+			display: block;
+			position: absolute;
+			width: 300px;
+		}
 
 		.nav-item-l2 {
-
 			@include headline-m();
-
-			float: left;
-			margin-top: $spacing / 2;
-			margin-right: $spacing;
-
-	//
-	//		display: none;
-	//
-	//		position: absolute;
-	//		top: 32px;
-	//
-	//		> li {
-	//			border-bottom: 2px solid $white;
-	//			background-color: $hilite;
-	//		}
-	//
-	//		span {
-	//
-	//			#typo > .typo-copy($hilite);
-	//
-	//			display: inline-block;
-	//			min-width: 120px;
-	//			padding: $spacing / 6 $spacing / 4;
-	//			text-transform: none;
-	//
-	//			&:hover {
-	//				color: $hilite;
-	//			}
-	//		}
-	//	}
-	//
-	}
-
+		}
 }

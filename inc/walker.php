@@ -15,18 +15,16 @@ class Nav extends \Walker_Nav_Menu {
 
 		if (!has_nav_menu( $locationId)) {
 
-			sprintf('<a href="%2$s">Define menu:</a> %1$s', $locationId, get_admin_url() . 'nav-menus.php');
+			echo sprintf('<a href="%2$s">Click to define menu "%1$s"</a>', $locationId, get_admin_url() . 'nav-menus.php?action=locations');
 		}
 
 		return wp_nav_menu(array_merge(
 			array(
-					'theme_location' => $locationId,
-					'echo'           => false,
-					'container'      => false,
-					'before'         => '',
-					'items_wrap'     => '%3$s',
-					'depth'          => (int) $depth,
-					'walker'         => new $walker(),
+					'theme_location'=> $locationId,
+					'container'		=> false,
+					'menu_class'	=> 'nav-list nav-list-l1',
+					'depth'         => (int) $depth,
+					'walker'        => new $walker(),
 			),
 			$params
 		));
@@ -41,7 +39,7 @@ class Nav extends \Walker_Nav_Menu {
 	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$this->elCount = 0;
-		$output .= sprintf("\n%s<ul class=\"nav-list-l%d\">\n", self::indent($depth, 2), $depth+2);
+		$output .= sprintf("\n%s<ul class=\"nav-list nav-list-l%d\">\n", self::indent($depth, 2), $depth+2);
 	}
 
 	/**
@@ -74,7 +72,7 @@ class Nav extends \Walker_Nav_Menu {
 
 		// Classes
 		$classes = array();
-		$classes[] = 'nav-item-l' . ($depth+1);
+		$classes[] = 'nav-item nav-item-l' . ($depth+1);
 		if ($item->current_item_ancestor || $item->current) {
 			$classes[] = 'active'; // if child OR page is active
 		}
@@ -123,8 +121,8 @@ class Nav extends \Walker_Nav_Menu {
 		// Item
 		$item_output .= self::indent($depth, 2);
 //		if ($item->current) $item_output .= '<strong>';
-		$item_output .= '<a'. $attributes .'>';
-		$item_output .= $args->link_before . '<span class="title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>' . $args->link_after;
+		$item_output .= '<a class="nav-item-link" '. $attributes .'>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 
 		// Item: Description
 		if (!empty($item->description)) {
@@ -132,7 +130,7 @@ class Nav extends \Walker_Nav_Menu {
 		}
 
 		// Item: Close link, incl. icon markup
-		$item_output .= '<i></i></a>';
+		$item_output .= '</a>';
 //		if ($item->current) $item_output .= '</strong>';
 		$item_output .= PHP_EOL;
 
