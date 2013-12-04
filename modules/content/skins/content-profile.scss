@@ -1,0 +1,12 @@
+.skinContentProfile {
+
+  	h2, h3, p, hr {
+	  color: $dark;
+	  border-color: $dark;
+	}
+
+	.bd {
+		padding: $spacing * 1.5;
+		background-color: $decent;
+	}
+}

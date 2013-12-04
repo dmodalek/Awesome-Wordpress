@@ -19,5 +19,8 @@ Todo:
 - JS Snippet for Grid Toggling on/off
 - Module JS Tests
 - Webserver via Grunt
+- Code Sniffer http://squizlabs.github.io/HTML_CodeSniffer/
+- Semantic Grid System
+
 
 - Not: Bower

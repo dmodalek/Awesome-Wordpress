@@ -1,20 +1,20 @@
 .modMap {
 
-  	.cf();
-    .column(10);
-    .push(1);
+//  	@extend cf();
+    @include column(10);
+  	@include push(1);
 
 	//
 	// Legend
 
 	.legend-list {
 		float: right;
-		margin: @spacing 0;
+		margin: $spacing 0;
 
 
   		> li {
   		  	display: inline-block;
-  			margin-left: @spacing;
+  			margin-left: $spacing;
   		}
 	}
 
@@ -22,31 +22,31 @@
 		.sport,
 		.med {
 
-			margin-right: @spacing;
+			margin-right: $spacing;
 			&:before {
 				content: "";
 				display: inline-block;
-				width: @spacing / 2;
-				height: @spacing / 2;
-				margin-right: @spacing / 2;
+				width: $spacing / 2;
+				height: $spacing / 2;
+				margin-right: $spacing / 2;
 			}
 		}
 
 		.wellness {
 			&:before {
-				background-color: @wellness;
+				background-color: $wellness;
 			}
 		}
 
 		.sport {
 			&:before {
-				background-color: @sport;
+				background-color: $sport;
 			}
 		}
 
 		.med {
 			&:before {
-				background-color: @med;
+				background-color: $med;
 			}
 		}
 }
@@ -57,25 +57,25 @@
 
 	.mapp-ib {
 		border: 1px solid white;
-		box-shadow: 0 0 1px @black;
+		box-shadow: 0 0 1px $black;
 
 
 		.mapp-title h2 {
-			color: @dark;
-			margin-bottom: @spacing;
+			color: $dark;
+			margin-bottom: $spacing;
 		}
 
 		.mapp-body {
-			#typo > .meta(@dark);
+			@include meta($dark);
 
 			label {
-				#typo > .meta(@dark);
+				@include meta($dark);
 				display: block;
-				color: @decent;
+				color: $decent;
 			}
 
 			.row {
-				margin-bottom: @spacing / 2;
+				margin-bottom: $spacing / 2;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -83,7 +83,7 @@
 			}
 
 			.profile-link {
-				color: @dark;
+				color: $dark;
 				text-decoration: underline;
 			}
 		}

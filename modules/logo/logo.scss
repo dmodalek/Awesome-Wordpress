@@ -1,6 +1,6 @@
 .modLogo {
 
-	.column(4);
+	@include column(4);
 
 	img {
 		max-width: 100%;

@@ -2,7 +2,7 @@
  * -------------------------- */
 
 /* Stacked and layered icon */
-@include icon-stack();
+$include icon-stack();
 
 /* Animated rotating icon */
 .icon-spin {
@@ -20,23 +20,23 @@ a .icon-spin {
   text-decoration: none;
 }
 
-@-moz-keyframes spin {
+$-moz-keyframes spin {
   0% { -moz-transform: rotate(0deg); }
   100% { -moz-transform: rotate(359deg); }
 }
-@-webkit-keyframes spin {
+$-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(359deg); }
 }
-@-o-keyframes spin {
+$-o-keyframes spin {
   0% { -o-transform: rotate(0deg); }
   100% { -o-transform: rotate(359deg); }
 }
-@-ms-keyframes spin {
+$-ms-keyframes spin {
   0% { -ms-transform: rotate(0deg); }
   100% { -ms-transform: rotate(359deg); }
 }
-@keyframes spin {
+$keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(359deg); }
 }

@@ -16,11 +16,10 @@ if ( ! function_exists( 'theme_setup' ) ) :
 function theme_setup() {
 
 	// Make Theme available for translation
-
 	load_theme_textdomain('theme', get_template_directory() . '/languages');
 
 	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style('css/editor-style.css', theme_webfont_url());
+	add_editor_style('css/editor-style.css');
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support('post-thumbnails' );
@@ -87,69 +86,23 @@ function module($name, $template = null, $skin = null, $attr = array()) {
 }
 
 /**
- * Include all files from the /inc directory
- */
-
-require get_template_directory() . '/inc/helper.php';
-require get_template_directory() . '/inc/posttypes.php';
-require get_template_directory() . '/inc/taxonomies.php';
-require get_template_directory() . '/inc/walker.php';
-
-
-/**************************************************************/
-
-
-/**
- * Register widget areas.
- *
- * @return void
- */
-function theme_widgets_init() {
-
-	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'theme' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Main sidebar that appears on the left.', 'theme' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'theme_widgets_init' );
-
-/**
- * Register Webfont
- *
- * @return void
- */
-function theme_webfont_url() {
-	$font_url = '';
-	$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
-
-	return $font_url;
-}
-
-/**
  * Enqueue scripts and styles for front end.
  *
  * @return void
  */
 function theme_scripts() {
-	// Add Lato font, used in the main stylesheet.
-	wp_enqueue_style( 'theme-webfont', theme_webfont_url(), array(), null );
 
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );
+	// theme.css
+	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, all);
+	wp_enqueue_style('theme-styles');
 
-	// Load our main stylesheet.
-	wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+	// Enqueue Script: theme-head.js
+	wp_register_script('theme-head', get_template_directory_uri() . '/dist/theme-head.min.js', array(), false, false);
+	wp_enqueue_script('theme-head');
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), false, true );
+	// Enqueue Script: theme.js
+	wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
+	wp_enqueue_script('theme');
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -219,5 +172,40 @@ function theme_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
+
+
+/**
+ * Include all files from the /inc directory
+ */
+
+require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/posttypes.php';
+require get_template_directory() . '/inc/taxonomies.php';
+require get_template_directory() . '/inc/walker.php';
+
+
+/**************************************************************/
+
+
+/**
+ * Register widget areas.
+ *
+ * @return void
+ */
+function theme_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __( 'Primary Sidebar', 'theme' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Main sidebar that appears on the left.', 'theme' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+}
+add_action( 'widgets_init', 'theme_widgets_init' );
+
+
 
 ?>

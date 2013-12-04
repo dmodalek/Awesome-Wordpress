@@ -1,12 +1,12 @@
 // Mixins
 // --------------------------
 
-@mixin icon($icon) {
-  @include icon-FontAwesome();
+$mixin icon($icon) {
+  $include icon-FontAwesome();
   content: $icon;
 }
 
-@mixin icon-FontAwesome() {
+$mixin icon-FontAwesome() {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -15,13 +15,13 @@
   *margin-right: .3em; // fixes ie7 issues
 }
 
-@mixin border-radius($radius) {
+$mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
 
-@mixin icon-stack($width: 2em, $height: 2em, $top-font-size: 1em, $base-font-size: 2em) {
+$mixin icon-stack($width: 2em, $height: 2em, $top-font-size: 1em, $base-font-size: 2em) {
   .icon-stack {
     position: relative;
     display: inline-block;

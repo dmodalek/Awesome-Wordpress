@@ -7,7 +7,7 @@
 }
 
 body {
-  	#typo > .copy();
+//  	#typo > .copy();
   	padding: 0;
 	margin: 0;
 	background: linear-gradient(to right top, rgb(126,154,201) 2%, rgb(14,30,49) 86%);
@@ -19,17 +19,17 @@ a {
 	&:visited,
 	&:focus,
 	&:active {
-		color: @white;
+//		color: $white;
 		text-decoration: none;
 	}
 	&:hover {
-		color: @hilite;
+//		color: $hilite;
 		text-decoration: none;
 	}
 }
 
 small {
-	#typo > .meta();
+//	#typo > .meta();
 }
 
 i {
@@ -48,27 +48,27 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	#typo > .headline-l();
+//	#typo > .headline-l();
 }
 
 h2 {
-	#typo > .headline-m();
+//	#typo > .headline-m();
 }
 
 h3 {
-	#typo > .headline-m();
+//	#typo > .headline-m();
 }
 
 
 input[type=text],
 textarea {
-	.cf();
+//	.cf();
 	border-radius: 8px;
 	border: none;
 	padding-left: 10px;
 	padding-right: 10px;
 	height: 38px;
-	#typo > .copy(@dark);
+//	#typo > .copy($dark);
 }
 
 input[type=submit] {
@@ -77,18 +77,18 @@ input[type=submit] {
 }
 
 input[type="checkbox"] + label {
-	margin-left: @spacing / 4;
+//	margin-left: $spacing / 4;
 }
 
 label {
 	cursor: text;
-	#typo > .copy();
+//	#typo > .copy();
 }
 
 label[for] {
 	cursor: pointer;
 	display: block;
-	margin-bottom: @spacing / 4;
+//	margin-bottom: $spacing / 4;
 }
 
 button {
@@ -104,6 +104,6 @@ hr {
 	clear: both;
 	border: 0;
 	height: 0;
-	border-top: 1px solid @white;
-	margin: @spacing 0;
+//	border-top: 1px solid $white;
+//	margin: $spacing 0;
 }

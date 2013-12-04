@@ -2,7 +2,7 @@
 
 //
 //Centered
-.centered(@expanded: 0) {
+.centered {
 	margin: 0 auto;
 }
 
@@ -11,5 +11,5 @@
 // Column Shortcode
 
 .one_fifth {
-	margin-bottom: @spacing;
+//	margin-bottom: $spacing;
 }

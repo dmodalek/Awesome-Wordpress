@@ -1,6 +1,6 @@
 .modSocial {
 
-	.column(5);
+	@include column(5);
 
 	text-align: right;
 

@@ -1,13 +1,12 @@
 .modLangMenu {
 
-	.column(1);
+	@include column(1);
 
-	margin-top: @spacing / 2;
+	margin-top: $spacing / 2;
 
 	a {
 		float: right;
-
-	  .ir();
+//	  	ir();
 	}
 
 	.de a:before {
@@ -15,6 +14,6 @@
 	  	display: inline-block;
 	  	width: 33px;
 	  	height: 19px;
-	  	background-image: url('@{imgPath}/modules/lang-menu-flag-de.png');
+	  	//background-image: url('${imgPath}/modules/lang-menu-flag-de.png');
 	}
 }

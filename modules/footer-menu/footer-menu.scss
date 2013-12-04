@@ -1,6 +1,6 @@
 .modFooterMenu {
 
-	.column(7);
+	@include column(7);
 
 
 	//
@@ -10,7 +10,7 @@
 		.nav-item-l1 {
 
 			float: left;
-			margin-right: @spacing * 1.5;
+			margin-right: $spacing * 1.5;
 
 		}
 

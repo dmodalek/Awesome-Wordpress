@@ -4,34 +4,31 @@
 
 // Font included conditionally via fonts file
 
-@font-family: 'Open Sans', sans-serif;
+$font-family: 'Open Sans', sans-serif;
 
 
 // Add Styling (Color, Text Decoration etc.) in your Modules
 
-#typo {
-
   	// H1: Page Headlines, MainNav
 
-	.headline-l(@color: @white) {
-		font-family: @font-family;
+	@mixin headline-l($color: $white) {
+		font-family: $font-family;
 		font-weight:normal;
 		font-size: 22px;
 		line-height: 32px;
-		color: @color;
-		margin-bottom: @spacing;
+		color: $color;
+		margin-bottom: $spacing;
 	}
 
 
 	// H2: Section Titles
 
-	.headline-m(@color: @white) {
-		font-family: @font-family;
+	@mixin headline-m($color: $white) {
+		font-family: $font-family;
 		font-weight:normal;
 		font-size: 18px;
 		line-height: 28px;
-		color: @color;
-
+		color: $color;
 	}
 
 
@@ -39,16 +36,15 @@
 	// Typography Miscs
 	//
 
-	.copy(@color: @white) { // √
+	@mixin copy($color: $white) {
 	  font-size: 14px;
 	  line-height: 24px;
-	  color: @color;
+	  color: $color;
 	}
 
 
-	.meta(@color: @white) {
+	@mixin meta($color: $white) {
 	  	font-size: 12px;
 		line-height: 22px;
-		color: @color;
+		color: $color;
 	}
-}

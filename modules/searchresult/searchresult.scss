@@ -1,6 +1,6 @@
 .modSearchresult {
 
 	> .title {
-		.column(12);
+		@include column(12);
 	}
 }
