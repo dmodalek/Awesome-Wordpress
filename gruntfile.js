@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 			  	},
 				files: {
-					'dist/<%= pkg.name %>.min.css': 'css/theme.scss'
+					'dist/<%= pkg.name %>.min.css': 'css/import.scss'
 				}
 		    }
 		  },

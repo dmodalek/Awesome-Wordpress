@@ -36,14 +36,14 @@ $font-family: 'Open Sans', sans-serif;
 	// Typography Miscs
 	//
 
-	@mixin copy($color: $white) {
+	@mixin typo-copy($color: $white) {
 	  font-size: 14px;
 	  line-height: 24px;
 	  color: $color;
 	}
 
 
-	@mixin meta($color: $white) {
+	@mixin typo-meta($color: $white) {
 	  	font-size: 12px;
 		line-height: 22px;
 		color: $color;

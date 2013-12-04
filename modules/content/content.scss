@@ -1,6 +1,6 @@
 .modContent {
 
-//	@extend .cf;
+	@extend .cf;
 
   	@include column(10);
   	@include push(1);

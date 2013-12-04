@@ -1,0 +1,211 @@
+//
+// General Elements
+//
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include typo-copy;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right top, rgb(126, 154, 201) 2%, rgb(14, 30, 49) 86%);
+  background-attachment: fixed;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:focus,
+  &:active {
+	color: $white;
+	text-decoration: none;
+  }
+  &:hover {
+	color: $hilite;
+	text-decoration: none;
+  }
+}
+
+small {
+  @include typo-meta;
+}
+
+i {
+  display: inline-block; // Used for Sprites
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+
+  margin: 0;
+}
+
+h1 {
+  @include headline-l;
+}
+
+h2 {
+  @include headline-m;
+}
+
+h3 {
+  @include headline-m;
+}
+
+input[type=text],
+textarea {
+  @extend .cf;
+  @include typo-copy($dark);
+
+  border-radius: 8px;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 38px;
+}
+
+input[type=submit] {
+  border: none;
+  display: block;
+}
+
+input[type="checkbox"] + label {
+  margin-left: $spacing / 4;
+}
+
+label {
+  cursor: text;
+  @include typo-copy;
+}
+
+label[for] {
+  cursor: pointer;
+  display: block;
+  margin-bottom: $spacing / 4;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+a img {
+  border: none;
+}
+
+hr {
+  clear: both;
+  border: 0;
+  height: 0;
+  border-top: 1px solid $white;
+  margin: $spacing 0;
+}
+
+h1 {
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+h2 {
+  margin-top: $spacing;
+  margin-bottom: $spacing / 2;
+}
+
+h3 {
+  margin-top: $spacing;
+  margin-bottom: $spacing / 2;
+}
+
+h4 {
+  margin: $spacing/2 0;
+}
+
+i {
+  margin-right: $spacing / 2;
+}
+
+p {
+  @include typo-copy;
+  margin: 0 0 $spacing/2 0;
+}
+
+ul,
+ol {
+  margin: $spacing 0;
+  padding-left: $spacing;
+
+  & > li {
+	margin: $spacing/2 0;
+  }
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+figure {
+  margin-bottom: $spacing;
+}
+
+.align-left {
+  float: left;
+  margin: 0 $spacing 1em 0;
+}
+
+.align-right {
+  float: right;
+  margin: 0 0 1em $spacing;
+}
+
+.align-center {
+  display: block;
+  text-align: center;
+
+  img {
+	margin: auto;
+  }
+}
+
+iframe {
+  width: 570px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  @include typo-meta;
+  color: $hilite;
+  margin-top: 5px;
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:active {
+  color: $hilite;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input[type=submit] {
+  border: none;
+  display: block;
+  margin-top: $spacing;
+}
