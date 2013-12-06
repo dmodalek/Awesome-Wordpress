@@ -1,6 +1,7 @@
 .mod-content {
 
-	@extend .cf;
+	@include column(10);
+	@include push(1);
 
 	margin-bottom: $base-spacing-unit;
 }

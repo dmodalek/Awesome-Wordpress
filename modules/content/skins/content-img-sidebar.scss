@@ -1,9 +1,7 @@
 .skin-content-img-sidebar {
 
-	@include row(10);
-
-	.hd {
-		@include column(10);
+	.bd {
+		@include row(10);
 	}
 
 	.main-content {

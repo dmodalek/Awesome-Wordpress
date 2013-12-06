@@ -36,7 +36,6 @@
 
 <body <?php body_class(); ?>>
 
-
 	<div class="site-wrapper">
 
 		<header class="site-header" role="banner">

@@ -8,21 +8,20 @@
 	}
 
 		.site-header {
-			@extend .cf;
+			@include row(12);
+
 			margin-top: $double-spacing-unit;
 			margin-bottom: $base-spacing-unit;
 			border-bottom: 1px solid $white;
 		}
 
 		.site-main {
-			@extend .cf;
-			@include column(11);
-			@include push(1);
+			@include row(12);
 			margin-bottom: $base-spacing-unit * 2;
 		}
 
 		.site-footer {
-		  	@extend .cf;
+			@include row(12);
 			padding: $base-spacing-unit 0;
 			border-top: 1px solid $white;
 		}
