@@ -1,27 +1,31 @@
 .mod-layout {
 
 	.site-wrapper {
-
+		background: rgba(170,170,170, 0.1);
 		@extend .centered;
 		width: $total-width;
 		margin-top: $base-spacing-unit;
 	}
 
 		.site-header {
-			@include row(12);
-
+			@extend .cf;
 			margin-top: $double-spacing-unit;
 			margin-bottom: $base-spacing-unit;
 			border-bottom: 1px solid $white;
 		}
 
 		.site-main {
-			@include row(12);
+			@extend .cf;
 			margin-bottom: $base-spacing-unit * 2;
+
+			.inner {
+				@include column(10);
+				@include push(1);
+			}
 		}
 
 		.site-footer {
-			@include row(12);
+			@extend .cf;
 			padding: $base-spacing-unit 0;
 			border-top: 1px solid $white;
 		}

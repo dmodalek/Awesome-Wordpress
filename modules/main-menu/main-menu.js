@@ -6,7 +6,7 @@
 	 * @class NavMain
 	 * @extends Tc.Module
 	 */
-	Tc.Module.Mainmenu = Tc.Module.extend({
+	Tc.Module.MainMenu = Tc.Module.extend({
 
 		/**
 		 * Initializes the NavMain module.
@@ -32,30 +32,6 @@
 		on: function (callback) {
 			var self = this,
 				$ctx = this.$ctx;
-
-//			var $menuItems = $('.nav-item-l1 a', $ctx);
-//
-				// iterate over each top level menu item
-//				$.each($menuItems, function(index, value) {
-//
-//					var $thisItem = $(this),
-//						$thisSpans = $('span', $thisItem),
-//						maxSpanWidth = 0;
-//
-//					// iterate over each span item in the current top level menu item
-//					$.each($thisSpans, function(index, value) {
-//
-//						var thisSpanWidth = $(this).outerWidth();
-//
-//						if(thisSpanWidth > maxSpanWidth) { maxSpanWidth = thisSpanWidth }
-//					});
-//
-//					maxSpanWidth = maxSpanWidth + 1;
-//
-//				 	$thisItem.attr('style', 'width: '+maxSpanWidth+'px;');
-//				});
-
-
 
 			callback();
 		}

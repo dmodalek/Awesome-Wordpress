@@ -5,6 +5,8 @@
  * Contains footer content and the closing of the .site-wrapper and .site-main
  */
 ?>
+				</div><!-- .inner -->
+
 			</div><!-- .site-main -->
 
 			<footer class="site-footer" role="complementary">

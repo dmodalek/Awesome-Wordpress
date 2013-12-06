@@ -1,42 +1,16 @@
-/**
- *
- * Awesome Grid System
- */
 
-// Defaults which you can freely override
-$column-width: 70px;
-$gutter-width: 20px;
-$columns: 12;
+// Import gridle :
+@import 'gridle/gridle';
 
-// Utility function — you should never need to modify this
-@function gridsystem-width($columns:$columns) {
-	@return ($column-width * $columns) + ($gutter-width * $columns);
-}
+// Configure :
+$gridle-columns-count : 12;
+$gridle-gutter-width : 20px;
+$gridle-debug : true;
+$gridle-html-states-classes : true; // not really for production, used for demo here...
 
-// Set $total-width to 100% for a fluid layout
-$total-width: gridsystem-width($columns);;
+@include gridle_register_default_states();
+@include gridle_register_state('ipad-landscape', 'only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)');
 
-@mixin row($x, $columns:$columns) {
+// Generate classes :
+@include gridle_generate_classes();
 
-	background: rgba(79,87,199, 0.2);
-
-	display: block;
-	width: $total-width*(((($gutter-width+$column-width)*$x)) / gridsystem-width($columns));
-	margin: 0 0 0 $total-width*(($gutter-width)/gridsystem-width($columns))*-1;
-	@extend .cf;
-}
-@mixin column($x,$columns:$columns) {
-
-	background: rgba(199,79,86, 0.2);
-
-	display: inline;
-	float: left;
-	width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns));
-	margin: 0 0 0 $total-width*(($gutter-width)/gridsystem-width($columns));
-}
-@mixin push($offset:1) {
-	margin-left: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width)/gridsystem-width($columns));
-}
-@mixin pull($offset:1) {
-	margin-right: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width)/gridsystem-width($columns));
-}

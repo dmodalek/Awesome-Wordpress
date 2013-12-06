@@ -1,0 +1,21 @@
+
+<div class="hd">
+	<h1 class="title"><?php the_title(); ?></h1>
+	<div class="header-image">
+		<?php the_post_thumbnail('theme-content-header'); ?>
+	</div>
+</div>
+
+<div class="bd">
+	<div class="main-content">
+		<?php the_content(); ?>
+	</div>
+	<div class="side-content">
+		<?php
+			if (class_exists('MultiPostThumbnails')) {
+				MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image', NULL,  'theme-sidebar');
+				MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'third-image', NULL,  'theme-sidebar');
+			}
+		?>
+	</div>
+</div>

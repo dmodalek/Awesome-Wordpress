@@ -1,0 +1,42 @@
+/**
+ *
+ * Awesome Grid System
+
+ */
+
+// Defaults which you can freely override
+$column-width: 70px;
+$gutter-width: 20px;
+$columns: 12;
+
+// Utility function — you should never need to modify this
+@function gridsystem-width($columns:$columns) {
+	@return ($column-width * $columns) + ($gutter-width * $columns);
+}
+
+// Set $total-width to 100% for a fluid layout
+$total-width: gridsystem-width($columns);;
+
+@mixin row($x, $columns:$columns) {
+
+//	background: rgba(79,87,199, 0.1);
+
+	display: block;
+	width: $total-width*(((($gutter-width+$column-width)*$x)) / gridsystem-width($columns));
+	margin: 0 0 0 $total-width*(($gutter-width)/gridsystem-width($columns))*-1;
+	@extend .cf;
+}
+@mixin column($x,$columns:$columns) {
+//	background: rgba(199,79,86, 0.1);
+
+	display: inline;
+	float: left;
+	width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns));
+	margin: 0 0 0 $total-width*(($gutter-width)/gridsystem-width($columns));
+}
+@mixin push($offset:1) {
+	margin-left: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width)/gridsystem-width($columns));
+}
+@mixin pull($offset:1) {
+	margin-right: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width)/gridsystem-width($columns));
+}

@@ -1,0 +1,18 @@
+.skin-content-img-top {
+
+	.bd {
+		@include row(10);
+	}
+
+	.main-content {
+		@include column(7);
+	}
+
+	.side-content {
+		@include column(3);
+
+		.attachment-theme-sidebar {
+			margin-bottom: $base-spacing-unit;
+		}
+	}
+}

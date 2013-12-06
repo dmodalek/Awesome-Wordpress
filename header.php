@@ -48,3 +48,5 @@
 		</header>
 
 		<div class="site-main" role="main">
+
+			<div class="inner">

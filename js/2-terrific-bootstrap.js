@@ -1,12 +1,13 @@
+
 /**
  * Terrific Bootstrap
  */
+
 (function ($) {
 	$(document).ready(function () {
-		var $page = $('body');
-		window.application = new Tc.Application($page);
-		application.registerModules();
-		application.registerModule($page, 'layout');
+		var $html = $('html');
+		window.application = new Tc.Application($html);
+		application.registerModules($html);
 		application.start();
 	});
 })(Tc.$);

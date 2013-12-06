@@ -1,0 +1,23 @@
+.mod-debug {
+
+	header {
+		@include gridle ( 12 );
+	}
+
+	.content {
+		@include gridle ( 8 );
+		@include gridle ( 12 , 'mobile' );
+	}
+
+	.sidebar {
+		// sidebar will make 4 columns width
+		@include gridle ( 4 );
+		@include gridle ( 12 , 'mobile' );
+
+		// update sidebar look and feel for mobile and tablet
+		@include gridle_state (  mobile tablet  ) {
+
+		}
+	}
+
+}

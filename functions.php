@@ -15,6 +15,9 @@ if ( ! function_exists( 'theme_setup' ) ) :
 
 function theme_setup() {
 
+	// Define APP_ENV (should be defined in wp-config.php)
+	if(defined(APP_ENV) == false) { define(APP_ENV, 'prod'); }
+
 	// Make Theme available for translation
 	load_theme_textdomain('theme', get_template_directory() . '/languages');
 
@@ -47,6 +50,7 @@ function theme_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support('post-thumbnails' );
 	add_image_size('theme-sidebar', 250, 200, false);
+	add_image_size('theme-content-header', 880, 400, false);
 
 	if (class_exists('MultiPostThumbnails')) {
 		$types = array('page');
@@ -127,7 +131,9 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
  */
 function theme_body_classes( $classes ) {
 
-	$classes[] = 'mod-layout';
+	$classes[] = 'mod mod-layout';
+
+	if(APP_ENV == 'dev') { $classes[] = 'skin-layout-dev'; }
 
 	return $classes;
 }
