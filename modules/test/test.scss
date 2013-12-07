@@ -1,0 +1,31 @@
+.mod-test {
+
+
+
+	.container {
+		@extend .cf;
+		width: 960px;
+		background: rgba(255,255,255,0.1);
+	}
+
+	.content {
+		@include col(8);
+
+
+		.row {
+			@include row();
+		}
+
+		.content-left {
+			@include col(8);
+		}
+
+		.content-right {
+			@include col(4);
+		}
+	}
+
+	.sidebar {
+		@include col(4);
+	}
+}

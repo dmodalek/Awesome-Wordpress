@@ -113,12 +113,16 @@ function theme_scripts() {
 	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true); // Can't add without protocol 'cause of WordPress
 	wp_enqueue_script('jquery');
 
-	// theme.min.css
-	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, all);
-	wp_enqueue_style('theme-styles');
+	switch(APP_ENV) {
 
-	// theme.min.js
-	wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.css', array(), false, all);
+					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.js', array('jquery'), false, true);
+					break;
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, all);
+					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
+	}
+
+	wp_enqueue_style('theme-styles');
 	wp_enqueue_script('theme');
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );

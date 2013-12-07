@@ -1,12 +1,12 @@
 <?php
 
 /*
- * Template Name: Dev
+ * Template Name: Test
  */
 
 get_header();
 
-	module('dev');
+	module('test');
 
 get_footer();
 

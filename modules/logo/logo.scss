@@ -1,14 +1,8 @@
 .mod-logo {
 	@extend .cf;
-	@include column(4);
+	@include col(4);
 
 	img {
 		max-width: 100%;
 	}
 }
-
-
-
-
-
-

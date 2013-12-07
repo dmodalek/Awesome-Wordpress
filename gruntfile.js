@@ -34,6 +34,13 @@ module.exports = function (grunt) {
 				'layout/skins/*.js'
 			],
 
+			scriptsLint: [
+				'modules/*/*.js',
+				'modules/*/skins/*.js',
+				'layout/*.js',
+				'layout/skins/*.js'
+			],
+
 			// Markup
 			markup: [
 				'*.php',
@@ -42,23 +49,20 @@ module.exports = function (grunt) {
 			]
 		},
 
-//		concat: {
-//			styles: {
-//				src: ['<%=dirs.styles%>'],
-//				dest: 'dist/<%= pkg.name %>.css'
-//			},
-//
-//			scripts: {
-//				options: {
-//					separator: ';'
-//				},
-//				src: ['<%=dirs.scripts%>'],
-//				dest: 'dist/<%= pkg.name %>.js'
-//			}
-//		},
-
 		sass: {
-			dist: {
+
+			dev: {
+				options: {
+					style: 'nested',
+					sourcemap: true,
+					require: 'sass-globbing'
+				},
+				files: {
+					'dist/<%= pkg.name %>.css': '<%=dirs.sass%>'
+				}
+			},
+
+			prod: {
 				options: {
 					style: 'compressed',
 					sourcemap: true,
@@ -70,12 +74,39 @@ module.exports = function (grunt) {
 			}
 		},
 
-		uglify: {
+		jshint: {
+			files: ['Gruntfile.js', '<%=dirs.scriptsLint%>'],
 			options: {
-				banner: '<%= banner %>'
-			},
-			scripts: {
+				// options here to override JSHint defaults
+				globals: {
+					jQuery: true,
+					console: false,
+					module: true,
+					document: true
+				}
+			}
+		},
+
+		uglify: {
+
+			dev: {
 				options: {
+					banner: '<%= banner %>',
+					beautify: true,
+					sourceMap: 'dist/<%= pkg.name %>.map.js',
+					sourceMapRoot: '../',
+					sourceMappingURL: '<%= pkg.name %>.map.js'
+				},
+
+				files: {
+					'dist/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
+				}
+			},
+
+			prod: {
+				options: {
+					banner: '<%= banner %>',
+					beautify: true,
 					sourceMap: 'dist/<%= pkg.name %>.min.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.min.map.js'
@@ -87,24 +118,13 @@ module.exports = function (grunt) {
 			}
 		},
 
-//		jshint: {
-//			files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-//			options: {
-//				// options here to override JSHint defaults
-//				globals: {
-//					jQuery: true,
-//					console: true,
-//					module: true,
-//					document: true
-//				}
-//			}
-//		},
+
 		watch: {
 			options: {
 				livereload: true
 			},
 			files: ['Gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>', '<%= dirs.markup %>'],
-			tasks: ['sass', 'uglify']
+			tasks: ['dev']
 		}
 	});
 
@@ -114,10 +134,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('test', ['jshint', 'mocha']);
+	// Default
+	grunt.registerTask('default', ['dev', 'watch']);
 
-//	grunt.registerTask('default', ['jshint', 'mocha', 'concat', 'uglify']);
-	grunt.registerTask('default', ['sass', 'uglify', 'watch']);
+	// Dev
+	grunt.registerTask('dev', ['sass:dev', 'jshint', 'uglify:dev']);
 
-
+	// Prod
+	grunt.registerTask('prod', ['sass:prod', 'jshint', 'uglify:prod']);
 };

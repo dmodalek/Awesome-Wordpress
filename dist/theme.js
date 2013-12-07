@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 06.12.2013 at 18:12:00
+ * Generated with Grunt on 07.12.2013 at 11:01:46
  */
 
 var Tc = Tc || {};
@@ -240,16 +240,6 @@ Tc.$ = $, function() {
         window.application = new Tc.Application(b), application.registerModules(b), application.start();
     });
 }(Tc.$), function() {
-    Tc.Module.Debug = Tc.Module.extend({
-        init: function(a, b, c) {
-            this._super(a, b, c);
-        },
-        on: function(a) {
-            this.$ctx;
-            a();
-        }
-    });
-}(Tc.$), function() {
     Tc.Module.FactsList = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);
@@ -297,9 +287,9 @@ Tc.$ = $, function() {
             this.$ctx.prepend(e), e.on("click", function() {
                 d.toggleClass("grid-debug");
             }), d.on("keydown", function(a) {
-                68 == a.keyCode && d.toggleClass("grid-debug");
+                71 == a.keyCode && d.toggleClass("grid-debug");
             }), b.on(c);
         };
     };
 }(Tc.$);
-//# sourceMappingURL=theme.min.map.js
+//# sourceMappingURL=theme.map.js

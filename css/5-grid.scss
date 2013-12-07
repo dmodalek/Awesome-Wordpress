@@ -1,16 +1,99 @@
+/**
+ *
+ * Awesome Grid
+ *
+ */
 
-// Import gridle :
-@import 'gridle/gridle';
 
-// Configure :
-$gridle-columns-count : 12;
-$gridle-gutter-width : 20px;
-$gridle-debug : true;
-$gridle-html-states-classes : true; // not really for production, used for demo here...
+/*
+ * Customize
+ */
 
-@include gridle_register_default_states();
-@include gridle_register_state('ipad-landscape', 'only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)');
+$cols: 12;
+$grid-col-width: 70px;
+$grid-gutter-width: 20px;
 
-// Generate classes :
-@include gridle_generate_classes();
+$grid-fixed-width: 960px;
+$grid-fixed-gutter: 20px;
+$grid-max-cols: 12;
 
+
+/*
+ * Your Grid Mixins
+ */
+
+@mixin row() {
+	@extend .cf;
+	margin-left: -$grid-fluid-gutter;
+	@include _debug('row', $cols);
+}
+
+@mixin col($cols: 12) {
+	margin-left: $grid-fluid-gutter;
+	float: left;
+	width: round(($grid-one-col * $cols) + ($grid-fluid-gutter * ($cols - 1)));
+	@include _debug('col', $cols);
+}
+
+@mixin push($cols: 1) {
+	margin-left: round(($grid-one-col * $cols) + ($grid-fluid-gutter * ($cols + 1))) !important;
+	@include _debug('push', $cols);
+}
+
+@mixin pull($cols: 1) {
+	margin-left: round(($grid-one-col * $cols) + ($grid-fluid-gutter * ($cols - 1)));
+	@include _debug('pull', $cols);
+}
+
+
+/*
+ * Internal stuff
+ */
+
+$grid-fluid-gutter: round(percentage((100 / ($grid-fixed-width / $grid-fixed-gutter)) / 100));
+$grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols;
+
+@mixin _debug($label: '', $cols: 12) {
+
+	.grid-debug & {
+
+		&:before,
+		&:after {
+			display: block !important;
+			text-align: center;
+			color: white;
+			font-size: 11px;
+		}
+
+		&:before {
+			content: "#{$label}-#{$cols}" !important;
+		}
+
+		&:after {
+			content: "";
+		}
+
+		@if $label == 'row' {
+
+			&:before,
+			&:after {
+				margin: 10px 0 10px $grid-fluid-gutter;
+				padding: 10px $grid-gutter-width/2;
+				background-color: rgba(000, 000, 000, 0.1);
+			}
+		}
+
+		@if $label == 'col' {
+
+			&:before,
+			&:after {
+				margin: 10px 0;
+				padding: 5px 0;
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			margin-top: 4px !important;
+			margin-bottom: 4px !important;
+		}
+	}
+}

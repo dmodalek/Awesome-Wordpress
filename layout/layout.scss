@@ -1,9 +1,8 @@
 .mod-layout {
 
 	.site-wrapper {
-		background: rgba(170,170,170, 0.1);
 		@extend .centered;
-		width: $total-width;
+		width: 1140px;
 		margin-top: $base-spacing-unit;
 	}
 
@@ -15,13 +14,10 @@
 		}
 
 		.site-main {
-			@extend .cf;
+			@include push(1);
+			@include col(10);
+			display:block;
 			margin-bottom: $base-spacing-unit * 2;
-
-			.inner {
-				@include column(10);
-				@include push(1);
-			}
 		}
 
 		.site-footer {
