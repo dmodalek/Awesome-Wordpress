@@ -13,8 +13,6 @@
 
 		.nav-item-l1 {
 
-			@include headline-l();
-
 			&.active > a {
 				color: $hilite;
 			}
@@ -35,9 +33,5 @@
 			display: block;
 			position: absolute;
 			width: 300px;
-		}
-
-		.nav-item-l2 {
-			@include headline-m();
 		}
 }

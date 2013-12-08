@@ -13,7 +13,7 @@
 			border-bottom: 1px solid $white;
 		}
 
-		.site-main {
+		.site-main{
 			@include push(1);
 			@include col(10);
 			display:block;

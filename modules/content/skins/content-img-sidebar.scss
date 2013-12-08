@@ -1,15 +1,15 @@
 .skin-content-img-sidebar {
 
 	.bd {
-//		@include row(10);
+		@include row();
 	}
 
 	.main-content {
-//		@include column(7);
+		@include col(8);
 	}
 
 	.side-content {
-//		@include column(3);
+		@include col(4);
 
 		.attachment-theme-sidebar {
 			margin-bottom: $base-spacing-unit;

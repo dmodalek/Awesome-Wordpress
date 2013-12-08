@@ -1,7 +1,5 @@
 <?php
 
-if ( ! function_exists( 'theme_setup' ) ) :
-
 /**
  * Theme setup.
  *
@@ -15,16 +13,16 @@ if ( ! function_exists( 'theme_setup' ) ) :
 
 function theme_setup() {
 
-	// Define APP_ENV (should be defined in wp-config.php)
-	if(defined(APP_ENV) == false) { define(APP_ENV, 'prod'); }
+	/*
+	 * APP Env
+	 */
+	if(defined(APP_ENV) == false) {
+		define(APP_ENV, 'prod');
+	}
 
-	// Make Theme available for translation
-	load_theme_textdomain('theme', get_template_directory() . '/languages');
-
-	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style('css/editor-style.css');
-
-	// This theme uses wp_nav_menu() in two locations.
+	/*
+	 * Register Nav Menus
+	 */
 	register_nav_menus( array(
 		'main-menu'   => __( 'Main Menu', 'theme' ),
 		'lang-menu' => __( 'Lang Menu', 'theme' ),
@@ -32,24 +30,10 @@ function theme_setup() {
 	));
 
 	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
+	 * Register Post Thumbnails
 	 */
-	add_theme_support('html5', array(
-		'search-form', 'comment-form', 'comment-list',
-	));
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-	));
-
-	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support('post-thumbnails' );
-	add_image_size('theme-sidebar', 250, 200, false);
+	add_image_size('theme-sidebar', 292, 200, false);
 	add_image_size('theme-content-header', 880, 400, false);
 
 	if (class_exists('MultiPostThumbnails')) {
@@ -69,37 +53,36 @@ function theme_setup() {
 			);
 		}
 	}
+
+	/*
+	 * Languages
+	 */
+	load_theme_textdomain('theme', get_template_directory() . '/languages');
+
+	/*
+	 * Editor Styles
+	 */
+	add_editor_style('css/editor-style.css');
+
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments to output valid HTML5
+	 */
+	add_theme_support('html5', array(
+		'search-form', 'comment-form', 'comment-list',
+	));
+
+	/*
+	 * Enable support for Post Formats, see http://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+	));
+
+
 }
-endif; // theme_setup
 add_action( 'after_setup_theme', 'theme_setup' );
 
-/**
- * Terrific Module
- *
- * @param string $name
- * @param string $template
- * @param string $skin
- * @param array $attr
- */
-function module($name, $template = null, $skin = null, $attr = array()) {
-    $flat = strtolower($name);
-    $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));
-    $template = $template == null ? '' : '-' . strtolower($template);
-    $skin = $skin == null ? '' : ' skin-' . $dashed . '-' . $skin;
-    $attributes = ' ';
-    $additionalClasses = '';
-    foreach ($attr as $key => $value) {
-        if ($key === 'class' && $value !== '') {
-            $additionalClasses .= ' ' . $value;
-        }
-        else {
-            $attributes .= $key . '="' . $value . '" ';
-        }
-    }
-    echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
-    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
-    echo "\n</div>";
-}
 
 /**
  * Enqueue scripts and styles for front end.
@@ -127,6 +110,37 @@ function theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
+
+/**
+ * Terrific Module
+ *
+ * @param string $name
+ * @param string $template
+ * @param string $skin
+ * @param array $attr
+ */
+
+function module($name, $template = null, $skin = null, $attr = array()) {
+    $flat = strtolower($name);
+    $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));
+    $template = $template == null ? '' : '-' . strtolower($template);
+    $skin = $skin == null ? '' : ' skin-' . $dashed . '-' . $skin;
+    $attributes = ' ';
+    $additionalClasses = '';
+    foreach ($attr as $key => $value) {
+        if ($key === 'class' && $value !== '') {
+            $additionalClasses .= ' ' . $value;
+        }
+        else {
+            $attributes .= $key . '="' . $value . '" ';
+        }
+    }
+    echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
+    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
+    echo "\n</div>";
+}
+
+
 /**
  * Extend the default WordPress body classes.
  *
@@ -143,23 +157,6 @@ function theme_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'theme_body_classes' );
 
-/**
- * Extend the default WordPress post classes.
- *
- * Adds a post class to denote:
- * Non-password protected page with a post thumbnail.
- *
- * @param array $classes A list of existing post class values.
- * @return array The filtered post class list.
- */
-function theme_post_classes( $classes ) {
-	if ( ! post_password_required() && has_post_thumbnail() ) {
-		$classes[] = 'has-post-thumbnail';
-	}
-
-	return $classes;
-}
-add_filter( 'post_class', 'theme_post_classes' );
 
 /**
  * Create a nicely formatted and more specific title element text for output
@@ -204,29 +201,11 @@ require get_template_directory() . '/inc/posttypes.php';
 require get_template_directory() . '/inc/taxonomies.php';
 require get_template_directory() . '/inc/walker.php';
 
-
-/**************************************************************/
-
-
-/**
- * Register widget areas.
- *
- * @return void
+/*
+ * Constructor
  */
-function theme_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'theme' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Main sidebar that appears on the left.', 'theme' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'theme_widgets_init' );
-
-
+new Theme\PostType\Fact();
+new Theme\PostType\Profile();
 
 ?>

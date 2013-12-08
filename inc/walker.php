@@ -31,11 +31,9 @@ class Nav extends \Walker_Nav_Menu {
 	}
 
 	/**
-	 * @see Walker::start_lvl()
-	 * @since 3.0.0
-	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int $depth Depth of page. Used for padding.
+	 * @param string $output
+	 * @param int $depth
+	 * @param array $args
 	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$this->elCount = 0;
@@ -43,25 +41,20 @@ class Nav extends \Walker_Nav_Menu {
 	}
 
 	/**
-	 * @see Walker::end_lvl()
-	 * @since 3.0.0
-	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int $depth Depth of page. Used for padding.
+	 * @param string $output
+	 * @param int $depth
+	 * @param array $args
 	 */
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= sprintf("%s</ul><!-- /l%d -->\n", self::indent($depth, 2), $depth+2);
 	}
 
 	/**
-	 * @see Walker::start_el()
-	 * @since 3.0.0
-	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param object $item Menu item data object.
-	 * @param int $depth Depth of menu item. Used for padding.
-	 * @param object $args
-	 * @return void
+	 * @param string $output
+	 * @param object $item
+	 * @param int $depth
+	 * @param array $args
+	 * @param int $id
 	 */
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		// Attributes
@@ -149,12 +142,10 @@ class Nav extends \Walker_Nav_Menu {
 	}
 
 	/**
-	 * @see Walker::end_el()
-	 * @since 3.0.0
-	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param object $item Page data object. Not used.
-	 * @param int $depth Depth of page. Not Used.
+	 * @param string $output
+	 * @param object $item
+	 * @param int $depth
+	 * @param array $args
 	 */
 	function end_el( &$output, $item, $depth = 0, $args = array() ) {
 		$this->elCount++;
@@ -167,8 +158,6 @@ class Nav extends \Walker_Nav_Menu {
 
 		return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
 	}
-
-	//------------------------------------------------------------------------------------------------------------------
 
 	protected static function indent($depth, $indent = 0) {
 		$indentCount = $depth < 1 ? 0 : $depth + 1;

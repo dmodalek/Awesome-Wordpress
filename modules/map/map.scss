@@ -66,10 +66,8 @@
 		}
 
 		.mapp-body {
-			@include typo-meta($dark);
 
 			label {
-				@include typo-meta($dark);
 				display: block;
 				color: $decent;
 			}

@@ -9,3 +9,8 @@ A starter theme for wordpress. Based on...
 - Terrific JS (https://github.com/brunschgi/terrificjs)
 - Mobile Boilerplate
 - Wordpress Default Theme 2014
+
+
+Dependencies:
+
+- SASS ~ 3.3

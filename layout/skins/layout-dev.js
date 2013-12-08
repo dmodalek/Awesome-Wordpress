@@ -8,11 +8,12 @@
 				$badge = $('<div class="badge">DEV</div>');
 
 			this.$ctx.prepend($badge);
-			$badge.on('click', function() {
-				$ctx.toggleClass('grid-debug');
-			});
 
 			$ctx.on('keydown', function(ev) {
+
+				if(ev.keyCode == 68) { // d
+					$ctx.toggleClass('css-hint');
+				}
 
 				if(ev.keyCode == 71) { // g
 					$ctx.toggleClass('grid-debug');
