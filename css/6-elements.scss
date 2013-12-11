@@ -22,30 +22,18 @@ body {
 
 
 /*
- * Reset
- */
-
-h1,h2,h3,h4,h5,h6,
-p,blockquote,pre,
-dl,dd,ol,ul,
-form,fieldset,legend,
-table,th,td,caption,
-hr {
-    margin:0;
-    padding:0;
-}
-
-
-/*
  * Block Elements: Margin Bottom for vertical rathm
  */
 
 h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,dl,
+ul,ol,dl, hr,
 blockquote,p,address,
 table,
 fieldset,figure,
 pre {
+    @extend .cf;
+    padding: 0;
+    margin-top: 0;
 	margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
 }
 
@@ -55,7 +43,7 @@ pre {
  * treatment regarding vertical rhythm.
  */
 
-hr{
+hr {
     margin-bottom:(($base-spacing-unit - 2px) / $base-font-size)*1rem;
 }
 
@@ -110,26 +98,27 @@ h6, .zeta{
 
 
 /*
- * Lists
- */
-
-ul, ol, dd{
-	margin-left:(2 * $base-spacing-unit / $base-font-size) * 1rem;
-}
-
-
-/*
  * Links
  */
 
 a {
 	&,
-    &:hover,
     &:active,
     &:focus{
 		color: $hilite;
-        text-decoration:underline;
+        text-decoration:none;
     }
+    &:hover {
+    	text-decoration: underline;
+    }
+}
+
+/*
+ * Lists
+ */
+
+ul, ol, dd{
+	margin-left:(2 * $base-spacing-unit / $base-font-size) * 1rem;
 }
 
 

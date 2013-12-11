@@ -6,12 +6,12 @@ html .mceContentBody {
 
 .alignleft {
 	float: left;
-	margin: 5px 20px 5px 0;
+	margin: 0 $base-spacing-unit 0 0;
 }
 
 .alignright {
 	float: right;
-	margin: 5px 0 5px 20px;
+	margin: 0 0 0 $base-spacing-unit;
 }
 
 .aligncenter {
@@ -24,35 +24,13 @@ img.alignnone {
 }
 
 .wp-caption {
-	background: transparent;
-	border: none;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-}
-
-.wp-caption.alignleft {
-	margin: 5px 10px 5px 0;
-}
-
-.wp-caption.alignright {
-	margin: 5px 0 5px 10px;
+	width: auto !important; // Remove WP width
 }
 
 .wp-caption-dt {
 	margin: 0;
 }
 
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-	color: #220e10;
-	font-size: 18px;
-	font-style: italic;
-	font-weight: 300;
-	line-height: 1.5;
-	margin-bottom: 24px;
-	padding: 0;
-}
 
 .mceTemp + ul,
 .mceTemp + ol  {

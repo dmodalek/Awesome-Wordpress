@@ -2,8 +2,8 @@
 
 	@include col(7);
 
-	height: 80px;
-	padding-top: 12px;
+	height: $base-spacing-unit * 4;
+	padding-top: 16px;
 
 	// Lvl1
 
@@ -12,6 +12,10 @@
 	}
 
 		.nav-item-l1 {
+
+			> .nav-item-link {
+				@extend .gamma;
+			}
 
 			&.active > a {
 				color: $hilite;

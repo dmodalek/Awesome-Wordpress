@@ -14,6 +14,12 @@ $grid-fixed-gutter: 20px;
 $grid-max-cols: 12;
 
 
+// Calculations
+
+$grid-fluid-gutter: percentage((100 / ($grid-fixed-width / $grid-fixed-gutter)) / 100);
+$grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols;
+
+
 /*
  * Your Grid Mixins
  */
@@ -27,27 +33,24 @@ $grid-max-cols: 12;
 @mixin col($grid-max-cols: 12) {
 	margin-left: $grid-fluid-gutter;
 	float: left;
-	width: round(($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1)));
+	width: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
 	@include _debug('col', $grid-max-cols);
 }
 
 @mixin push($grid-max-cols: 1) {
-	margin-left: round(($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols + 1))) !important;
+	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols + 1)) !important;
 	@include _debug('push', $grid-max-cols);
 }
 
 @mixin pull($grid-max-cols: 1) {
-	margin-left: round(($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1)));
+	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
 	@include _debug('pull', $grid-max-cols);
 }
 
 
 /*
- * Internal stuff
+ * Debug
  */
-
-$grid-fluid-gutter: round(percentage((100 / ($grid-fixed-width / $grid-fixed-gutter)) / 100));
-$grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols;
 
 @mixin _debug($label: '', $cols: 12) {
 
@@ -96,3 +99,8 @@ $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols
 		}
 	}
 }
+
+
+
+
+

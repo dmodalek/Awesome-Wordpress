@@ -1,3 +1,7 @@
 .mod-content {
 	margin-bottom: $base-spacing-unit;
+
+	.main-content {
+		padding-right: $base-spacing-unit;
+	}
 }

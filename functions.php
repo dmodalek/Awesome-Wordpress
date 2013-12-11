@@ -32,10 +32,27 @@ function theme_setup() {
 	/*
 	 * Register Post Thumbnails
 	 */
+
 	add_theme_support('post-thumbnails' );
-	add_image_size('theme-sidebar', 292, 200, false);
+
+	// Update default sizes
+	update_option('thumbnail_size_w',140);
+	update_option('thumbnail_size_h', 140);
+	update_option('medium_size_w', 298);
+	update_option('medium_size_h', 200);
+	update_option('large_size_w', 400);
+	update_option('large_size_h', 300);
+
+	// Update default alignment and size
+	update_option('image_default_align', 'left');
+	update_option('image_default_size', 'medium');
+
+	// Add additional image sizes
+	add_image_size('theme-sidebar', 298, 200, false);
 	add_image_size('theme-content-header', 880, 400, false);
 
+
+	// Add multiple Post Thumbnails
 	if (class_exists('MultiPostThumbnails')) {
 		$types = array('page');
 		foreach($types as $type) {
@@ -82,7 +99,6 @@ function theme_setup() {
 
 }
 add_action( 'after_setup_theme', 'theme_setup' );
-
 
 /**
  * Enqueue scripts and styles for front end.
@@ -196,7 +212,7 @@ add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
  * Include all files from the /inc directory
  */
 
-require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/posttypes.php';
 require get_template_directory() . '/inc/taxonomies.php';
 require get_template_directory() . '/inc/walker.php';

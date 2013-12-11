@@ -1,9 +1,5 @@
 .mod-map {
 
-//  	@extend cf();
-//    @include column(10);
-//  	@include push(1);
-
 	//
 	// Legend
 
@@ -54,6 +50,10 @@
 
 	//
 	// Override Map Styles
+
+	.mapp-layout {
+		margin: 0;
+	}
 
 	.mapp-ib {
 		border: 1px solid white;

@@ -118,6 +118,15 @@ module.exports = function (grunt) {
 			}
 		},
 
+		connect: {
+			server: {
+				options: {
+					port: 8000,
+					base: './'
+				}
+			}
+		},
+
 
 		watch: {
 			options: {
@@ -128,11 +137,8 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	// load all grunt tasks matching the `grunt-*` pattern
+	require('load-grunt-tasks')(grunt);
 
 	// Default
 	grunt.registerTask('default', ['dev', 'watch']);

@@ -387,9 +387,19 @@ table {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
+.cf, h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl, hr,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
   clear: both; }
-  .cf:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
+  .cf:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
+  ul:after, ol:after, dl:after, hr:after,
+  blockquote:after, p:after, address:after,
+  table:after,
+  fieldset:after, figure:after,
+  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -437,7 +447,7 @@ table {
  * Your Grid Mixins
  */
 /*
- * Internal stuff
+ * Debug
  */
 /**
  * Global Elements
@@ -458,26 +468,16 @@ body {
   background-attachment: fixed; }
 
 /*
- * Reset
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul,
-form, fieldset, legend,
-table, th, td, caption,
-hr {
-  margin: 0;
-  padding: 0; }
-
-/*
  * Block Elements: Margin Bottom for vertical rathm
  */
 h1, h2, h3, h4, h5, h6, hgroup,
-ul, ol, dl,
+ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
 pre {
+  padding: 0;
+  margin-top: 0;
   margin-bottom: 1.5rem; }
 
 /*
@@ -502,7 +502,7 @@ h2, .beta {
   line-height: 1.6;
   font-weight: normal; }
 
-h3, .gamma {
+h3, .gamma, .mod-main-menu .nav-item-l1 > .nav-item-link {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1;
@@ -552,17 +552,19 @@ h6, .zeta {
   line-height: 2.4; }
 
 /*
+ * Links
+ */
+a, a:active, a:focus {
+  color: #a1daf7;
+  text-decoration: none; }
+a:hover {
+  text-decoration: underline; }
+
+/*
  * Lists
  */
 ul, ol, dd {
   margin-left: 3rem; }
-
-/*
- * Links
- */
-a, a:hover, a:active, a:focus {
-  color: #a1daf7;
-  text-decoration: underline; }
 
 /*
  * Images
@@ -600,11 +602,11 @@ html .mceContentBody {
 
 .alignleft {
   float: left;
-  margin: 5px 20px 5px 0; }
+  margin: 0 24px 0 0; }
 
 .alignright {
   float: right;
-  margin: 5px 0 5px 20px; }
+  margin: 0 0 0 24px; }
 
 .aligncenter {
   display: block;
@@ -614,30 +616,10 @@ img.alignnone {
   margin: 5px 0; }
 
 .wp-caption {
-  background: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-  text-align: left; }
-
-.wp-caption.alignleft {
-  margin: 5px 10px 5px 0; }
-
-.wp-caption.alignright {
-  margin: 5px 0 5px 10px; }
+  width: auto !important; }
 
 .wp-caption-dt {
   margin: 0; }
-
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-  color: #220e10;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  padding: 0; }
 
 .mceTemp + ul,
 .mceTemp + ol {
@@ -756,6 +738,8 @@ img.alignnone {
 
 .mod-content {
   margin-bottom: 24px; }
+  .mod-content .main-content {
+    padding-right: 24px; }
 
 .mod-error {
   padding: 24px 0 0 0; }
@@ -785,9 +769,9 @@ img.alignnone {
   padding: 12px 0; }
 
 .mod-footer-menu {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 56%; }
+  width: 56.57895%; }
   .grid-debug.mod-footer-menu, .grid-debug .mod-footer-menu {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -806,9 +790,9 @@ img.alignnone {
       background-color: rgba(255, 255, 255, 0.1); }
 
 .mod-lang-menu {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 6%;
+  width: 6.57895%;
   padding-top: 18px; }
   .grid-debug.mod-lang-menu, .grid-debug .mod-lang-menu {
     margin-top: 4px !important;
@@ -834,9 +818,9 @@ img.alignnone {
     background-image: url("../images/modules/lang-menu-flag-de.png"); }
 
 .mod-logo {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 31%; }
+  width: 31.57895%; }
   .grid-debug.mod-logo, .grid-debug .mod-logo {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -857,11 +841,11 @@ img.alignnone {
     max-width: 100%; }
 
 .mod-main-menu {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 56%;
-  height: 80px;
-  padding-top: 12px; }
+  width: 56.57895%;
+  height: 96px;
+  padding-top: 16px; }
   .grid-debug.mod-main-menu, .grid-debug .mod-main-menu {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -917,6 +901,9 @@ img.alignnone {
 .mod-map .med:before {
   background-color: #ff1457; }
 
+.mapp-layout {
+  margin: 0; }
+
 .mapp-ib {
   border: 1px solid white;
   box-shadow: 0 0 1px black; }
@@ -942,9 +929,9 @@ img.alignnone {
   border: none; }
 
 .mod-social {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 40%;
+  width: 39.91228%;
   text-align: right; }
   .grid-debug.mod-social, .grid-debug .mod-social {
     margin-top: 4px !important;
@@ -970,9 +957,9 @@ img.alignnone {
   width: 960px;
   background: rgba(255, 255, 255, 0.1); }
 .mod-test .content {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 65%; }
+  width: 64.91228%; }
   .grid-debug.mod-test .content, .grid-debug .mod-test .content {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -990,7 +977,7 @@ img.alignnone {
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
   .mod-test .content .row {
-    margin-left: -2%; }
+    margin-left: -1.75439%; }
     .grid-debug.mod-test .content .row:before, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:before, .grid-debug .mod-test .content .row:after {
       display: block !important;
       text-align: center;
@@ -1001,13 +988,13 @@ img.alignnone {
     .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after {
       content: ""; }
     .grid-debug.mod-test .content .row:before, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:before, .grid-debug .mod-test .content .row:after {
-      margin: 10px 0 10px 2%;
+      margin: 10px 0 10px 1.75439%;
       padding: 10px 10px;
       background-color: rgba(0, 0, 0, 0.1); }
   .mod-test .content .content-left {
-    margin-left: 2%;
+    margin-left: 1.75439%;
     float: left;
-    width: 65%; }
+    width: 64.91228%; }
     .grid-debug.mod-test .content .content-left, .grid-debug .mod-test .content .content-left {
       margin-top: 4px !important;
       margin-bottom: 4px !important; }
@@ -1025,9 +1012,9 @@ img.alignnone {
         padding: 5px 0;
         background-color: rgba(255, 255, 255, 0.1); }
   .mod-test .content .content-right {
-    margin-left: 2%;
+    margin-left: 1.75439%;
     float: left;
-    width: 31%; }
+    width: 31.57895%; }
     .grid-debug.mod-test .content .content-right, .grid-debug .mod-test .content .content-right {
       margin-top: 4px !important;
       margin-bottom: 4px !important; }
@@ -1045,9 +1032,9 @@ img.alignnone {
         padding: 5px 0;
         background-color: rgba(255, 255, 255, 0.1); }
 .mod-test .sidebar {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 31%; }
+  width: 31.57895%; }
   .grid-debug.mod-test .sidebar, .grid-debug .mod-test .sidebar {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -1066,7 +1053,7 @@ img.alignnone {
       background-color: rgba(255, 255, 255, 0.1); }
 
 .skin-content-img-sidebar .bd {
-  margin-left: -2%; }
+  margin-left: -1.75439%; }
   .grid-debug.skin-content-img-sidebar .bd:before, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:before, .grid-debug .skin-content-img-sidebar .bd:after {
     display: block !important;
     text-align: center;
@@ -1077,13 +1064,13 @@ img.alignnone {
   .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after {
     content: ""; }
   .grid-debug.skin-content-img-sidebar .bd:before, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:before, .grid-debug .skin-content-img-sidebar .bd:after {
-    margin: 10px 0 10px 2%;
+    margin: 10px 0 10px 1.75439%;
     padding: 10px 10px;
     background-color: rgba(0, 0, 0, 0.1); }
 .skin-content-img-sidebar .main-content {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 65%; }
+  width: 64.91228%; }
   .grid-debug.skin-content-img-sidebar .main-content, .grid-debug .skin-content-img-sidebar .main-content {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -1101,9 +1088,9 @@ img.alignnone {
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
 .skin-content-img-sidebar .side-content {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 31%; }
+  width: 31.57895%; }
   .grid-debug.skin-content-img-sidebar .side-content, .grid-debug .skin-content-img-sidebar .side-content {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -1124,7 +1111,7 @@ img.alignnone {
     margin-bottom: 24px; }
 
 .skin-content-img-top .bd {
-  margin-left: -2%; }
+  margin-left: -1.75439%; }
   .grid-debug.skin-content-img-top .bd:before, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:before, .grid-debug .skin-content-img-top .bd:after {
     display: block !important;
     text-align: center;
@@ -1135,13 +1122,13 @@ img.alignnone {
   .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after {
     content: ""; }
   .grid-debug.skin-content-img-top .bd:before, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:before, .grid-debug .skin-content-img-top .bd:after {
-    margin: 10px 0 10px 2%;
+    margin: 10px 0 10px 1.75439%;
     padding: 10px 10px;
     background-color: rgba(0, 0, 0, 0.1); }
 .skin-content-img-top .main-content {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 65%; }
+  width: 64.91228%; }
   .grid-debug.skin-content-img-top .main-content, .grid-debug .skin-content-img-top .main-content {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -1159,9 +1146,9 @@ img.alignnone {
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
 .skin-content-img-top .side-content {
-  margin-left: 2%;
+  margin-left: 1.75439%;
   float: left;
-  width: 31%; }
+  width: 31.57895%; }
   .grid-debug.skin-content-img-top .side-content, .grid-debug .skin-content-img-top .side-content {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -1196,10 +1183,10 @@ img.alignnone {
   margin-bottom: 24px;
   border-bottom: 1px solid white; }
 .mod-layout .site-main {
-  margin-left: 10% !important;
-  margin-left: 2%;
+  margin-left: 10.08772% !important;
+  margin-left: 1.75439%;
   float: left;
-  width: 81%;
+  width: 81.57895%;
   display: block;
   margin-bottom: 48px; }
   .grid-debug.mod-layout .site-main:before, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:before, .grid-debug .mod-layout .site-main:after {

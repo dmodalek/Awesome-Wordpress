@@ -1,16 +1,20 @@
 {
-  "name": "theme",
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-glue": "~0.1.1",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-autoprefixer": "~0.2.20130806",
-    "grunt-contrib-cssmin": "~0.6.1",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.5.1",
-    "grunt-mocha": "~0.4.7",
-    "grunt-contrib-compass": "~0.6.0"
-  }
-}
+	"name": "theme",
+	"version": "1.0.0",
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-uglify": "~0.2.2",
+		"grunt-contrib-imagemin": "~0.4.0",
+		"grunt-contrib-watch": "~0.5.1",
+		"grunt-contrib-connect": "~0.5.0",
+		"grunt-contrib-jshint": "~0.6.0",
+		"grunt-contrib-sass": "~0.5.0",
+		"grunt-autoprefixer": "~0.2.20130806",
+		"grunt-contrib-cssmin": "~0.6.1",
+		"grunt-mocha": "~0.4.7"
+		},
+
+		"dependencies": {
+			"load-grunt-tasks": "~0.2.0"
+		}
+	}

@@ -1,8 +1,8 @@
 <?php
 
-namespace Theme\Walker;
+namespace Theme;
 
-class Nav extends \Walker_Nav_Menu {
+class Walker_Nav_Menu extends \Walker_Nav_Menu {
 
 	public static $INDENT_CHAR = "\t";
 
