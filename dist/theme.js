@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 11.12.2013 at 17:20:30
+ * Generated with Grunt on 14.01.2014 at 9:19:03
  */
 
 var Tc = Tc || {};
@@ -283,9 +283,9 @@ Tc.$ = $, function() {
 }(Tc.$), function(a) {
     Tc.Module.Layout.Dev = function(b) {
         this.on = function(c) {
-            var d = this.$ctx, e = a('<div class="badge">DEV</div>');
+            var d = this.$ctx, e = a('<div class="badge" title="— Press G for Grid Helper\n— Press C for CSS Hint">DEV</div>');
             this.$ctx.prepend(e), d.on("keydown", function(a) {
-                68 == a.keyCode && d.toggleClass("css-hint"), 71 == a.keyCode && d.toggleClass("grid-debug");
+                67 == a.keyCode && d.toggleClass("css-debug"), 71 == a.keyCode && d.toggleClass("grid-debug");
             }), b.on(c);
         };
     };

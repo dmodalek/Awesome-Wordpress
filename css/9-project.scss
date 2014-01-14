@@ -1,0 +1,8 @@
+::selection {
+	color: $dark;
+	background: $white; /* Safari */
+}
+::-moz-selection {
+	color: $dark;
+	background: $white; /* Firefox */
+}

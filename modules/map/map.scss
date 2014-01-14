@@ -62,14 +62,14 @@
 
 		.mapp-title h2 {
 			color: $dark;
-			margin-bottom: $base-spacing-unit;
+			margin-bottom: $half-spacing-unit;
 		}
 
 		.mapp-body {
 
 			label {
 				display: block;
-				color: $decent;
+				font-size: $small-size;
 			}
 
 			.row {
@@ -82,7 +82,7 @@
 
 			.profile-link {
 				color: $dark;
-				text-decoration: underline;
+				font-weight: bold;
 			}
 		}
 

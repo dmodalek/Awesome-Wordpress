@@ -392,14 +392,14 @@ ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
-pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
+pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
   clear: both; }
   .cf:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
   ul:after, ol:after, dl:after, hr:after,
   blockquote:after, p:after, address:after,
   table:after,
   fieldset:after, figure:after,
-  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
+  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row:after, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -625,7 +625,17 @@ img.alignnone {
 .mceTemp + ol {
   list-style-position: inside; }
 
-.css-hint {
+::selection {
+  color: #213249;
+  background: white;
+  /* Safari */ }
+
+::-moz-selection {
+  color: #213249;
+  background: white;
+  /* Firefox */ }
+
+.css-debug {
   /**
    * Debug
    *
@@ -683,57 +693,57 @@ img.alignnone {
   /**
    * Are you using the grid system correctly?
    */ }
-  .css-hint :empty {
+  .css-debug :empty {
     outline: 5px solid yellow; }
-  .css-hint img {
+  .css-debug img {
     outline: 5px solid red; }
-  .css-hint img[alt] {
+  .css-debug img[alt] {
     outline: none; }
-  .css-hint img[alt=""] {
+  .css-debug img[alt=""] {
     outline: 5px solid yellow; }
-  .css-hint a {
+  .css-debug a {
     outline: 5px solid yellow; }
-  .css-hint a[title] {
+  .css-debug a[title] {
     outline: none; }
-  .css-hint a[href="#"],
-  .css-hint a[href*="javascript"] {
+  .css-debug a[href="#"],
+  .css-debug a[href*="javascript"] {
     outline: 5px solid yellow; }
-  .css-hint a[target] {
+  .css-debug a[target] {
     outline: 5px solid yellow; }
-  .css-hint ul > *:not(li),
-  .css-hint ol > *:not(li) {
+  .css-debug ul > *:not(li),
+  .css-debug ol > *:not(li) {
     outline: 5px solid red; }
-  .css-hint th {
+  .css-debug th {
     outline: 5px solid yellow; }
-  .css-hint th[scope] {
+  .css-debug th[scope] {
     outline: none; }
-  .css-hint table > tr {
+  .css-debug table > tr {
     outline: 5px solid yellow; }
-  .css-hint tbody + tfoot {
+  .css-debug tbody + tfoot {
     outline: 5px solid yellow; }
-  .css-hint form {
+  .css-debug form {
     outline: 5px solid red; }
-  .css-hint form[action] {
+  .css-debug form[action] {
     outline: none; }
-  .css-hint textarea,
-  .css-hint input {
+  .css-debug textarea,
+  .css-debug input {
     outline: 5px solid red; }
-  .css-hint input[type] {
+  .css-debug input[type] {
     outline: none; }
-  .css-hint textarea[rows][cols] {
+  .css-debug textarea[rows][cols] {
     outline: none; }
-  .css-hint input[type=submit] {
+  .css-debug input[type=submit] {
     outline: 5px solid red; }
-  .css-hint input[type=submit][value] {
+  .css-debug input[type=submit][value] {
     outline: none; }
-  .css-hint [style] {
+  .css-debug [style] {
     outline: 5px solid yellow; }
-  .css-hint [id] {
+  .css-debug [id] {
     outline: 5px solid yellow; }
-  .css-hint .gw > :not(.g),
-  .css-hint .grid-wrapper > :not(.grid),
-  .css-hint .gw--rev > :not(.g),
-  .css-hint .grid-wrapper--rev > :not(.grid) {
+  .css-debug .gw > :not(.g),
+  .css-debug .grid-wrapper > :not(.grid),
+  .css-debug .gw--rev > :not(.g),
+  .css-debug .grid-wrapper--rev > :not(.grid) {
     outline: 5px solid red; }
 
 .mod-content {
@@ -909,17 +919,17 @@ img.alignnone {
   box-shadow: 0 0 1px black; }
   .mapp-ib .mapp-title h2 {
     color: #213249;
-    margin-bottom: 24px; }
+    margin-bottom: 12px; }
   .mapp-ib .mapp-body label {
     display: block;
-    color: #cbcfd5; }
+    font-size: 12px; }
   .mapp-ib .mapp-body .row {
     margin-bottom: 12px; }
     .mapp-ib .mapp-body .row:last-child {
       margin-bottom: 0; }
   .mapp-ib .mapp-body .profile-link {
     color: #213249;
-    text-decoration: underline; }
+    font-weight: bold; }
   .mapp-ib .mapp-links {
     border: none;
     height: 0;
@@ -1174,6 +1184,81 @@ img.alignnone {
 .skin-content-profile .bd {
   padding: 36px;
   background-color: #cbcfd5; }
+.skin-content-profile .row {
+  margin-left: -1.75439%; }
+  .grid-debug.skin-content-profile .row:before, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:before, .grid-debug .skin-content-profile .row:after {
+    display: block !important;
+    text-align: center;
+    color: white;
+    font-size: 11px; }
+  .grid-debug.skin-content-profile .row:before, .grid-debug .skin-content-profile .row:before {
+    content: "row-12" !important; }
+  .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after {
+    content: ""; }
+  .grid-debug.skin-content-profile .row:before, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:before, .grid-debug .skin-content-profile .row:after {
+    margin: 10px 0 10px 1.75439%;
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.1); }
+.skin-content-profile .col {
+  margin-left: 1.75439%;
+  float: left;
+  width: 98.24561%; }
+  .grid-debug.skin-content-profile .col, .grid-debug .skin-content-profile .col {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.skin-content-profile .col:before, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:before, .grid-debug .skin-content-profile .col:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.skin-content-profile .col:before, .grid-debug .skin-content-profile .col:before {
+      content: "col-12" !important; }
+    .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after {
+      content: ""; }
+    .grid-debug.skin-content-profile .col:before, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:before, .grid-debug .skin-content-profile .col:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
+.skin-content-profile .col-left {
+  margin-left: 1.75439%;
+  float: left;
+  width: 31.57895%; }
+  .grid-debug.skin-content-profile .col-left, .grid-debug .skin-content-profile .col-left {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.skin-content-profile .col-left:before, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:before, .grid-debug .skin-content-profile .col-left:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.skin-content-profile .col-left:before, .grid-debug .skin-content-profile .col-left:before {
+      content: "col-4" !important; }
+    .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after {
+      content: ""; }
+    .grid-debug.skin-content-profile .col-left:before, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:before, .grid-debug .skin-content-profile .col-left:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
+.skin-content-profile .col-right {
+  margin-left: 1.75439%;
+  float: left;
+  width: 64.91228%; }
+  .grid-debug.skin-content-profile .col-right, .grid-debug .skin-content-profile .col-right {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.skin-content-profile .col-right:before, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:before, .grid-debug .skin-content-profile .col-right:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.skin-content-profile .col-right:before, .grid-debug .skin-content-profile .col-right:before {
+      content: "col-8" !important; }
+    .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after {
+      content: ""; }
+    .grid-debug.skin-content-profile .col-right:before, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:before, .grid-debug .skin-content-profile .col-right:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
 
 .mod-layout .site-wrapper {
   width: 1140px;
@@ -1221,7 +1306,7 @@ img.alignnone {
 .skin-layout-dev .badge {
   cursor: pointer;
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   padding: 0.4rem 0.8rem;
   color: white;

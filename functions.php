@@ -51,6 +51,9 @@ function theme_setup() {
 	add_image_size('theme-sidebar', 298, 200, false);
 	add_image_size('theme-content-header', 880, 400, false);
 
+	add_image_size('theme-profile-header', 930, 178, true);
+	add_image_size('theme-profile-medium', 200, 200, false);
+
 
 	// Add multiple Post Thumbnails
 	if (class_exists('MultiPostThumbnails')) {
@@ -114,10 +117,10 @@ function theme_scripts() {
 
 	switch(APP_ENV) {
 
-		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.css', array(), false, all);
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.css', array(), false, 'all');
 					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.js', array('jquery'), false, true);
 					break;
-		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, all);
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, 'all');
 					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
 	}
 
@@ -125,36 +128,6 @@ function theme_scripts() {
 	wp_enqueue_script('theme');
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
-
-
-/**
- * Terrific Module
- *
- * @param string $name
- * @param string $template
- * @param string $skin
- * @param array $attr
- */
-
-function module($name, $template = null, $skin = null, $attr = array()) {
-    $flat = strtolower($name);
-    $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));
-    $template = $template == null ? '' : '-' . strtolower($template);
-    $skin = $skin == null ? '' : ' skin-' . $dashed . '-' . $skin;
-    $attributes = ' ';
-    $additionalClasses = '';
-    foreach ($attr as $key => $value) {
-        if ($key === 'class' && $value !== '') {
-            $additionalClasses .= ' ' . $value;
-        }
-        else {
-            $attributes .= $key . '="' . $value . '" ';
-        }
-    }
-    echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
-    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
-    echo "\n</div>";
-}
 
 
 /**
@@ -208,10 +181,43 @@ function theme_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
 
 
+
+/**
+ * Terrific Module
+ *
+ * @param string $name
+ * @param string $template
+ * @param string $skin
+ * @param array $attr
+ */
+
+function module($name, $template = null, $skin = null, $attr = array()) {
+    $flat = strtolower($name);
+    $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));
+    $template = $template == null ? '' : '-' . strtolower($template);
+    $skin = $skin == null ? '' : ' skin-' . $dashed . '-' . $skin;
+    $attributes = ' ';
+    $additionalClasses = '';
+    foreach ($attr as $key => $value) {
+        if ($key === 'class' && $value !== '') {
+            $additionalClasses .= ' ' . $value;
+        }
+        else {
+            $attributes .= $key . '="' . $value . '" ';
+        }
+    }
+    echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
+    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
+    echo "\n</div>";
+}
+
+
 /**
  * Include all files from the /inc directory
  */
 
+require get_template_directory() . '/inc/helper.php';
+require get_template_directory() . '/inc/project.php';
 require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/posttypes.php';
 require get_template_directory() . '/inc/taxonomies.php';

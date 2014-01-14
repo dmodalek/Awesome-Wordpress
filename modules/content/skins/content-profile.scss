@@ -9,4 +9,20 @@
 		padding: $base-spacing-unit * 1.5;
 		background-color: $decent;
 	}
+
+		.row {
+			@include row();
+		}
+
+			.col {
+				@include col();
+			}
+
+			.col-left {
+				@include col(4);
+			}
+
+			.col-right {
+				@include col(8);
+			}
 }
