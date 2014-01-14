@@ -117,11 +117,11 @@ function theme_scripts() {
 
 	switch(APP_ENV) {
 
-		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.js', array('jquery'), false, true);
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/built/theme.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/built/theme.js', array('jquery'), false, true);
 					break;
-		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/dist/theme.min.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/dist/theme.min.js', array('jquery'), false, true);
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/built/theme.min.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/built/theme.min.js', array('jquery'), false, true);
 	}
 
 	wp_enqueue_style('theme-styles');
@@ -216,12 +216,12 @@ function module($name, $template = null, $skin = null, $attr = array()) {
  * Include all files from the /inc directory
  */
 
-require get_template_directory() . '/inc/helper.php';
-require get_template_directory() . '/inc/project.php';
-require get_template_directory() . '/inc/shortcodes.php';
-require get_template_directory() . '/inc/posttypes.php';
-require get_template_directory() . '/inc/taxonomies.php';
-require get_template_directory() . '/inc/walker.php';
+require get_template_directory() . '/includes/helper.php';
+require get_template_directory() . '/includes/project.php';
+require get_template_directory() . '/includes/shortcodes.php';
+require get_template_directory() . '/includes/posttypes.php';
+require get_template_directory() . '/includes/taxonomies.php';
+require get_template_directory() . '/includes/walker.php';
 
 /*
  * Constructor

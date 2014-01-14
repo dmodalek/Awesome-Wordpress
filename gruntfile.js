@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
 			// Styles
 			styles: [
-				'css/*.scss',
+				'styles/*.scss',
 				'modules/*/*.scss',
 				'modules/*/skins/*.scss',
 				'layout/*.scss',
@@ -22,12 +22,12 @@ module.exports = function (grunt) {
 			],
 
 			sass: [
-				'css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
+				'styles/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
 			],
 
 			// Scripts
 			scripts: [
-				'js/*.js',
+				'javascript/*.js',
 				'modules/*/*.js',
 				'modules/*/skins/*.js',
 				'layout/*.js',
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'dist/<%= pkg.name %>.css': '<%=dirs.sass%>'
+					'built/<%= pkg.name %>.css': '<%=dirs.sass%>'
 				}
 			},
 
@@ -69,13 +69,13 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'dist/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
+					'built/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
 				}
 			}
 		},
 
 		jshint: {
-			files: ['Gruntfile.js', '<%=dirs.scriptsLint%>'],
+			files: ['gruntfile.js', '<%=dirs.scriptsLint%>'],
 			options: {
 				// options here to override JSHint defaults
 				globals: {
@@ -93,13 +93,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'dist/<%= pkg.name %>.map.js',
+					sourceMap: 'built/<%= pkg.name %>.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.map.js'
 				},
 
 				files: {
-					'dist/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
+					'built/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
 				}
 			},
 
@@ -107,13 +107,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'dist/<%= pkg.name %>.min.map.js',
+					sourceMap: 'built/<%= pkg.name %>.min.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.min.map.js'
 				},
 
 				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
+					'built/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
 				}
 			}
 		},
@@ -132,7 +132,7 @@ module.exports = function (grunt) {
 			options: {
 				livereload: true
 			},
-			files: ['Gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>', '<%= dirs.markup %>'],
+			files: ['gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>', '<%= dirs.markup %>'],
 			tasks: ['dev']
 		}
 	});
