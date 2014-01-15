@@ -1,4 +1,4 @@
-<div clas="hd">
+<div class="hd">
 	<h1 class="title"><?php the_title(); ?></h1>
 	<?php
 	$attachment_id = get_field('profile-headerimage');
@@ -7,7 +7,8 @@
 	<img src="<?= $image[0]; ?>" width="<?= $image[1]; ?>" height="<?= $image[2]; ?>"/>
 
 </div>
-<div class="bd base">
+
+<div class="bd base section">
 	<div class="row">
 		<div class="col-left">
 			<?php
@@ -20,10 +21,12 @@
 			<?php the_field('profile-description'); ?>
 		</div>
 	</div>
+</div>
 
+<div class="bd base section">
 	<?php if(get_field('profile-offers')): ?>
 
-		<hr/>
+		<h2>Offers</h2>
 
 		<?php while(has_sub_field('profile-offers')): ?>
 
@@ -48,10 +51,14 @@
 
 	<?php endif; ?>
 
+</div>
+<div class="bd base section">
+
 	<?php if(get_field('profile-media')): ?>
 
-		<hr/>
 		<h2>Media</h2>
+
+		<div class="row">
 
 		<?php while(has_sub_field('profile-media')):
 
@@ -59,11 +66,13 @@
 
 				$attachment_id = get_sub_field('profile-media-file');
 
-				echo getMarkupFromAttachment($attachment_id);
+				echo getMarkupFromAttachment($attachment_id, 'theme-profile-media');
 
 			endif; ?>
 
 		<?php endwhile; ?>
+
+		</div>
 
 	<?php endif; ?>
 

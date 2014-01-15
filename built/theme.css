@@ -392,14 +392,14 @@ ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
-pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
+pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
   clear: both; }
   .cf:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
   ul:after, ol:after, dl:after, hr:after,
   blockquote:after, p:after, address:after,
   table:after,
   fieldset:after, figure:after,
-  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row:after, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
+  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row:after, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -437,6 +437,11 @@ pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .gri
 
 /**
  *
+ * Shortens singe line text using ...
+ *
+ */
+/**
+ *
  * Awesome Grid
  *
  */
@@ -453,10 +458,11 @@ pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .gri
  * Global Elements
  */
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
-  font: 1em/1.5 "Open Sans", sans-serif;
+  font: 0.875em/1.71429 "Open Sans", sans-serif;
   color: white;
   overflow-y: scroll;
   min-height: 100%; }
@@ -478,77 +484,77 @@ fieldset, figure,
 pre {
   padding: 0;
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.71429rem; }
 
 /*
  * `hr` elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
  */
 hr {
-  margin-bottom: 1.375rem; }
+  margin-bottom: 1.57143rem; }
 
 /*
  * Typography
  */
 h1, .alpha {
   font-size: 36px;
-  font-size: 2.25rem;
+  font-size: 2.57143rem;
   line-height: 1.33333;
   font-weight: normal; }
 
 h2, .beta {
   font-size: 30px;
-  font-size: 1.875rem;
+  font-size: 2.14286rem;
   line-height: 1.6;
   font-weight: normal; }
 
 h3, .gamma, .mod-main-menu .nav-item-l1 > .nav-item-link {
   font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 1.71429rem;
   line-height: 1;
   font-weight: normal; }
 
 h4, .delta {
   font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.2;
   font-weight: normal; }
 
 h5, .epsilon {
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 1.14286rem;
   line-height: 1.5;
   font-weight: normal; }
 
 h6, .zeta {
   font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.71429;
   font-weight: normal; }
 
 .giga {
   font-size: 96px;
-  font-size: 6rem;
+  font-size: 6.85714rem;
   line-height: 1; }
 
 .mega {
   font-size: 72px;
-  font-size: 4.5rem;
+  font-size: 5.14286rem;
   line-height: 1; }
 
 .kilo {
   font-size: 48px;
-  font-size: 3rem;
+  font-size: 3.42857rem;
   line-height: 1; }
 
 .small {
   font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 0.85714rem;
   line-height: 2; }
 
 .micro {
   font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 0.71429rem;
   line-height: 2.4; }
 
 /*
@@ -564,7 +570,7 @@ a:hover {
  * Lists
  */
 ul, ol, dd {
-  margin-left: 3rem; }
+  margin-left: 3.42857rem; }
 
 /*
  * Images
@@ -572,6 +578,20 @@ ul, ol, dd {
 img {
   max-width: 100%;
   height: auto; }
+
+/*
+ * Sections
+ *
+ * Used to visually divide content into sections
+ */
+.section {
+  padding: 36px;
+  background-color: #cbcfd5; }
+  .section + .section {
+    margin-top: 12px; }
+  .section h2, .section h3, .section p, .section hr {
+    color: #213249;
+    border-color: #213249; }
 
 /*
  * Navigations
@@ -749,7 +769,7 @@ img.alignnone {
 .mod-content {
   margin-bottom: 24px; }
   .mod-content .main-content {
-    padding-right: 24px; }
+    padding-right: 48px; }
 
 .mod-error {
   padding: 24px 0 0 0; }
@@ -1178,12 +1198,9 @@ img.alignnone {
   .skin-content-img-top .side-content .attachment-theme-sidebar {
     margin-bottom: 24px; }
 
-.skin-content-profile h2, .skin-content-profile h3, .skin-content-profile p, .skin-content-profile hr {
-  color: #213249;
-  border-color: #213249; }
-.skin-content-profile .bd {
-  padding: 36px;
-  background-color: #cbcfd5; }
+.skin-content-profile .hd {
+  line-height: 0;
+  margin-bottom: 12px; }
 .skin-content-profile .row {
   margin-left: -1.75439%; }
   .grid-debug.skin-content-profile .row:before, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:before, .grid-debug .skin-content-profile .row:after {
@@ -1259,14 +1276,41 @@ img.alignnone {
       margin: 10px 0;
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
+.skin-content-profile .attachement-link {
+  margin-left: 1.75439%;
+  float: left;
+  width: 23.24561%; }
+  .grid-debug.skin-content-profile .attachement-link, .grid-debug .skin-content-profile .attachement-link {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:before {
+      content: "col-3" !important; }
+    .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after {
+      content: ""; }
+    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
+.skin-content-profile .img-wrapper {
+  min-height: 65px; }
+.skin-content-profile .wp-caption-text {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  display: block; }
 
 .mod-layout .site-wrapper {
   width: 1140px;
   margin-top: 24px; }
 .mod-layout .site-header {
-  margin-top: 48px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid white; }
+  margin-top: 48px; }
 .mod-layout .site-main {
   margin-left: 10.08772% !important;
   margin-left: 1.75439%;
@@ -1300,8 +1344,7 @@ img.alignnone {
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
 .mod-layout .site-footer {
-  padding: 24px 0;
-  border-top: 1px solid white; }
+  padding: 24px 0; }
 
 .skin-layout-dev .badge {
   cursor: pointer;

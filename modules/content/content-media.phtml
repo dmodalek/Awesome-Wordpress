@@ -1,0 +1,30 @@
+
+<h1 class="title"><?php the_title(); ?></h1>
+
+<div class="bd base">
+	<?php the_content(); ?>
+</div>
+
+<div class="bd base">
+
+	<?php if(get_field('page-media')): ?>
+
+		<div class="row">
+
+		<?php while(has_sub_field('page-media')):
+
+			if( get_sub_field('page-media-file') ):
+
+				$attachment_id = get_sub_field('page-media-file');
+
+				echo getMarkupFromAttachment($attachment_id, 'theme-page-media');
+
+			endif; ?>
+
+		<?php endwhile; ?>
+
+		</div>
+
+	<?php endif; ?>
+
+</div>

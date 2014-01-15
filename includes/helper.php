@@ -1,18 +1,19 @@
 <?php
 
- 	function getMarkupFromAttachment($attachment_id) {
+ 	function getMarkupFromAttachment($attachment_id, $size) {
 
 		$output = '';
 
 		// Attachment Properities
 		$url = wp_get_attachment_url( $attachment_id );
 		$title = get_the_title( $attachment_id );
+		$caption = get_post_field('post_excerpt', $attachment_id);
 		$alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
 		$fileext = pathinfo($url, PATHINFO_EXTENSION);
-		$image = wp_get_attachment_image_src($attachment_id, 'theme-profile-medium');
+		$image = wp_get_attachment_image_src($attachment_id, $size);
 
 		// Custom Icons
-		$pdfIcon = '/wp-includes/images/crystal/document.png';
+		$iconPath = '/wp-includes/images/crystal';
 
 		switch($fileext) {
 
@@ -21,33 +22,29 @@
 			case 'jpeg':
 			case 'jpg':
 			case 'gif':
-				$output = sprintf('<a href="%s" target="_blank"><img src="%s" width="%s" height="%s" alt="%s"/><p class="wp-caption-text">%s</p></a>', $url, $image[0],  $image[1], $image[2], $alt, $title);
+				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" width="%s" height="%s" alt="%s"/></div><p class="wp-caption-text">%s</p></a>', $url, $image[0],  $image[1], $image[2], $alt, $title, $caption);
 				break;
 
 			// PDFs as Icon with Caption and Link to File
 			case 'pdf':
-			case 'doc':
-			case 'docx':
-			case 'ppt':
-			case 'pptx':
-			case 'pps':
-			case 'ppsx':
-			case 'odt':
-			case 'xls':
-			case 'xlsx':
-				$output = sprintf('<a href="%s" target="_blank"><img src="%s" alt="%s" /><p class="wp-caption-text">%s</p></a>', $url, $pdfIcon, $alt, $title);
+				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
 				break;
-			// ZIP as Icon with Caption and Link to File
-			case 'zip':
-				$output = sprintf('<a href="%s" target="_blank"><img src="%s" width="%s" height="%s"/></a>', $url, $image[0],  $image[1], $image[2]);
+			// Audio Files as Icon with Caption and Link to File
+			case 'mp3':
+			case 'm4a':
+				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/audio.png', $alt, $title);
 				break;
+
 			// Video Files as Icon with Caption and Link to File
-			case 'mp4':
-				$output = sprintf('<a href="%s" target="_blank"><img src="%s" width="%s" height="%s"/></a>', $url, $image[0],  $image[1], $image[2]);
+			case 'mov':
+			case 'avi':
+			case 'wmv':
+				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/video.png', $alt, $title);
 				break;
+
 			// Fallback
 			default:
-				$output = sprintf('<a href="%s" target="_blank"><img src="%s" width="%s" height="%s"/></a>', $url, $image[0],  $image[1], $image[2]);
+				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
 		}
 
 		return $output;

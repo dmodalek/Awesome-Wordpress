@@ -10,7 +10,7 @@ $debug-mode: false;
  * Base stuff
  */
 
-$base-font-size:    16px!default;
+$base-font-size:    14px!default;
 $base-line-height:  24px!default;
 
 
@@ -45,10 +45,10 @@ $micro-size:	10px!default;
  * Base Spacing Unit
  */
 
-$base-spacing-unit: 	$base-line-height!default;
-$half-spacing-unit: 	$base-spacing-unit / 2!default;
-$double-spacing-unit: 	$base-spacing-unit * 2!default;
-$line-height-ratio: 	$base-line-height / $base-font-size;
+$base-spacing: 		$base-line-height!default;
+$half-spacing: 		$base-spacing / 2!default;
+$double-spacing: 	$base-spacing * 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
 
 
 /**

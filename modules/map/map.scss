@@ -5,12 +5,12 @@
 
 	.legend-list {
 		float: right;
-		margin: $base-spacing-unit 0;
+		margin: $base-spacing 0;
 
 
   		> li {
   		  	display: inline-block;
-  			margin-left: $base-spacing-unit;
+  			margin-left: $base-spacing;
   		}
 	}
 
@@ -18,13 +18,13 @@
 		.sport,
 		.med {
 
-			margin-right: $base-spacing-unit;
+			margin-right: $base-spacing;
 			&:before {
 				content: "";
 				display: inline-block;
-				width: $base-spacing-unit / 2;
-				height: $base-spacing-unit / 2;
-				margin-right: $base-spacing-unit / 2;
+				width: $base-spacing / 2;
+				height: $base-spacing / 2;
+				margin-right: $base-spacing / 2;
 			}
 		}
 
@@ -62,7 +62,7 @@
 
 		.mapp-title h2 {
 			color: $dark;
-			margin-bottom: $half-spacing-unit;
+			margin-bottom: $half-spacing;
 		}
 
 		.mapp-body {
@@ -73,7 +73,7 @@
 			}
 
 			.row {
-				margin-bottom: $base-spacing-unit / 2;
+				margin-bottom: $base-spacing / 2;
 
 				&:last-child {
 					margin-bottom: 0;

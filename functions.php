@@ -53,6 +53,8 @@ function theme_setup() {
 
 	add_image_size('theme-profile-header', 930, 178, true);
 	add_image_size('theme-profile-medium', 200, 200, false);
+	add_image_size('theme-profile-media', 200, 65, false);
+	add_image_size('theme-page-media', 200, 65, false);
 
 
 	// Add multiple Post Thumbnails

@@ -3,26 +3,25 @@
 	.site-wrapper {
 		@extend .centered;
 		width: 1140px;
-		margin-top: $base-spacing-unit;
+		margin-top: $base-spacing;
 	}
 
 		.site-header {
 			@extend .cf;
-			margin-top: $double-spacing-unit;
-			margin-bottom: $base-spacing-unit;
-			border-bottom: 1px solid $white;
+			margin-top: $double-spacing;
+//			border-bottom: 1px solid $white;
 		}
 
 		.site-main{
 			@include push(1);
 			@include col(10);
 			display:block;
-			margin-bottom: $base-spacing-unit * 2;
+			margin-bottom: $base-spacing * 2;
 		}
 
 		.site-footer {
 			@extend .cf;
-			padding: $base-spacing-unit 0;
-			border-top: 1px solid $white;
+			padding: $base-spacing 0;
+//			border-top: 1px solid $white;
 		}
 }

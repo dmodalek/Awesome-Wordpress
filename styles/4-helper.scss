@@ -52,3 +52,18 @@
 .text-center {
 	text-align:center;
 }
+
+
+/**
+ *
+ * Shortens singe line text using ...
+ *
+ */
+
+@mixin ellipsis {
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block; // Text overflow can only happen on block or inline-block level elements
+}

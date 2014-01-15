@@ -1,13 +1,8 @@
 .skin-content-profile {
 
-  	h2, h3, p, hr {
-	  color: $dark;
-	  border-color: $dark;
-	}
-
-	.bd {
-		padding: $base-spacing-unit * 1.5;
-		background-color: $decent;
+	.hd {
+		line-height: 0;
+		margin-bottom: $half-spacing;
 	}
 
 		.row {
@@ -25,4 +20,19 @@
 			.col-right {
 				@include col(8);
 			}
+
+
+			.attachement-link {
+				@include col(3);
+			}
+
+				.img-wrapper {
+					min-height: 65px;
+				}
+
+				.wp-caption-text {
+					@include ellipsis;
+					display: block;
+				}
+
 }

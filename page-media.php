@@ -1,7 +1,6 @@
 <?php
-
 /*
- * Template Name: Images Sidebar
+ * Template Name: Media Files
  */
 
 get_header();
@@ -9,10 +8,8 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		module('content', 'img-sidebar', 'img-sidebar');
+		module('content', 'media');
 
 	endwhile;
 
 get_footer();
-
-?>
