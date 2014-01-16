@@ -5,26 +5,28 @@
 	<?php the_content(); ?>
 </div>
 
-<div class="bd base">
-
 	<?php if(get_field('page-media')): ?>
 
-		<div class="row">
+		<?php while(has_sub_field('page-media')): ?>
 
-		<?php while(has_sub_field('page-media')):
+			<div class="bd base section">
 
-			if( get_sub_field('page-media-file') ):
+				<h2><? echo get_sub_field('page-media-section-title') ?></h2>
 
-				$attachment_id = get_sub_field('page-media-file');
+				<div class="row">
 
-				echo getMarkupFromAttachment($attachment_id, 'theme-page-media');
+					<?php while(has_sub_field('page-media-section-files')):
 
-			endif; ?>
+						$attachment_obj =  get_sub_field('page-media-section-file');
+
+						echo getMarkupFromAttachment($attachment_obj->ID, 'theme-page-media'); ?>
+
+					<?php endwhile; ?>
+
+				</div>
+
+			</div>
 
 		<?php endwhile; ?>
 
-		</div>
-
 	<?php endif; ?>
-
-</div>

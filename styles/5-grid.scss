@@ -101,6 +101,19 @@ $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols
 }
 
 
+/*
+ * Html Classes
+ */
+
+.row {
+	@include row();
+}
+
+	.col {
+		@include col();
+	}
+
+
 
 
 

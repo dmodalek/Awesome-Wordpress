@@ -387,19 +387,19 @@ table {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf, h1, h2, h3, h4, h5, h6, hgroup,
+.cf, .row, .grid-debug.row:after, .grid-debug .row:after, .grid-debug.col:after, .grid-debug .col:after, h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
-pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
+pre, .grid-debug.attachment-link:after, .grid-debug .attachment-link:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer {
   clear: both; }
-  .cf:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
+  .cf:after, .row:after, .grid-debug.row:after, .grid-debug .row:after, .grid-debug.col:after, .grid-debug .col:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
   ul:after, ol:after, dl:after, hr:after,
   blockquote:after, p:after, address:after,
   table:after,
   fieldset:after, figure:after,
-  pre:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .skin-content-profile .row:after, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
+  pre:after, .grid-debug.attachment-link:after, .grid-debug .attachment-link:after, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .grid-debug.mod-lang-menu:after, .grid-debug .mod-lang-menu:after, .mod-logo:after, .grid-debug.mod-logo:after, .grid-debug .mod-logo:after, .grid-debug.mod-main-menu:after, .grid-debug .mod-main-menu:after, .grid-debug.mod-social:after, .grid-debug .mod-social:after, .mod-test .container:after, .grid-debug.mod-test .content:after, .grid-debug .mod-test .content:after, .mod-test .content .row:after, .grid-debug.mod-test .content .row:after, .grid-debug .mod-test .content .row:after, .grid-debug.mod-test .content .content-left:after, .grid-debug .mod-test .content .content-left:after, .grid-debug.mod-test .content .content-right:after, .grid-debug .mod-test .content .content-right:after, .grid-debug.mod-test .sidebar:after, .grid-debug .mod-test .sidebar:after, .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .bd:after, .grid-debug .skin-content-img-sidebar .bd:after, .grid-debug.skin-content-img-sidebar .main-content:after, .grid-debug .skin-content-img-sidebar .main-content:after, .grid-debug.skin-content-img-sidebar .side-content:after, .grid-debug .skin-content-img-sidebar .side-content:after, .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .bd:after, .grid-debug .skin-content-img-top .bd:after, .grid-debug.skin-content-img-top .main-content:after, .grid-debug .skin-content-img-top .main-content:after, .grid-debug.skin-content-img-top .side-content:after, .grid-debug .skin-content-img-top .side-content:after, .grid-debug.skin-content-profile .col-left:after, .grid-debug .skin-content-profile .col-left:after, .grid-debug.skin-content-profile .col-right:after, .grid-debug .skin-content-profile .col-right:after, .mod-layout .site-header:after, .grid-debug.mod-layout .site-main:after, .grid-debug .mod-layout .site-main:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -454,6 +454,46 @@ pre, .grid-debug.mod-footer-menu:after, .grid-debug .mod-footer-menu:after, .gri
 /*
  * Debug
  */
+/*
+ * Html Classes
+ */
+.row {
+  margin-left: -1.75439%; }
+  .grid-debug.row:before, .grid-debug.row:after, .grid-debug .row:before, .grid-debug .row:after {
+    display: block !important;
+    text-align: center;
+    color: white;
+    font-size: 11px; }
+  .grid-debug.row:before, .grid-debug .row:before {
+    content: "row-12" !important; }
+  .grid-debug.row:after, .grid-debug .row:after {
+    content: ""; }
+  .grid-debug.row:before, .grid-debug.row:after, .grid-debug .row:before, .grid-debug .row:after {
+    margin: 10px 0 10px 1.75439%;
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.1); }
+
+.col {
+  margin-left: 1.75439%;
+  float: left;
+  width: 98.24561%; }
+  .grid-debug.col, .grid-debug .col {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.col:before, .grid-debug.col:after, .grid-debug .col:before, .grid-debug .col:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.col:before, .grid-debug .col:before {
+      content: "col-12" !important; }
+    .grid-debug.col:after, .grid-debug .col:after {
+      content: ""; }
+    .grid-debug.col:before, .grid-debug.col:after, .grid-debug .col:before, .grid-debug .col:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
+
 /**
  * Global Elements
  */
@@ -592,6 +632,43 @@ img {
   .section h2, .section h3, .section p, .section hr {
     color: #213249;
     border-color: #213249; }
+
+/*
+ * Media File output styling
+ *
+ * Used in conjunction with getMarkupFromAttachment()
+ */
+.attachment-link {
+  margin-left: 1.75439%;
+  float: left;
+  width: 23.24561%; }
+  .grid-debug.attachment-link, .grid-debug .attachment-link {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important; }
+    .grid-debug.attachment-link:before, .grid-debug.attachment-link:after, .grid-debug .attachment-link:before, .grid-debug .attachment-link:after {
+      display: block !important;
+      text-align: center;
+      color: white;
+      font-size: 11px; }
+    .grid-debug.attachment-link:before, .grid-debug .attachment-link:before {
+      content: "col-3" !important; }
+    .grid-debug.attachment-link:after, .grid-debug .attachment-link:after {
+      content: ""; }
+    .grid-debug.attachment-link:before, .grid-debug.attachment-link:after, .grid-debug .attachment-link:before, .grid-debug .attachment-link:after {
+      margin: 10px 0;
+      padding: 5px 0;
+      background-color: rgba(255, 255, 255, 0.1); }
+
+.img-wrapper {
+  min-height: 65px; }
+
+.wp-caption-text {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  display: block; }
 
 /*
  * Navigations
@@ -1201,41 +1278,6 @@ img.alignnone {
 .skin-content-profile .hd {
   line-height: 0;
   margin-bottom: 12px; }
-.skin-content-profile .row {
-  margin-left: -1.75439%; }
-  .grid-debug.skin-content-profile .row:before, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:before, .grid-debug .skin-content-profile .row:after {
-    display: block !important;
-    text-align: center;
-    color: white;
-    font-size: 11px; }
-  .grid-debug.skin-content-profile .row:before, .grid-debug .skin-content-profile .row:before {
-    content: "row-12" !important; }
-  .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:after {
-    content: ""; }
-  .grid-debug.skin-content-profile .row:before, .grid-debug.skin-content-profile .row:after, .grid-debug .skin-content-profile .row:before, .grid-debug .skin-content-profile .row:after {
-    margin: 10px 0 10px 1.75439%;
-    padding: 10px 10px;
-    background-color: rgba(0, 0, 0, 0.1); }
-.skin-content-profile .col {
-  margin-left: 1.75439%;
-  float: left;
-  width: 98.24561%; }
-  .grid-debug.skin-content-profile .col, .grid-debug .skin-content-profile .col {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important; }
-    .grid-debug.skin-content-profile .col:before, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:before, .grid-debug .skin-content-profile .col:after {
-      display: block !important;
-      text-align: center;
-      color: white;
-      font-size: 11px; }
-    .grid-debug.skin-content-profile .col:before, .grid-debug .skin-content-profile .col:before {
-      content: "col-12" !important; }
-    .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:after {
-      content: ""; }
-    .grid-debug.skin-content-profile .col:before, .grid-debug.skin-content-profile .col:after, .grid-debug .skin-content-profile .col:before, .grid-debug .skin-content-profile .col:after {
-      margin: 10px 0;
-      padding: 5px 0;
-      background-color: rgba(255, 255, 255, 0.1); }
 .skin-content-profile .col-left {
   margin-left: 1.75439%;
   float: left;
@@ -1276,35 +1318,6 @@ img.alignnone {
       margin: 10px 0;
       padding: 5px 0;
       background-color: rgba(255, 255, 255, 0.1); }
-.skin-content-profile .attachement-link {
-  margin-left: 1.75439%;
-  float: left;
-  width: 23.24561%; }
-  .grid-debug.skin-content-profile .attachement-link, .grid-debug .skin-content-profile .attachement-link {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important; }
-    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:after {
-      display: block !important;
-      text-align: center;
-      color: white;
-      font-size: 11px; }
-    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:before {
-      content: "col-3" !important; }
-    .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:after {
-      content: ""; }
-    .grid-debug.skin-content-profile .attachement-link:before, .grid-debug.skin-content-profile .attachement-link:after, .grid-debug .skin-content-profile .attachement-link:before, .grid-debug .skin-content-profile .attachement-link:after {
-      margin: 10px 0;
-      padding: 5px 0;
-      background-color: rgba(255, 255, 255, 0.1); }
-.skin-content-profile .img-wrapper {
-  min-height: 65px; }
-.skin-content-profile .wp-caption-text {
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  display: block; }
 
 .mod-layout .site-wrapper {
   width: 1140px;

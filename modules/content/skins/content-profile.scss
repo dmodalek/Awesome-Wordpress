@@ -5,34 +5,12 @@
 		margin-bottom: $half-spacing;
 	}
 
-		.row {
-			@include row();
+		.col-left {
+			@include col(4);
 		}
 
-			.col {
-				@include col();
-			}
-
-			.col-left {
-				@include col(4);
-			}
-
-			.col-right {
-				@include col(8);
-			}
-
-
-			.attachement-link {
-				@include col(3);
-			}
-
-				.img-wrapper {
-					min-height: 65px;
-				}
-
-				.wp-caption-text {
-					@include ellipsis;
-					display: block;
-				}
+		.col-right {
+			@include col(8);
+		}
 
 }

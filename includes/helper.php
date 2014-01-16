@@ -2,8 +2,6 @@
 
  	function getMarkupFromAttachment($attachment_id, $size) {
 
-		$output = '';
-
 		// Attachment Properities
 		$url = wp_get_attachment_url( $attachment_id );
 		$title = get_the_title( $attachment_id );
@@ -22,29 +20,29 @@
 			case 'jpeg':
 			case 'jpg':
 			case 'gif':
-				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" width="%s" height="%s" alt="%s"/></div><p class="wp-caption-text">%s</p></a>', $url, $image[0],  $image[1], $image[2], $alt, $title, $caption);
+				$output = sprintf('<a class="attachment-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachment-icon" src="%s" width="%s" height="%s" alt="%s"/></div><p class="wp-caption-text">%s</p></a>', $url, $image[0],  $image[1], $image[2], $alt, $title, $caption);
 				break;
 
 			// PDFs as Icon with Caption and Link to File
 			case 'pdf':
-				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
+				$output = sprintf('<a class="attachment-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachment-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
 				break;
 			// Audio Files as Icon with Caption and Link to File
 			case 'mp3':
 			case 'm4a':
-				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/audio.png', $alt, $title);
+				$output = sprintf('<a class="attachment-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachment-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/audio.png', $alt, $title);
 				break;
 
 			// Video Files as Icon with Caption and Link to File
 			case 'mov':
 			case 'avi':
 			case 'wmv':
-				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/video.png', $alt, $title);
+				$output = sprintf('<a class="attachment-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachment-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/video.png', $alt, $title);
 				break;
 
 			// Fallback
 			default:
-				$output = sprintf('<a class="attachement-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachement-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
+				$output = sprintf('<a class="attachment-link" href="%s" target="_blank"><div class="img-wrapper"><img class="attachment-icon" src="%s" alt="%s" /></div><p class="wp-caption-text">%s</p></a>', $url, $iconPath . '/document.png', $alt, $title);
 		}
 
 		return $output;

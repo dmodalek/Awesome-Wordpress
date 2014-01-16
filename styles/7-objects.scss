@@ -21,6 +21,28 @@
 }
 
 
+
+/*
+ * Media File output styling
+ *
+ * Used in conjunction with getMarkupFromAttachment()
+ */
+
+.attachment-link {
+	@include col(3);
+}
+
+	.img-wrapper {
+		min-height: 65px;
+	}
+
+	.wp-caption-text {
+		@include ellipsis;
+		display: block;
+	}
+
+
+
 /*
  * Navigations
  *
