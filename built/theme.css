@@ -502,12 +502,12 @@ pre, .grid-debug.attachment-link:after, .grid-debug .attachment-link:after, .gri
   box-sizing: border-box; }
 
 html {
-  font: 0.875em/1.71429 "Open Sans", sans-serif;
   color: white;
   overflow-y: scroll;
   min-height: 100%; }
 
 body {
+  font: 0.875em/1.71429 "Open Sans", sans-serif;
   padding: 0;
   margin: 0;
   background: linear-gradient(to right top, #7e9ac9 2%, #0e1e31 86%);
@@ -620,6 +620,19 @@ img {
   height: auto; }
 
 /*
+ * Selected Text Styling
+ */
+::selection {
+  color: #213249;
+  background: white;
+  /* Safari */ }
+
+::-moz-selection {
+  color: #213249;
+  background: white;
+  /* Firefox */ }
+
+/*
  * Sections
  *
  * Used to visually divide content into sections
@@ -693,10 +706,21 @@ img {
     color: #a1daf7;
     text-decoration: none; }
 
+/*
+ * Wordpress Editor Styles
+ *
+ */
+/*
+ * Overwrite Styles for the Tiny MCE Editor (Backend)
+ */
 html .mceContentBody {
   font-size: 100%;
-  max-width: 604px; }
+  max-width: 604px;
+  background-image: none; }
 
+/*
+ * Styling for Wordpress specific classes (Frontend and Backend)
+ */
 .alignleft {
   float: left;
   margin: 0 24px 0 0; }
@@ -721,16 +745,6 @@ img.alignnone {
 .mceTemp + ul,
 .mceTemp + ol {
   list-style-position: inside; }
-
-::selection {
-  color: #213249;
-  background: white;
-  /* Safari */ }
-
-::-moz-selection {
-  color: #213249;
-  background: white;
-  /* Firefox */ }
 
 .css-debug {
   /**

@@ -8,13 +8,13 @@
 }
 
 html{
-    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
 	color: $white;
     overflow-y:scroll;
     min-height:100%;
 }
 
 body {
+	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
 	padding: 0;
   	margin: 0;
 	background: linear-gradient(to right top, rgb(126, 154, 201) 2%, rgb(14, 30, 49) 86%);
@@ -114,6 +114,7 @@ a {
     }
 }
 
+
 /*
  * Lists
  */
@@ -132,5 +133,18 @@ img{
     height:auto;
 }
 
+
+/*
+ * Selected Text Styling
+ */
+
+::selection {
+	color: $dark;
+	background: $white; /* Safari */
+}
+::-moz-selection {
+	color: $dark;
+	background: $white; /* Firefox */
+}
 
 

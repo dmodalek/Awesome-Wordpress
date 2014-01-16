@@ -1,8 +1,24 @@
 
+/*
+ * Wordpress Editor Styles
+ *
+ */
+
+
+/*
+ * Overwrite Styles for the Tiny MCE Editor (Backend)
+ */
+
 html .mceContentBody {
 	font-size: 100%;
 	max-width: 604px;
+	background-image: none;
 }
+
+
+/*
+ * Styling for Wordpress specific classes (Frontend and Backend)
+ */
 
 .alignleft {
 	float: left;

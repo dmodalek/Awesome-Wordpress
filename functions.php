@@ -77,14 +77,23 @@ function theme_setup() {
 	}
 
 	/*
-	 * Languages
+	 * Theme Frontend Languages
 	 */
 	load_theme_textdomain('theme', get_template_directory() . '/languages');
 
+
 	/*
 	 * Editor Styles
+	 *
+	 * Add theme.css to include frontend styles in tiny mce
+	 * Overwrite any styles via wordpress.scss
 	 */
-	add_editor_style('css/editor-style.css');
+
+	if(APP_ENV == 'dev') {
+		add_editor_style('built/theme.css');
+	} else {
+		add_editor_style('built/theme.min.css');
+	}
 
 
 	/*
@@ -100,8 +109,6 @@ function theme_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
 	));
-
-
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
