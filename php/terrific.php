@@ -1,6 +1,22 @@
 <?php
 
 /**
+ *
+ * Terrific PHP Implementation
+ *
+ * Examples
+ *
+ *	Simple: 	echo module('article');
+ * 	Advanced: 	echo module('article')->template('wide')->skin('wide')->data('my-article-obj')->tag('article')->attrib('role', 'aside')->indent(2);
+ *  Full: 		echo module('article')->template('wide')->skins(array('wide', 'single'))->data(array('data' => my-article-obj'))->tag('article')->attribs(array('role' => 'aside', 'data-id' => '1'))->indent(2);
+ *
+ * Inspired by http://terrifically.org/ and https://github.com/rogerdudler/terrific-micro
+ * Based on the PHP Implementation by https://github.com/lemats
+ *
+ */
+
+
+/**
  * Global function to include terrific modules in templates
  *
  * @param $name
@@ -17,13 +33,15 @@ function module($name) {
 
 class Terrific {
 
-	protected $name;
-	protected $params;
-	protected $template;
-	protected $skins = array();
+	public static $INDENT_CHAR = "\t";
 
-	protected $configs = array('tag' => 'div', 'fileext' => '.phtml');
+	protected $name;
+	protected $template;
+	protected $data;
+	protected $indent;
+	protected $skins = array();
 	protected $attribs = array();
+	protected $configs = array('tag' => 'div', 'fileext' => '.phtml');
 
 	/**
 	 * Constructor
@@ -73,6 +91,17 @@ class Terrific {
 	 */
 	public function skins(array $skins = array()) {
 		$this->skins = array_unique(array_merge($this->skins, $skins));
+		return $this;
+	}
+
+	/**
+	 * Set Data
+	 *
+	 * @param $skin
+	 * @return $this
+	 */
+	public function data($data) {
+		$this->data = $data;
 
 		return $this;
 	}
@@ -85,7 +114,6 @@ class Terrific {
 	 */
 	public function tag($tag) {
 		$this->configs['tag'] = $tag;
-
 		return $this;
 	}
 
@@ -115,11 +143,25 @@ class Terrific {
 	}
 
 	/**
+	 * Set indent
+	 *
+	 * @param $count
+	 * @return $this
+	 */
+	public function indent($count) {
+		$this->indent = $count;
+
+		return $this;
+	}
+
+	/**
 	 * Render a module
 	 *
 	 * @return string
 	 */
 	public function render() {
+
+		$data = $this->data;
 
 		// Classes
 		$classes = array('mod', "mod-{$this->name}");
@@ -132,12 +174,15 @@ class Terrific {
 		// Attribs
 		$attribs = array();
 		foreach ($this->attribs as $name => $value) {
+
 			switch ($name) {
+
 				case 'class':
 					if (!empty($value)) {
 						$classes[] = $value;
 					}
 					break;
+
 				default:
 					if (empty($value)) {
 						$attribs[] = "{$name}";
@@ -149,29 +194,53 @@ class Terrific {
 		}
 
 		// Add Prefix/Suffix
-		$out = sprintf('<!-- mod-%1$s -->'.PHP_EOL.'<%2$s class="%3$s"%4$s>' . PHP_EOL . '%5$s' . PHP_EOL . '</%2$s>'.PHP_EOL.'%6$s',
-						$this->name,
-						strtolower($this->configs['tag']),
-						implode(' ', $classes),
-						(count($attribs) ? ' ' . implode(' ', $attribs) : ''),
-						self::includeTemplate(),
-						"<!-- /mod-{$this->name} -->"
+		$markup = sprintf('<%1$s class="%2$s"%3$s>' . PHP_EOL . '%4$s' .PHP_EOL . '</%1$s>' . '<!-- /mod-%5$s -->',
+			strtolower($this->configs['tag']),
+			implode(' ', $classes),
+			(count($attribs) ? ' ' . implode(' ', $attribs) : ''),
+			self::$INDENT_CHAR  . trim(self::indentLines(self::includeTemplate(), 1)) . self::$INDENT_CHAR,
+			$this->name
 		);
 
-		return $out . PHP_EOL;
+		return self::indentLines($markup) .  PHP_EOL;
 	}
 
 	/**
-	 * Include template markup
+	 * Indent every line
+	 *
+	 * @param $markup
+	 * @return mixed
+	 */
+	protected function indentLines($markup, $count = null) {
+
+		if($count === null) {
+			$count = $this->indent;
+		}
+		$markup =& str_replace(
+			PHP_EOL,
+			PHP_EOL . str_repeat(self::$INDENT_CHAR, $count),
+			$markup);
+
+		return $markup;
+	}
+
+	/**
+	 * Include template markup and data
 	 *
 	 * @return string
 	 */
 	protected function includeTemplate() {
 
 		if (file_exists($this->templateFile())) {
+
 			ob_start();
+
+			// Set data
+			$data = $this->data;
 			include $this->templateFile();
+
 			return ob_get_clean();
+
 		} else {
 			return sprintf("<!-- Template does not exists: %s/%s -->", basename(dirname($this->name)), basename($this->template));
 		}

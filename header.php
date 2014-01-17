@@ -39,11 +39,12 @@
 
 		<header class="site-header" role="banner">
 
-			<?= module('logo'); ?>
+			<?= module('logo')->indent(3); ?>
 
-			<?= module('main-menu'); ?>
+			<?= module('main-menu')->indent(3); ?>
 
-			<?= module('lang-menu'); ?>
+			<?= module('lang-menu')->indent(3); ?>
+
 		</header>
 
 		<div class="site-main" role="main">
