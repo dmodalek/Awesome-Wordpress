@@ -8,7 +8,7 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		module('content', 'media');
+		echo module('content', 'media');
 
 	endwhile;
 

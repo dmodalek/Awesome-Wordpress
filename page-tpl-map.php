@@ -9,8 +9,8 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		module('content');
-		module('map', 'icelabs');
+		echo module('content');
+		echo module('map')->template('icelabs');
 
 	endwhile;
 

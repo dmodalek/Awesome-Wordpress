@@ -13,7 +13,7 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		module('content');
+		echo module('content');
 
 	endwhile;
 

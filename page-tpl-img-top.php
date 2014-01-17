@@ -9,7 +9,7 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		module('content', 'img-top', 'img-top');
+		echo module('content')->template('img-top')->skin('img-top');
 
 	endwhile;
 
