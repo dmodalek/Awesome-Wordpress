@@ -8,7 +8,7 @@
 			</div><!-- .site-main -->
 
 			<footer class="site-footer" role="complementary">
-				<?php module('footer') ?>
+				<?php echo module('footer') ?>
 				<?php get_sidebar( 'footer' ); ?>
 			</footer>
 

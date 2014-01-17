@@ -6,7 +6,7 @@
 
 get_header();
 
-	module('test');
+	echo module('test');
 
 get_footer();
 

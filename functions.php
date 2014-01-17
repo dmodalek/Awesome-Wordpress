@@ -191,53 +191,18 @@ add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
 
 
 
-/**
- * Terrific Module
- *
- * @param string $name
- * @param string $template
- * @param string $skin
- * @param array $attr
- */
-
-function module($name, $template = null, $skin = null, $attr = array(), $data = array()) {
-
-    $flat = strtolower($name);
-    $dashed = strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1-\\2', '\\1-\\2'), $name));
-    $template = $template == null ? '' : '-' . strtolower($template);
-    $skin = $skin == null ? '' : ' skin-' . $dashed . '-' . $skin;
-    $attributes = ' ';
-    $additionalClasses = '';
-
-    foreach ($attr as $key => $value) {
-        if ($key === 'class' && $value !== '') {
-            $additionalClasses .= ' ' . $value;
-        }
-        else {
-            $attributes .= $key . '="' . $value . '" ';
-        }
-    }
-
-	foreach ($data as $key => $value) {
-		${$key} = $value;
-	}
-
-    echo "<div class=\"mod mod-" . $dashed . $skin . $additionalClasses . "\"" . chop($attributes) . ">" . "\n";
-    require dirname(__FILE__) . '/modules/' . $name . '/' . $flat . $template . '.phtml';
-    echo "\n</div>";
-}
-
 
 /**
  * Include all files from the /inc directory
  */
 
-require get_template_directory() . '/includes/helper.php';
-require get_template_directory() . '/includes/project.php';
-require get_template_directory() . '/includes/shortcodes.php';
-require get_template_directory() . '/includes/posttypes.php';
-require get_template_directory() . '/includes/taxonomies.php';
-require get_template_directory() . '/includes/walker.php';
+require get_template_directory() . '/php/terrific.php';
+require get_template_directory() . '/php/helper.php';
+require get_template_directory() . '/php/project.php';
+require get_template_directory() . '/php/shortcodes.php';
+require get_template_directory() . '/php/posttypes.php';
+require get_template_directory() . '/php/taxonomies.php';
+require get_template_directory() . '/php/walker.php';
 
 /*
  * Constructor

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<div class="page-main">
-		<?php module('content', 'profile', 'profile'); ?>
+		<?php echo module('content')->template('profile')->skin('profile'); ?>
 	</div>
 
 <? get_footer(); ?>

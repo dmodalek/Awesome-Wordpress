@@ -14,3 +14,14 @@ A starter theme for wordpress. Based on...
 Dependencies:
 
 - SASS ~ 3.3
+
+
+Quick Start
+
+- Copy example/wp-config-sample.php to your wordpress root
+
+
+Tipps & Tricks
+
+- See debug.log for PHP Errors
+- Press G to see the Grid Helper in the Frontend

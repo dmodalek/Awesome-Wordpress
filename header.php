@@ -39,11 +39,11 @@
 
 		<header class="site-header" role="banner">
 
-			<? module('logo'); ?>
+			<?= module('logo'); ?>
 
-			<? module('main-menu'); ?>
+			<?= module('main-menu'); ?>
 
-			<? module('lang-menu'); ?>
+			<?= module('lang-menu'); ?>
 		</header>
 
 		<div class="site-main" role="main">
