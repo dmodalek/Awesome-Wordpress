@@ -23,6 +23,7 @@ class Terrific {
 	protected $skins = array();
 
 	protected $configs = array('tag' => 'div', 'fileext' => '.phtml');
+	protected $attribs = array();
 
 	/**
 	 * Constructor
@@ -77,6 +78,43 @@ class Terrific {
 	}
 
 	/**
+	 * Set html tag
+	 *
+	 * @param $tag
+	 * @return $this
+	 */
+	public function tag($tag) {
+		$this->configs['tag'] = $tag;
+
+		return $this;
+	}
+
+	/**
+	 * Add attribute
+	 *
+	 * @param $name
+	 * @param $value
+	 * @return $this
+	 */
+	public function attrib($name, $value) {
+		$this->attribs[$name] = $value;
+
+		return $this;
+	}
+
+	/**
+	 * Add attributes
+	 *
+	 * @param $name
+	 * @param $value
+	 */
+	public function attribs(array $attribs = array()) {
+		$this->attribs = array_unique(array_merge($this->attribs, $attribs));
+
+		return $this;
+	}
+
+	/**
 	 * Render a module
 	 *
 	 * @return string
@@ -91,11 +129,31 @@ class Terrific {
 			$classes[] = sprintf("skin-%s-%s", $this->name, strtolower($skin));
 		}
 
+		// Attribs
+		$attribs = array();
+		foreach ($this->attribs as $name => $value) {
+			switch ($name) {
+				case 'class':
+					if (!empty($value)) {
+						$classes[] = $value;
+					}
+					break;
+				default:
+					if (empty($value)) {
+						$attribs[] = "{$name}";
+					} else {
+						$attribs[] = "{$name}=\"{$value}\"";
+					}
+					break;
+			}
+		}
+
 		// Add Prefix/Suffix
-		$out = sprintf('<!-- mod-%1$s -->'.PHP_EOL.'<%2$s class="%3$s">' . PHP_EOL . '%4$s' . PHP_EOL . '</%2$s>'.PHP_EOL.'%5$s',
+		$out = sprintf('<!-- mod-%1$s -->'.PHP_EOL.'<%2$s class="%3$s"%4$s>' . PHP_EOL . '%5$s' . PHP_EOL . '</%2$s>'.PHP_EOL.'%6$s',
 						$this->name,
 						strtolower($this->configs['tag']),
 						implode(' ', $classes),
+						(count($attribs) ? ' ' . implode(' ', $attribs) : ''),
 						self::includeTemplate(),
 						"<!-- /mod-{$this->name} -->"
 		);
