@@ -29,16 +29,18 @@
  */
 
 .attachment-link {
-	@include col(3);
+	@include col(2);
 }
 
 	.img-wrapper {
-		min-height: 65px;
+		min-height: $base-spacing * 3;
+		text-align: center;
 	}
 
 	.wp-caption-text {
 		@include ellipsis;
 		display: block;
+		text-align: center;
 	}
 
 

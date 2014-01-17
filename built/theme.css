@@ -654,7 +654,7 @@ img {
 .attachment-link {
   margin-left: 1.75439%;
   float: left;
-  width: 23.24561%; }
+  width: 14.91228%; }
   .grid-debug.attachment-link, .grid-debug .attachment-link {
     margin-top: 4px !important;
     margin-bottom: 4px !important; }
@@ -664,7 +664,7 @@ img {
       color: white;
       font-size: 11px; }
     .grid-debug.attachment-link:before, .grid-debug .attachment-link:before {
-      content: "col-3" !important; }
+      content: "col-2" !important; }
     .grid-debug.attachment-link:after, .grid-debug .attachment-link:after {
       content: ""; }
     .grid-debug.attachment-link:before, .grid-debug.attachment-link:after, .grid-debug .attachment-link:before, .grid-debug .attachment-link:after {
@@ -673,7 +673,8 @@ img {
       background-color: rgba(255, 255, 255, 0.1); }
 
 .img-wrapper {
-  min-height: 65px; }
+  min-height: 72px;
+  text-align: center; }
 
 .wp-caption-text {
   max-width: 100%;
@@ -681,7 +682,8 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  display: block; }
+  display: block;
+  text-align: center; }
 
 /*
  * Navigations

@@ -23,8 +23,8 @@
 	</div>
 </div>
 
-<div class="bd base section">
-	<?php if(get_field('profile-offers')): ?>
+<?php if(get_field('profile-offers')): ?>
+	<div class="bd base section">
 
 		<h2>Offers</h2>
 
@@ -49,12 +49,12 @@
 			</div>
 		<?php endwhile; ?>
 
-	<?php endif; ?>
+	</div>
+<?php endif; ?>
 
-</div>
-<div class="bd base section">
 
-	<?php if(get_field('profile-media')): ?>
+<?php if(get_field('profile-media')): ?>
+	<div class="bd base section">
 
 		<h2>Media</h2>
 
@@ -74,6 +74,47 @@
 
 		</div>
 
-	<?php endif; ?>
+	</div>
 
-</div>
+<?php endif; ?>
+
+<?php
+
+	//
+	// ACF Relationship Query
+
+	$facts = get_posts(array(
+		'post_type' => 'icelab_facts',
+		'meta_query' => array(
+			array(
+				'key' => 'profile', // name of custom field
+				'value' => get_the_ID(), // matches exaclty "123", not just 123. This prevents a match for "1234"
+				'compare' => 'LIKE'
+			)
+		)
+	));
+
+	if($facts): ?>
+
+		<div class="bd base section">
+
+			<h2>Kontakt</h2>
+
+			<?php
+
+			global $fact;
+
+			foreach( $facts as $fact): ?>
+
+				<div class="row">
+
+					<? module('map', 'contact',null, null, array('fact' => $fact)); ?>
+
+				</div>
+
+			<? endforeach; ?>
+
+
+		</div>
+
+<?php endif; ?>

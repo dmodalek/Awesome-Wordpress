@@ -10,7 +10,7 @@ get_header();
 		the_post();
 
 		module('content');
-		module('map');
+		module('map', 'icelabs');
 
 	endwhile;
 
