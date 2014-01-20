@@ -1,0 +1,6 @@
+.skin-map-contact {
+
+	& + .skin-map-contact {
+		margin-top: $base-spacing;
+	}
+}

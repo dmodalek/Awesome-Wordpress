@@ -81,7 +81,7 @@
 <?php
 
 	//
-	// ACF Relationship Query
+	// Get Facts for this Profile
 
 	$facts = get_posts(array(
 		'post_type' => 'icelab_facts',
@@ -104,9 +104,12 @@
 
 			foreach( $facts as $fact): ?>
 
-				<div class="row">
-					<?= module('map')->template('contact')->data($fact)->attribs(array('role' => 'aside', 'data-id' => '1')); ?>
-				</div>
+				<p><?= $fact->contact ?><br/>
+				<p><?= $fact->street ?></p>
+				<p><?= $fact->plz-city ?></p>
+				<p><?= $fact->country ?></p>
+
+				<?= module('map')->template('contact')->skin('contact')->data($fact)->attribs(array('role' => 'aside', 'data-id' => '1')); ?>
 
 			<? endforeach; ?>
 

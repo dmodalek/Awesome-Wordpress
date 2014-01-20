@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
 			// Styles
 			styles: [
-				'styles/*.scss',
+				'css/*.scss',
 				'modules/*/*.scss',
 				'modules/*/skins/*.scss',
 				'layout/*.scss',
@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 			],
 
 			sass: [
-				'styles/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
+				'css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
 			],
 
 			// Scripts
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'built/<%= pkg.name %>.css': '<%=dirs.sass%>'
+					'assets/built/<%= pkg.name %>.css': '<%=dirs.sass%>'
 				}
 			},
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'built/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
+					'assets/built/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
 				}
 			}
 		},
@@ -93,13 +93,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'built/<%= pkg.name %>.map.js',
+					sourceMap: 'assets/built/<%= pkg.name %>.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.map.js'
 				},
 
 				files: {
-					'built/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
+					'assets/built/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
 				}
 			},
 
@@ -107,13 +107,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'built/<%= pkg.name %>.min.map.js',
+					sourceMap: 'assets/built/<%= pkg.name %>.min.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.min.map.js'
 				},
 
 				files: {
-					'built/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
+					'assets/built/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
 				}
 			}
 		},

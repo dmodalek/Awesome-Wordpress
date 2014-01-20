@@ -235,8 +235,11 @@ class Terrific {
 
 			ob_start();
 
-			// Set data
-			$data = $this->data;
+			// Provide data for the module
+			if($this->data !== null) {
+				$data = $this->data;
+			}
+
 			include $this->templateFile();
 
 			return ob_get_clean();

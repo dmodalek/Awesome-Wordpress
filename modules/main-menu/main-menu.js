@@ -32,7 +32,7 @@
 		on: function (callback) {
 			var self = this,
 				$ctx = this.$ctx;
-
+				console.log('Module Main Menu Loaded');
 			callback();
 		}
 

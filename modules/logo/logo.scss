@@ -2,6 +2,8 @@
 	@extend .cf;
 	@include col(4);
 
+	padding-right: $half-spacing;
+
 	img {
 		max-width: 100%;
 	}

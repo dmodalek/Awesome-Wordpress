@@ -1,20 +1,20 @@
 <?php
 
-//	$mymap = new Mappress_Map(array('height' => 300));
-//	$arrPois = Array();
-//
+	$mymap = new Mappress_Map(array('height' => 200));
+	$arrPois = Array();
 
-//	 Content
-//	$title = '<h2>' . $fact->post_title . '</h2>';
-//	$body = '<div class="row"><label>' . __('Contact') . '</label>' .  get_field('contact') . '</div><div class="row"><label>' . __('Areas') . '</label>' . join(', ', get_field('areas_of_application')). '</div><div class="row"><label>' . __('Address') . '</label>' . get_field('address') . '</div><div class="row"><a class="profile-link" href="' . get_permalink() . '">' . __('View the full Profile') . '</a></div>';
-//
-//	$arrPois[] = new Mappress_Poi(array('title' => $title, 'body' => $body, "iconid" => $type.'.png', "address" => get_field('address')));
-//
-//	$arrPois[count($arrPois) - 1]->geocode();
-//
-//
-//	$mymap->pois = $arrPois;
-//
-//	echo $mymap->display();
+	// Popover Content
+	$title = '<h2>' . $data->post_title . '</h2>';
+	$body = '<div class="row"><label>' . __('Contact') . '</label>' .  get_field('contact', $data->ID) . '</div><div class="row"><label>' . __('Areas') . '</label>' . join(', ', get_field('areas_of_application', $data->ID)). '</div><div class="row"><label>' . __('Address') . '</label>' . get_field('address', $data->ID) . '</div></div>';
+
+	// POI
+	$arrPois[] = new Mappress_Poi(array('title' => $title, 'body' => $body, "iconid" => $type.'.png', "address" => get_field('address', $data->ID)));
+
+	$arrPois[count($arrPois) - 1]->geocode();
+
+
+	$mymap->pois = $arrPois;
+
+	echo $mymap->display();
 
 ?>

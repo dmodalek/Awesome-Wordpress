@@ -1,0 +1,16 @@
+.skin-map-icelabs {
+
+	//
+	// Legend
+
+	.legend-list {
+		float: right;
+		margin: $base-spacing 0;
+
+
+  		> li {
+  		  	display: inline-block;
+  			margin-left: $base-spacing;
+  		}
+	}
+}

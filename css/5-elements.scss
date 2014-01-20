@@ -135,6 +135,16 @@ img{
 
 
 /*
+ * Forms
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: $quarter-spacing;
+}
+
+
+/*
  * Selected Text Styling
  */
 

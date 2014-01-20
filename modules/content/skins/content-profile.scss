@@ -5,12 +5,11 @@
 		margin-bottom: $half-spacing;
 	}
 
-		.col-left {
-			@include col(4);
-		}
+	.col-left {
+		@include col(4);
+	}
 
-		.col-right {
-			@include col(8);
-		}
-
+	.col-right {
+		@include col(8);
+	}
 }
