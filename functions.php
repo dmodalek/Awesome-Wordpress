@@ -26,7 +26,7 @@ function theme_setup() {
 	 * The same paths are defined for Javascript in terrific-bootstrap.js
 	 */
 
-	define(BUILT_DIR, '/assets/built');
+	define(BUILT_DIR, '/dist');
 
 	/*
 	 * Register Nav Menus
