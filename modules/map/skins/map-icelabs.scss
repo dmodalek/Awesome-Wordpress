@@ -1,9 +1,13 @@
 .skin-map-icelabs {
 
-	//
-	// Legend
+	// Info Window Content
+	.gm-style-iw {
+		color: $dark;
+	}
 
-	.legend-list {
+	// Map Legend
+
+	.filter {
 		float: right;
 		margin: $base-spacing 0;
 

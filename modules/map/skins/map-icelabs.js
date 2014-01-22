@@ -3,54 +3,26 @@
 	Tc.Module.Map.Icelabs = function (parent) {
 
 		this.mapsReadyCallback = 'mapsReadyCallback';
+		this.map = null;
+		this.marker = [];
+
+		//////////////////////////////////////////////////////////////////////////////
+
 
 		this.on = function (callback) {
 
-			$(document).on(this.mapsReadyCallback, this.initMap);
+			var self = this;
+
+			// Init Map on Callback
+			$(document).on(this.mapsReadyCallback, function() {
+				$.proxy(self.initMapData(), self);
+			});
+
+			// Bind Change Filter
+			this.bindFilterChange();
 
 			// call parent constructor, must be called last
 			parent.on(callback);
-		};
-
-		this.initMap = function () {
-
-			var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions),
-				geocoder = new google.maps.Geocoder(),
-				facts = modMapIcelabsFacts,
-				mapOptions = {
-					zoom: 4,
-					center: myLatlng
-				};
-
-			facts.forEach(function (fact) {
-
-				console.log(fact);
-
-			});
-
-
-			var myLatlng = new google.maps.LatLng(-25.363882, 131.044922);
-			var infowindow = new google.maps.InfoWindow({
-				content: 'Inhalt'
-			});
-
-			geocoder.geocode({ 'address': 'Poststrasse 3 8546 Islikon'}, function (results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-					map.setCenter(results[0].geometry.location);
-
-					var marker = new google.maps.Marker({
-						position: results[0].geometry.location,
-						map: map,
-						title: 'Uluru (Ayers Rock)'
-					});
-					google.maps.event.addListener(marker, 'click', function () {
-						infowindow.open(map, marker);
-					});
-				} else {
-					alert("Geocode was not successful for the following reason: " + status);
-				}
-
-			});
 		};
 
 		this.after = function () {
@@ -60,6 +32,32 @@
 			// callback, must be called last
 			parent.after();
 		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
+		this.bindFilterChange = function() {
+
+			var self = this,
+				$filterItems = $('.filter-item', this.$ctx);
+
+			$filterItems.on('change', function(e) {
+
+				var $filter = $('input:checked', $filterItems);
+				self.filterMapBy($filter);
+			});
+		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
+		/**
+		 *
+		 * Load Google Maps API
+		 *
+		 */
 
 		this.loadMapAPI = function () {
 
@@ -71,12 +69,94 @@
 				'callback=' + this.mapsReadyCallback;
 			document.body.appendChild(script);
 		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
+		/**
+		 *
+		 * Initialize Google Map
+		 *
+		 */
+
+		this.initMapData = function () {
+
+			var self = this,
+				geocoder = new google.maps.Geocoder(),
+				facts = modMapIcelabFacts;
+
+			this.map = new google.maps.Map(document.getElementById('map-canvas'), { zoom: 4 });
+
+			$.each(facts, function(index, fact) {
+
+				var custom_fields = fact.custom_fields;
+
+				// Async
+				geocoder.geocode({ 'address': custom_fields.fact_plz_city + ' ' + custom_fields.fact_country }, function (results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+
+						self.marker.push(new google.maps.Marker({
+							position: results[0].geometry.location,
+							title: fact.post_title
+						}));
+
+						self.marker[self.marker.length - 1].infoWindow = new google.maps.InfoWindow({
+							content: fact.post_content
+						});
+
+						self.addMarker(self.marker[self.marker.length - 1]);
+						self.map.setCenter(self.marker[0].position);
+					}
+				});
+			});
+		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
+		this.filterMapBy = function($filter) {
+
+			var ids = [];
+
+			// Get Ids of the active filter
+			$filter.each(function(index, item) {
+				ids.push($(item).attr('id'));
+			});
+		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
+		this.addMarker = function(marker) {
+
+			var self = this;
+			$.each(this.marker, function(index, marker) {
+
+				marker.setMap(self.map);
+
+				google.maps.event.addListener(marker, 'click', function () {
+
+					marker.infoWindow.open(self.map, marker);
+				});
+			});
+		};
+
+
+		//////////////////////////////////////////////////////////////////////////////
+
+
 	};
+
 })(Tc.$);
 
 
 /**
+ *
  * Listen for global Google Maps API Callback
+ *
  */
 
 window.mapsReadyCallback = function () {

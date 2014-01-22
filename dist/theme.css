@@ -582,7 +582,6 @@ ul, ol, dd {
  * Images
  */
 img {
-  max-width: 100%;
   height: auto; }
 
 /*
@@ -992,10 +991,12 @@ img.alignnone {
 .skin-map-contact + .skin-map-contact {
   margin-top: 24px; }
 
-.skin-map-icelabs .legend-list {
+.skin-map-icelabs .gm-style-iw {
+  color: #213249; }
+.skin-map-icelabs .filter {
   float: right;
   margin: 24px 0; }
-  .skin-map-icelabs .legend-list > li {
+  .skin-map-icelabs .filter > li {
     display: inline-block;
     margin-left: 24px; }
 

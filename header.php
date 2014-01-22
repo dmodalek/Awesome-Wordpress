@@ -22,10 +22,10 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-	<script src="<?php echo get_template_directory_uri(); ?>/javascript/inline/modernizr.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/inline/modernizr.js" type="text/javascript"></script>
 
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/javascript/inline/html5shiv-printshiv.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/inline/html5shiv-printshiv.js" type="text/javascript"></script>
 	<![endif]-->
 
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icons/apple-touch-icon-144x144-precomposed.png">

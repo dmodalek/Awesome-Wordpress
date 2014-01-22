@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 20.01.2014 at 18:58:53
+ * Generated with Grunt on 22.01.2014 at 17:28:02
  */
 
 !function(a, b) {
@@ -3190,16 +3190,6 @@ Tc.$ = $, function() {
         }
     });
 }(Tc.$), function() {
-    Tc.Module.MainMenu = Tc.Module.extend({
-        init: function(a, b, c) {
-            this._super(a, b, c);
-        },
-        on: function(a) {
-            this.$ctx;
-            console.log("Module Main Menu Loaded"), a();
-        }
-    });
-}(Tc.$), function() {
     Tc.Module.Map = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);
@@ -3211,40 +3201,53 @@ Tc.$ = $, function() {
     });
 }(Tc.$), function(a) {
     Tc.Module.Map.Icelabs = function(b) {
-        this.mapsReadyCallback = "mapsReadyCallback", this.on = function(c) {
-            a(document).on(this.mapsReadyCallback, this.initMap), b.on(c);
-        }, this.initMap = function() {
-            var a = new google.maps.Map(document.getElementById("map-canvas"), d), b = new google.maps.Geocoder(), c = modMapIcelabsFacts, d = {
-                zoom: 4,
-                center: e
-            };
-            c.forEach(function(a) {
-                console.log(a);
-            });
-            var e = new google.maps.LatLng(-25.363882, 131.044922), f = new google.maps.InfoWindow({
-                content: "Inhalt"
-            });
-            b.geocode({
-                address: "Poststrasse 3 8546 Islikon"
-            }, function(b, c) {
-                if (c == google.maps.GeocoderStatus.OK) {
-                    a.setCenter(b[0].geometry.location);
-                    var d = new google.maps.Marker({
-                        position: b[0].geometry.location,
-                        map: a,
-                        title: "Uluru (Ayers Rock)"
-                    });
-                    google.maps.event.addListener(d, "click", function() {
-                        f.open(a, d);
-                    });
-                } else alert("Geocode was not successful for the following reason: " + c);
-            });
+        this.mapsReadyCallback = "mapsReadyCallback", this.map = null, this.marker = [], 
+        this.on = function(c) {
+            var d = this;
+            a(document).on(this.mapsReadyCallback, function() {
+                a.proxy(d.initMapData(), d);
+            }), this.bindFilterChange(), b.on(c);
         }, this.after = function() {
             this.loadMapAPI(), b.after();
+        }, this.bindFilterChange = function() {
+            var b = this, c = a(".filter-item", this.$ctx);
+            c.on("change", function() {
+                var d = a("input:checked", c);
+                b.filterMapBy(d);
+            });
         }, this.loadMapAPI = function() {
             var a = "AIzaSyCHfBbGLxR4PCDV_OCaqcF20AzV2KADA1Y", b = document.createElement("script");
             b.type = "text/javascript", b.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&API_KEY=" + a + "&sensor=false&callback=" + this.mapsReadyCallback, 
             document.body.appendChild(b);
+        }, this.initMapData = function() {
+            var b = this, c = new google.maps.Geocoder(), d = modMapIcelabFacts;
+            this.map = new google.maps.Map(document.getElementById("map-canvas"), {
+                zoom: 4
+            }), a.each(d, function(a, d) {
+                var e = d.custom_fields;
+                c.geocode({
+                    address: e.fact_plz_city + " " + e.fact_country
+                }, function(a, c) {
+                    c == google.maps.GeocoderStatus.OK && (b.marker.push(new google.maps.Marker({
+                        position: a[0].geometry.location,
+                        title: d.post_title
+                    })), b.marker[b.marker.length - 1].infoWindow = new google.maps.InfoWindow({
+                        content: d.post_content
+                    }), b.addMarker(b.marker[b.marker.length - 1]), b.map.setCenter(b.marker[0].position));
+                });
+            });
+        }, this.filterMapBy = function(b) {
+            var c = [];
+            b.each(function(b, d) {
+                c.push(a(d).attr("id"));
+            });
+        }, this.addMarker = function() {
+            var b = this;
+            a.each(this.marker, function(a, c) {
+                c.setMap(b.map), google.maps.event.addListener(c, "click", function() {
+                    c.infoWindow.open(b.map, c);
+                });
+            });
         };
     };
 }(Tc.$), window.mapsReadyCallback = function() {

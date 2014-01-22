@@ -129,8 +129,8 @@ function theme_scripts() {
 
 	// jQuery CDN
 	wp_deregister_script('jquery');
-//	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true); // Can't add without protocol 'cause of WordPress
-//	wp_enqueue_script('jquery');
+	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', false, null, true); // Can't add without protocol 'cause of WordPress
+	wp_enqueue_script('jquery');
 
 	switch(APP_ENV) {
 
@@ -204,13 +204,16 @@ add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
  * Include all files from the /inc directory
  */
 
+require get_template_directory() . '/includes/wp-shortcodes.php';
+require get_template_directory() . '/includes/wp-posttypes.php';
+require get_template_directory() . '/includes/wp-taxonomies.php';
+require get_template_directory() . '/includes/wp-walker.php';
+require get_template_directory() . '/includes/wp-filter.php';
+
 require get_template_directory() . '/includes/terrific.php';
 require get_template_directory() . '/includes/helper.php';
 require get_template_directory() . '/includes/project.php';
-require get_template_directory() . '/includes/shortcodes.php';
-require get_template_directory() . '/includes/posttypes.php';
-require get_template_directory() . '/includes/taxonomies.php';
-require get_template_directory() . '/includes/walker.php';
+
 
 /*
  * Constructor
