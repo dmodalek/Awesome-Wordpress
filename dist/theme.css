@@ -357,6 +357,9 @@ table {
  * Base Spacing Unit
  */
 /**
+ * Alpha Transparence
+ */
+/**
  * Colors
  */
 /**
@@ -369,14 +372,14 @@ ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
-pre, .mod-logo, .mod-test .container, .mod-test .content .row, .skin-content-img-sidebar .bd, .skin-content-img-top .bd, .mod-layout .site-header, .mod-layout .site-footer {
+pre, .mod-logo, .mod-test .container, .mod-test .content .row, .skin-content-img-sidebar .bd, .skin-content-img-top .bd, .skin-map-icelabs .map-canvas, .mod-layout .site-header, .mod-layout .site-footer {
   clear: both; }
   .cf:after, .row:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
   ul:after, ol:after, dl:after, hr:after,
   blockquote:after, p:after, address:after,
   table:after,
   fieldset:after, figure:after,
-  pre:after, .mod-logo:after, .mod-test .container:after, .mod-test .content .row:after, .skin-content-img-sidebar .bd:after, .skin-content-img-top .bd:after, .mod-layout .site-header:after, .mod-layout .site-footer:after {
+  pre:after, .mod-logo:after, .mod-test .container:after, .mod-test .content .row:after, .skin-content-img-sidebar .bd:after, .skin-content-img-top .bd:after, .skin-map-icelabs .map-canvas:after, .mod-layout .site-header:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -589,7 +592,10 @@ img {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  margin-right: 6px; }
+  margin-right: 12px; }
+
+label[for] {
+  cursor: pointer; }
 
 /*
  * Selected Text Styling
@@ -604,6 +610,9 @@ input[type="radio"] {
   background: white;
   /* Firefox */ }
 
+.richtext li {
+  padding-left: 12px; }
+
 /*
  * Sections
  *
@@ -611,12 +620,9 @@ input[type="radio"] {
  */
 .section {
   padding: 36px;
-  background-color: #cbcfd5; }
+  background: rgba(255, 255, 255, 0.2); }
   .section + .section {
     margin-top: 12px; }
-  .section h2, .section h3, .section p, .section hr {
-    color: #213249;
-    border-color: #213249; }
 
 /*
  * Media File output styling
@@ -850,34 +856,30 @@ img.alignnone {
 .mod-error {
   padding: 24px 0 0 0; }
 
-.mod-facts-list #facts-table {
-  width: 100%;
-  text-align: left; }
-  .mod-facts-list #facts-table th, .mod-facts-list #facts-table td {
-    padding-right: 24px; }
-  .mod-facts-list #facts-table thead tr {
-    height: 80px; }
-  .mod-facts-list #facts-table thead .sort {
-    color: #a1daf7; }
-  .mod-facts-list #facts-table tbody tr {
-    border-bottom: 1px solid white; }
-    .mod-facts-list #facts-table tbody tr:last-child {
-      border-bottom: 0; }
-.mod-facts-list .sort {
-  cursor: pointer; }
-.mod-facts-list .search {
-  text-align: center; }
-
-.mod-facts .area,
-.mod-facts .profile {
-  text-align: center; }
-.mod-facts td {
-  padding: 12px 0; }
-
 .mod-footer-menu {
   margin-left: 1.75439%;
   float: left;
   width: 56.57895%; }
+
+.mod-icelab-list-item .area {
+  text-align: center; }
+.mod-icelab-list-item td {
+  padding: 12px 0; }
+
+.mod-icelab-list #facts-table {
+  width: 100%;
+  text-align: left; }
+  .mod-icelab-list #facts-table th, .mod-icelab-list #facts-table td {
+    padding-right: 24px; }
+  .mod-icelab-list #facts-table thead th {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  .mod-icelab-list #facts-table tbody tr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.mod-icelab-list .sort {
+  cursor: pointer; }
+.mod-icelab-list .search {
+  text-align: center; }
 
 .mod-lang-menu {
   margin-left: 1.75439%;
@@ -991,14 +993,24 @@ img.alignnone {
 .skin-map-contact + .skin-map-contact {
   margin-top: 24px; }
 
-.skin-map-icelabs .gm-style-iw {
-  color: #213249; }
-.skin-map-icelabs .filter {
-  float: right;
-  margin: 24px 0; }
-  .skin-map-icelabs .filter > li {
-    display: inline-block;
-    margin-left: 24px; }
+.skin-map-icelabs {
+  margin-bottom: 24px; }
+  .skin-map-icelabs .gm-style-iw {
+    color: #213249; }
+  .skin-map-icelabs .map-canvas {
+    background: transparent;
+    height: 400px; }
+  .skin-map-icelabs .filter-list {
+    float: right;
+    margin: 24px 0; }
+    .skin-map-icelabs .filter-list .filter-item {
+      display: inline-block;
+      margin-left: 24px; }
+    .skin-map-icelabs .filter-list .filter-label {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 12px;
+      user-select: none; }
 
 .mod-layout .site-wrapper {
   width: 940px;

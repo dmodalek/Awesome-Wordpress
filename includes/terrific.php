@@ -114,6 +114,7 @@ class Terrific {
 	 */
 	public function tag($tag) {
 		$this->configs['tag'] = $tag;
+
 		return $this;
 	}
 
@@ -216,7 +217,7 @@ class Terrific {
 		if($count === null) {
 			$count = $this->indent;
 		}
-		$markup =& str_replace(
+		$markup = str_replace(
 			PHP_EOL,
 			PHP_EOL . str_repeat(self::$INDENT_CHAR, $count),
 			$markup);

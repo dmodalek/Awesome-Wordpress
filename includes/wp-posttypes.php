@@ -68,7 +68,7 @@ class Profile {
 				// Backend
 				'show_ui'             => true,
 				'show_in_menu'        => true,
-				'rewrite' 			  => array('slug' => __('where-why/list-of-all-icelabs/profile', 'icelab'), 'with_front' => false),
+				'rewrite' 			  => array('slug' => __('profiles', 'icelab'), 'with_front' => false),
 				'menu_position'       => 50,
 				'supports' => array(
 					'title',

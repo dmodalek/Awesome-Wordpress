@@ -1,7 +1,7 @@
 <?php
 
 
-function enhancePostsWithCustomFields($posts) {
+function enhanceGetPostsWithCustomFields($posts) {
 	for ($i = 0; $i < count($posts); $i++) {
 
 		$custom_fields = get_post_custom($posts[$i]->ID);

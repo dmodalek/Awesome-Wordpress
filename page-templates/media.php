@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Media Files
+ * Template Name: Media
  */
 
 get_header();
@@ -8,7 +8,7 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		echo module('content', 'media');
+		echo module('content')->template('media');
 
 	endwhile;
 

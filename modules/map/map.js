@@ -4,14 +4,13 @@
 
 		init: function ($ctx, sandbox, modId) {
 
-			// call parent constructor, must be called first
+			// call parent constructor
 			this._super($ctx, sandbox, modId);
-
 		},
 
 		on: function (callback) {
 
-			// callback, must be called last
+			// callback, must be called at the end
 			callback();
 		},
 

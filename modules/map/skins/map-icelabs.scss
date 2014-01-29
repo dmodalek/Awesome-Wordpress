@@ -1,20 +1,38 @@
 .skin-map-icelabs {
 
+	margin-bottom: $base-spacing;
+
 	// Info Window Content
 	.gm-style-iw {
 		color: $dark;
 	}
 
+	// Map
+
+	.map-canvas {
+		@extend .cf;
+		background: transparent;
+		height: 400px;
+	}
+
 	// Map Legend
 
-	.filter {
+	.filter-list {
 		float: right;
 		margin: $base-spacing 0;
 
 
-  		> li {
+  		.filter-item {
   		  	display: inline-block;
   			margin-left: $base-spacing;
   		}
+
+			.filter-label {
+				background: rgba($white, $alpha);
+				border-radius: 8px;
+				padding: 6px 12px;
+
+				user-select: none; // prevents text selection while clicking
+			}
 	}
 }

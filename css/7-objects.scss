@@ -8,15 +8,10 @@
 
 .section {
 	padding: $base-spacing * 1.5;
-	background-color: $decent;
+	background: rgba($white, $alpha);
 
 	& + .section {
 		margin-top: $half-spacing;
-	}
-
-	h2, h3, p, hr {
-	  color: $dark;
-	  border-color: $dark;
 	}
 }
 

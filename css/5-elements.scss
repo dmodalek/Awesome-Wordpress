@@ -139,7 +139,11 @@ img{
 
 input[type="checkbox"],
 input[type="radio"] {
-	margin-right: $quarter-spacing;
+	margin-right: $half-spacing;
+}
+
+label[for] {
+	cursor: pointer;
 }
 
 

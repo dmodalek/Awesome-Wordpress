@@ -1,23 +1,23 @@
 
 <h1 class="title"><?php the_title(); ?></h1>
 
-<div class="bd base">
+<div class="bd richtext">
 	<?php the_content(); ?>
 </div>
 
-	<?php if(get_field('page-media')): ?>
+	<?php if(get_field('page_media')): ?>
 
-		<?php while(has_sub_field('page-media')): ?>
+		<?php while(has_sub_field('page_media')): ?>
 
-			<div class="bd base section">
+			<div class="bd section">
 
-				<h2><? echo get_sub_field('page-media-section-title') ?></h2>
+				<h2><? echo get_sub_field('page_media_section_title') ?></h2>
 
 				<div class="row">
 
-					<?php while(has_sub_field('page-media-section-files')):
+					<?php while(has_sub_field('page_media_section_files')):
 
-						$attachment_obj =  get_sub_field('page-media-section-file');
+						$attachment_obj =  get_sub_field('page_media_section_file');
 
 						echo getMarkupFromAttachment($attachment_obj, 'theme-page-media'); ?>
 
