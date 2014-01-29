@@ -12,7 +12,7 @@
 			$ctx.on('keydown', function(ev) {
 
 				if(ev.keyCode == 67) { // c
-					$ctx.toggleClass('css-debug');
+//					$ctx.toggleClass('css-debug');
 				}
 
 				if(ev.keyCode == 71) { // g

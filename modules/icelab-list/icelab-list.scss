@@ -1,4 +1,4 @@
-.mod-facts-list {
+.mod-icelab-list {
 
 	#facts-table {
 		width: 100%;
@@ -10,22 +10,19 @@
 
 		thead {
 
-			tr {
-				height: 80px;
+			th {
+				padding: $base-spacing/2 0;
+				border-bottom: 1px solid rgba($white, $alpha);
 			}
 
 			.sort {
-				color: $hilite;
+
 			}
 		}
 
 		tbody {
 			tr {
-				border-bottom: 1px solid $white;
-
-				&:last-child {
-					border-bottom: 0;
-				}
+				border-top: 1px solid rgba($white, $alpha);
 			}
 		}
 	}

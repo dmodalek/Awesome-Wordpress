@@ -1,7 +1,7 @@
 <div class="hd">
 	<h1 class="title"><?php the_title(); ?></h1>
 	<?php
-	$attachment_id = get_field('profile-headerimage');
+	$attachment_id = get_field('profile_headerimage');
 	$image = wp_get_attachment_image_src($attachment_id, 'theme-profile-header');
 	?>
 	<img src="<?= $image[0]; ?>" width="<?= $image[1]; ?>" height="<?= $image[2]; ?>"/>
@@ -12,30 +12,30 @@
 	<div class="row">
 		<div class="col-left">
 			<?php
-			$attachment_id = get_field('profile-logo');
+			$attachment_id = get_field('profile_logo');
 			$image = wp_get_attachment_image_src($attachment_id, 'theme-profile-medium');
 			?>
 			<img src="<?= $image[0]; ?>" width="<?= $image[1]; ?>" height="<?= $image[2]; ?>"/>
 		</div>
 		<div class="col-right">
-			<?php the_field('profile-description'); ?>
+			<?php the_field('profile_description'); ?>
 		</div>
 	</div>
 </div>
 
-<?php if(get_field('profile-offers')): ?>
+<?php if(get_field('profile_offers')): ?>
 	<div class="bd base section">
 
 		<h2>Offers</h2>
 
-		<?php while(has_sub_field('profile-offers')): ?>
+		<?php while(has_sub_field('profile_offers')): ?>
 
 			<div class="row">
 
 				<div class="col-left">
 
 					<?php
-					$attachment_id = get_sub_field('profile-offer-image');
+					$attachment_id = get_sub_field('profile_offer_image');
 					$image = wp_get_attachment_image_src($attachment_id, 'theme-profile-medium');
 					?>
 
@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="col-right">
-			 		<?php the_sub_field('profile-offer-description'); ?>
+			 		<?php the_sub_field('profile_offer_description'); ?>
 				</div>
 
 			</div>
@@ -53,20 +53,20 @@
 <?php endif; ?>
 
 
-<?php if(get_field('profile-media')): ?>
+<?php if(get_field('profile_media')): ?>
 	<div class="bd base section">
 
 		<h2>Media</h2>
 
 		<div class="row">
 
-		<?php while(has_sub_field('profile-media')):
+		<?php while(has_sub_field('profile_media')):
 
-			if( get_sub_field('profile-media-file') ):
+			if( get_sub_field('profile_media_file') ):
 
-				$attachment_id = get_sub_field('profile-media-file');
+				$attachment_id = get_sub_field('profile_media_file');
 
-				echo getMarkupFromAttachment($attachment_id, 'theme-profile-media');
+				echo getMarkupFromAttachment($attachment_id, 'theme-profile_media');
 
 			endif; ?>
 

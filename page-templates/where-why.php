@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Template Name: Map
+ * Template Name: Where / Why
  */
 
 get_header();
@@ -11,6 +11,7 @@ get_header();
 
 		echo module('content');
 		echo module('map')->template('icelabs')->skin('icelabs');
+		echo module('icelab-list');
 
 	endwhile;
 

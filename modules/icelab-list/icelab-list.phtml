@@ -1,0 +1,27 @@
+<table id="facts-table">
+	<thead>
+	<tr>
+		<th data-sort="name" class="sort"><?= __('Name') ?></th>
+		<th data-sort="area_wellness" class="area sort"><?= __('Wellness') ?></th>
+		<th data-sort="area_sport" class="area sort"><?= __('Sport') ?></th>
+		<th data-sort="area_med" class="area sort"><?= __('Medical') ?></th>
+		<th data-sort="country" class="sort"><?= __('Country') ?></th>
+		<th data-sort="more"><?= __('Profile') ?></th>
+	</tr>
+	</thead>
+	<tbody class="list">
+
+	<?php
+
+	$loop = new WP_Query(array('post_type' => 'icelab_facts', 'posts_per_page' => -1));
+
+	while ($loop->have_posts()) : $loop->the_post();
+
+		echo module('icelab-list-item')->attrib('class', 'base')->tag('tr')->indent(2);
+
+	endwhile;
+
+	wp_reset_postdata(); ?>
+
+	</tbody>
+</table>

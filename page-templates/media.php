@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Media Files
+ * Template Name: Media
  */
 
 get_header();
