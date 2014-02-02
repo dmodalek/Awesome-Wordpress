@@ -54,7 +54,7 @@ class Profile {
 	public function __construct() {
 
 		register_post_type(
-			'icelab_profile',
+			'profile',
 			array(
 				'labels'      => array(
 					'name' => __( 'Profile', 'icelab' ),

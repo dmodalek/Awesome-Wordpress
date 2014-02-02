@@ -1,0 +1,14 @@
+.mod-map {
+
+	// Info Window Content
+	.gm-style-iw {
+		color: $dark;
+	}
+
+	// Map
+	.map-canvas {
+		@extend .cf;
+		background: transparent;
+		min-height: 300px;
+	}
+}

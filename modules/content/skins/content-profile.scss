@@ -12,4 +12,13 @@
 	.col-right {
 		@include col(8);
 	}
+
+		.lang-switch-box {
+			margin-bottom: $base-spacing;
+			border-bottom: 1px solid rgba($white, $alpha);
+		}
+
+			.lang-switch-item {
+				@include icelab-button('left');
+			}
 }

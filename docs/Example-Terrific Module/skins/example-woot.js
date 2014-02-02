@@ -4,13 +4,19 @@
 
 		this.on = function (callback) {
 
-			// call parent constructor, must be called last
+			// Do stuff here
+			//...
+
+			// call parent constructor
 			parent.on(callback);
 		},
 
 		this.after = function () {
 
-			// callback, must be called last
+			// Do stuff here
+			//...
+
+			// callback
 			parent.after();
 		}
 

@@ -12,7 +12,7 @@
 
 			th {
 				padding: $base-spacing/2 0;
-				border-bottom: 1px solid rgba($white, $alpha);
+				border-bottom: 1px solid rgba($decent, $alpha);
 			}
 
 			.sort {
@@ -22,7 +22,7 @@
 
 		tbody {
 			tr {
-				border-top: 1px solid rgba($white, $alpha);
+				border-top: 1px solid rgba($decent, $alpha);
 			}
 		}
 	}

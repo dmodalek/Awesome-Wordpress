@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 29.01.2014 at 15:39:09
+ * Generated with Grunt on 02.02.2014 at 20:41:32
  */
 
 !function(a, b) {
@@ -4174,6 +4174,16 @@ Tc.$ = $, function() {
         }
     });
 }.call(this), function() {
+    Tc.Module.Content = Tc.Module.extend({
+        init: function(a, b, c) {
+            this._super(a, b, c);
+        },
+        on: function(a) {
+            a();
+        },
+        after: function() {}
+    });
+}(Tc.$), function() {
     Tc.Module.Footer = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);
@@ -4203,42 +4213,25 @@ Tc.$ = $, function() {
             });
         }
     });
-}(Tc.$), function() {
+}(Tc.$), function(a) {
     Tc.Module.Map = Tc.Module.extend({
         init: function(a, b, c) {
-            this._super(a, b, c);
+            this._super(a, b, c), this.mapsReadyCallback = "mapsReadyCallback", this.map = null, 
+            this.markers = [];
         },
-        on: function(a) {
-            a();
+        on: function(b) {
+            var c = this;
+            a(document).on(this.mapsReadyCallback, function() {
+                a.proxy(c.initMapMarkers(), c);
+            }), this.loadMapAPI(), b();
         },
-        after: function() {}
-    });
-}(Tc.$), function(a) {
-    Tc.Module.Map.Icelabs = function(b) {
-        this.mapsReadyCallback = "mapsReadyCallback", this.map = null, this.markers = [], 
-        this.on = function(c) {
-            var d = this;
-            this.sandbox.subscribe("map", this), a(document).on(this.mapsReadyCallback, function() {
-                a.proxy(d.initMapMarkers(), d);
-            }), this.bindFilterChange(), b.on(c);
-        }, this.after = function() {
-            this.loadMapAPI(), b.after();
-        }, this.bindFilterChange = function() {
-            var b = this, c = a(".filter-item", this.$ctx);
-            c.on("change", function() {
-                var c = a("input:checked", c), d = [];
-                c.each(function(b, c) {
-                    d.push(a(c).attr("id"));
-                }), b.filterMapBy(d), b.fire("mapChange", {
-                    filterBy: d
-                }, [ "map" ]);
-            });
-        }, this.loadMapAPI = function() {
+        loadMapAPI: function() {
             var a = "AIzaSyCHfBbGLxR4PCDV_OCaqcF20AzV2KADA1Y", b = document.createElement("script");
             b.type = "text/javascript", b.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&API_KEY=" + a + "&sensor=false&callback=" + this.mapsReadyCallback, 
             document.body.appendChild(b);
-        }, this.initMapMarkers = function() {
-            var b = this, c = new google.maps.Geocoder(), d = modMapIcelabFacts;
+        },
+        initMapMarkers: function() {
+            var b = this, c = new google.maps.Geocoder(), d = JSON.parse(a(".map-marker").html());
             this.map = new google.maps.Map(document.getElementsByClassName("map-canvas")[0], {
                 zoom: 4
             }), a.each(d, function(a, d) {
@@ -4255,6 +4248,54 @@ Tc.$ = $, function() {
                     }), b.addMarker(b.markers[b.markers.length - 1]), b.map.setCenter(b.markers[0].position));
                 });
             });
+        },
+        addMarkers: function(b) {
+            var c = this;
+            a.each(b, function(a, b) {
+                c.addMarker(b);
+            });
+        },
+        addMarker: function(a) {
+            var b = this;
+            void 0 === a.getMap() && (a.setMap(b.map), google.maps.event.addListener(a, "click", function() {
+                a.infoWindow.open(b.map, a);
+            }));
+        },
+        removeMarkers: function(b) {
+            var c = this;
+            a.each(b, function(a, b) {
+                c.removeMarker(b);
+            });
+        },
+        removeMarker: function(a) {
+            void 0 !== a.getMap() && a.setMap(void 0);
+        }
+    });
+}(Tc.$), window.mapsReadyCallback = function() {
+    $(document).trigger("mapsReadyCallback");
+}, function(a) {
+    Tc.Module.Content.Profile = function(b) {
+        this.on = function(c) {
+            var d = a(".lang-switch-item", this.$ctx);
+            d.on("click", function() {
+                d.removeClass("active"), a(this).addClass("active");
+            }), b.on(c);
+        };
+    };
+}(Tc.$), function(a) {
+    Tc.Module.Map.Icelabs = function(b) {
+        this.on = function(a) {
+            this.sandbox.subscribe("map", this), this.bindFilterChange(), b.on(a);
+        }, this.bindFilterChange = function() {
+            var b = this, c = a(".filter-item", this.$ctx);
+            c.on("change", function(c) {
+                var d = a(c.target).closest(".filter-item"), e = a("input:checked", e), f = [];
+                d.toggleClass("active"), e.each(function(b, c) {
+                    f.push(a(c).attr("id"));
+                }), b.filterMapBy(f), b.fire("mapChange", {
+                    filterBy: f
+                }, [ "map" ]);
+            });
         }, this.filterMapBy = function(a) {
             var b = "", c = !1, d = _.filter(this.markers, function(d) {
                 return b = d.custom_fields.fact_areas.toString(), c = !1, _.each(a, function(a) {
@@ -4262,28 +4303,9 @@ Tc.$ = $, function() {
                 }), c;
             }), e = _.difference(this.markers, d);
             this.removeMarkers(e), this.addMarkers(d);
-        }, this.removeMarkers = function(b) {
-            var c = this;
-            a.each(b, function(a, b) {
-                c.removeMarker(b);
-            });
-        }, this.removeMarker = function(a) {
-            void 0 !== a.getMap() && a.setMap(void 0);
-        }, this.addMarkers = function(b) {
-            var c = this;
-            a.each(b, function(a, b) {
-                c.addMarker(b);
-            });
-        }, this.addMarker = function(a) {
-            var b = this;
-            void 0 === a.getMap() && (a.setMap(b.map), google.maps.event.addListener(a, "click", function() {
-                a.infoWindow.open(b.map, a);
-            }));
         };
     };
-}(Tc.$), window.mapsReadyCallback = function() {
-    $(document).trigger("mapsReadyCallback");
-}, function() {
+}(Tc.$), function() {
     Tc.Module.Layout = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);

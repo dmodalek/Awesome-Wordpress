@@ -12,16 +12,16 @@ $postsWithCustom = enhanceGetPostsWithCustomFields($posts);
 
 ?>
 
-<script type="text/javascript">
+<script class="map-marker" type="text/map-marker">
 
-	<?= "var modMapIcelabFacts=". json_encode($postsWithCustom); ?>
+	<?= json_encode($postsWithCustom); ?>
 
 </script>
 
 <ul class="filter-list">
-	<li class="filter-item"><label for="wellness" class="filter-label" data-filter="wellness" /><input id="wellness" type="checkbox" value="wellness" checked>Wellness</input></li>
-	<li class="filter-item"><label for="sport" class="filter-label" data-filter="sport" /><input id="sport" type="checkbox" value="sport" checked>Sport</li>
-	<li class="filter-item"><label for="medical" class="filter-label" data-filter="medical"/><input id="medical" type="checkbox" value="medical" checked>Medical</li>
+	<li class="filter-item active"><label for="wellness" class="filter-label" data-filter="wellness" /><input id="wellness" type="checkbox" value="wellness" checked>Wellness</input></li>
+	<li class="filter-item active"><label for="sport" class="filter-label" data-filter="sport" /><input id="sport" type="checkbox" value="sport" checked>Sport</li>
+	<li class="filter-item active"><label for="medical" class="filter-label" data-filter="medical"/><input id="medical" type="checkbox" value="medical" checked>Medical</li>
 </ul>
 
 <div class="map-canvas"></div>

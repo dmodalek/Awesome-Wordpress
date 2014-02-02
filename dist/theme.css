@@ -372,14 +372,14 @@ ul, ol, dl, hr,
 blockquote, p, address,
 table,
 fieldset, figure,
-pre, .mod-logo, .mod-test .container, .mod-test .content .row, .skin-content-img-sidebar .bd, .skin-content-img-top .bd, .skin-map-icelabs .map-canvas, .mod-layout .site-header, .mod-layout .site-footer {
+pre, .mod-logo, .mod-map .map-canvas, .mod-test .container, .mod-test .content .row, .skin-content-img-sidebar .bd, .skin-content-img-top .bd, .mod-layout .site-header, .mod-layout .site-footer {
   clear: both; }
   .cf:after, .row:after, h1:after, h2:after, h3:after, h4:after, h5:after, h6:after, hgroup:after,
   ul:after, ol:after, dl:after, hr:after,
   blockquote:after, p:after, address:after,
   table:after,
   fieldset:after, figure:after,
-  pre:after, .mod-logo:after, .mod-test .container:after, .mod-test .content .row:after, .skin-content-img-sidebar .bd:after, .skin-content-img-top .bd:after, .skin-map-icelabs .map-canvas:after, .mod-layout .site-header:after, .mod-layout .site-footer:after {
+  pre:after, .mod-logo:after, .mod-map .map-canvas:after, .mod-test .container:after, .mod-test .content .row:after, .skin-content-img-sidebar .bd:after, .skin-content-img-top .bd:after, .mod-layout .site-header:after, .mod-layout .site-footer:after {
     content: "";
     display: table;
     clear: both; }
@@ -576,12 +576,6 @@ a:hover {
   text-decoration: underline; }
 
 /*
- * Lists
- */
-ul, ol, dd {
-  margin-left: 3.42857rem; }
-
-/*
  * Images
  */
 img {
@@ -610,9 +604,20 @@ label[for] {
   background: white;
   /* Firefox */ }
 
-.richtext li {
-  padding-left: 12px; }
+.richtext {
+  /*
+   * Lists
+   */ }
+  .richtext ul, .richtext ol, .richtext dd {
+    margin-left: 3.42857rem; }
+  .richtext li {
+    padding-left: 12px; }
 
+/*
+ * Icelab Button
+ *
+ * Used to display filter and tabs
+ */
 /*
  * Sections
  *
@@ -715,7 +720,7 @@ img.alignnone {
 
 .mapp-ib {
   border: 1px solid white;
-  box-shadow: 0 0 1px black; }
+  box-shadow: 0 0 0 white; }
   .mapp-ib .mapp-title h2 {
     color: #213249;
     margin-bottom: 12px; }
@@ -873,9 +878,9 @@ img.alignnone {
     padding-right: 24px; }
   .mod-icelab-list #facts-table thead th {
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+    border-bottom: 1px solid rgba(203, 207, 213, 0.2); }
   .mod-icelab-list #facts-table tbody tr {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    border-top: 1px solid rgba(203, 207, 213, 0.2); }
 .mod-icelab-list .sort {
   cursor: pointer; }
 .mod-icelab-list .search {
@@ -920,6 +925,12 @@ img.alignnone {
     display: block;
     position: absolute;
     width: 300px; }
+
+.mod-map .gm-style-iw {
+  color: #213249; }
+.mod-map .map-canvas {
+  background: transparent;
+  min-height: 300px; }
 
 .mod-social {
   margin-left: 1.75439%;
@@ -989,28 +1000,38 @@ img.alignnone {
   margin-left: 1.75439%;
   float: left;
   width: 64.91228%; }
+.skin-content-profile .lang-switch-box {
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.skin-content-profile .lang-switch-item {
+  float: left;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 12px;
+  user-select: none; }
+  .skin-content-profile .lang-switch-item.active {
+    cursor: default;
+    background: rgba(255, 255, 255, 0.2); }
 
 .skin-map-contact + .skin-map-contact {
   margin-top: 24px; }
 
 .skin-map-icelabs {
   margin-bottom: 24px; }
-  .skin-map-icelabs .gm-style-iw {
-    color: #213249; }
-  .skin-map-icelabs .map-canvas {
-    background: transparent;
-    height: 400px; }
   .skin-map-icelabs .filter-list {
-    float: right;
-    margin: 24px 0; }
+    width: 100%;
+    text-align: right;
+    margin: 24px 0;
+    border-bottom: 1px solid rgba(203, 207, 213, 0.2); }
     .skin-map-icelabs .filter-list .filter-item {
+      float: right;
+      cursor: pointer;
       display: inline-block;
-      margin-left: 24px; }
-    .skin-map-icelabs .filter-list .filter-label {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
       padding: 6px 12px;
       user-select: none; }
+      .skin-map-icelabs .filter-list .filter-item.active {
+        cursor: default;
+        background: rgba(255, 255, 255, 0.2); }
 
 .mod-layout .site-wrapper {
   width: 940px;
