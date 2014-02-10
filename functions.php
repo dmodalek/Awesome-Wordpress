@@ -32,9 +32,9 @@ function theme_setup() {
 	 * Register Nav Menus
 	 */
 	register_nav_menus( array(
-		'main-menu'   => __( 'Main Menu', 'theme' ),
-		'lang-menu' => __( 'Lang Menu', 'theme' ),
-		'footer-menu' => __( 'Footer Menu', 'theme' ),
+		'main-menu'   => __( 'Main Menu', 'awesome-textdomain' ),
+		'lang-menu' => __( 'Lang Menu', 'awesome-textdomain' ),
+		'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' ),
 	));
 
 	/*

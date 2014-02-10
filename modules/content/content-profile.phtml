@@ -17,17 +17,24 @@
 			?>
 			<img src="<?= $image[0]; ?>" width="<?= $image[1]; ?>" height="<?= $image[2]; ?>"/>
 		</div>
+
 		<div class="col-right">
+		<?php if (get_field('profile_description_en')): ?>
 			<ul class="lang-switch-box">
-				<li class="lang-switch-item active">English</li>
-				<li class="lang-switch-item">German</li>
+				<li class="lang-switch-item active">Landessprache</li>
+				<li class="lang-switch-item">English</li>
 			</ul>
-			<div class="description-main">
+			<div class="desc-box">
+				<div class="desc-item">
+					<?= get_field('profile_description'); ?>
+				</div>
+				<div class="desc-item">
+					<?php the_field('profile_description_en'); ?>
+				</div>
+			</div>
+			<? else: ?>
 				<?= get_field('profile_description'); ?>
-			</div>
-			<div class="description-other">
-				<?php the_field('profile_description_en'); ?>
-			</div>
+			<? endif; ?>
 		</div>
 	</div>
 </div>
@@ -75,7 +82,7 @@
 
 				$attachment_id = get_sub_field('profile_media_file');
 
-				echo getMarkupFromAttachment($attachment_id, 'theme-profile_media');
+				echo getMarkupFromAttachment($attachment_id, 'theme-profile-media');
 
 			endif; ?>
 

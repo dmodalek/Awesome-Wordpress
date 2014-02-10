@@ -4,17 +4,21 @@
 
 		this.on = function (callback) {
 
-			// Do stuff here
-			//...
+			var $langItems = $('.lang-switch-item', this.$ctx),
+				$descItems = $('.desc-item', this.$ctx);
 
-			var $langItems = $('.lang-switch-item', this.$ctx);
-
+			// Click on Tab Item
 			$langItems.on('click', function(ev) {
 
+				var $clickedLangItem = $(this),
+					index = $clickedLangItem.index();
+
+				// Toggle Classes
 				$langItems.removeClass('active');
 				$(this).addClass('active');
 
-				// Todo: Hide and Show EN / DE, hide Switcher if only one Language
+				// Toggle visible desc
+				$descItems.hide().eq(index).show();
 			});
 
 			// call parent constructor

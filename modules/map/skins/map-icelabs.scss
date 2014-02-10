@@ -8,10 +8,10 @@
 		width: 100%;
 		text-align: right;
 		margin: $base-spacing 0;
-		border-bottom: 1px solid rgba($decent, $alpha);
 
   		.filter-item {
 			@include icelab-button('right');
+			margin-left: $half-spacing;
   		}
 	}
 }

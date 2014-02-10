@@ -387,11 +387,11 @@ pre, .mod-logo, .mod-map .map-canvas, .mod-test .container, .mod-test .content .
 /**w
  * Image replacement
  */
-.ir, .mod-lang-menu .de .nav-item-link {
+.ir {
   background-color: transparent;
   border: 0;
   overflow: hidden; }
-  .ir:before, .mod-lang-menu .de .nav-item-link:before {
+  .ir:before {
     content: "";
     display: block;
     width: 0;
@@ -889,14 +889,12 @@ img.alignnone {
 .mod-lang-menu {
   margin-left: 1.75439%;
   float: left;
-  width: 6.57895%;
+  width: 14.91228%;
   padding-top: 18px; }
+  .mod-lang-menu .nav-item {
+    display: none; }
   .mod-lang-menu .nav-item-link {
     float: right; }
-  .mod-lang-menu .de .nav-item-link {
-    width: 33px;
-    height: 19px;
-    background-image: url("../images/modules/lang-menu-flag-de.png"); }
 
 .mod-logo {
   margin-left: 1.75439%;
@@ -909,7 +907,7 @@ img.alignnone {
 .mod-main-menu {
   margin-left: 1.75439%;
   float: left;
-  width: 56.57895%;
+  width: 48.24561%;
   height: 96px;
   padding-top: 16px; }
   .mod-main-menu .nav-list-l1 {
@@ -1012,6 +1010,10 @@ img.alignnone {
   .skin-content-profile .lang-switch-item.active {
     cursor: default;
     background: rgba(255, 255, 255, 0.2); }
+.skin-content-profile .desc-box .desc-item {
+  display: none; }
+.skin-content-profile .desc-box .desc-item:first-child {
+  display: block; }
 
 .skin-map-contact + .skin-map-contact {
   margin-top: 24px; }
@@ -1021,14 +1023,14 @@ img.alignnone {
   .skin-map-icelabs .filter-list {
     width: 100%;
     text-align: right;
-    margin: 24px 0;
-    border-bottom: 1px solid rgba(203, 207, 213, 0.2); }
+    margin: 24px 0; }
     .skin-map-icelabs .filter-list .filter-item {
       float: right;
       cursor: pointer;
       display: inline-block;
       padding: 6px 12px;
-      user-select: none; }
+      user-select: none;
+      margin-left: 12px; }
       .skin-map-icelabs .filter-list .filter-item.active {
         cursor: default;
         background: rgba(255, 255, 255, 0.2); }

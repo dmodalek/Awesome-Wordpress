@@ -21,4 +21,15 @@
 			.lang-switch-item {
 				@include icelab-button('left');
 			}
+
+		.desc-box {
+
+			.desc-item {
+				display: none;
+			}
+
+			.desc-item:first-child {
+				display: block;
+			}
+		}
 }

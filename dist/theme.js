@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 02.02.2014 at 20:41:32
+ * Generated with Grunt on 10.02.2014 at 14:43:43
  */
 
 !function(a, b) {
@@ -4213,6 +4213,16 @@ Tc.$ = $, function() {
             });
         }
     });
+}(Tc.$), function() {
+    Tc.Module.LangMenu = Tc.Module.extend({
+        init: function(a, b, c) {
+            this._super(a, b, c);
+        },
+        on: function(a) {
+            a();
+        },
+        after: function() {}
+    });
 }(Tc.$), function(a) {
     Tc.Module.Map = Tc.Module.extend({
         init: function(a, b, c) {
@@ -4276,9 +4286,10 @@ Tc.$ = $, function() {
 }, function(a) {
     Tc.Module.Content.Profile = function(b) {
         this.on = function(c) {
-            var d = a(".lang-switch-item", this.$ctx);
+            var d = a(".lang-switch-item", this.$ctx), e = a(".desc-item", this.$ctx);
             d.on("click", function() {
-                d.removeClass("active"), a(this).addClass("active");
+                var b = a(this), c = b.index();
+                d.removeClass("active"), a(this).addClass("active"), e.hide().eq(c).show();
             }), b.on(c);
         };
     };
