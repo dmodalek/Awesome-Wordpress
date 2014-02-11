@@ -13,7 +13,7 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		echo module(array('name' => 'logo', ));
+		echo module('content');
 
 	endwhile;
 

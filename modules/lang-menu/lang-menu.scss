@@ -1,15 +1,52 @@
 .mod-lang-menu {
 
 	@include col(2);
-	padding-top: 18px;
+	padding-top: 20px;
 
-	.nav-list {}
+	.nav-list {
+		display: inline-block;
+		position: absolute;
+
+		&:hover {
+			margin-top: -$quart-spacing;
+			margin-left: -$half-spacing;
+			padding: $quart-spacing $half-spacing;
+			background: rgba($white, $alpha);
+
+			.nav-item {
+				display: block;
+
+				&:first-child .nav-item-link {
+					color: $hilite;
+					cursor: default;
+				}
+			}
+		}
 
 		.nav-item {
 			display: none;
+			float: none; 		// overwrite object definition
+			margin-right: 0;	// overwrite object definition
+
+			&:first-child {
+				display: block;
+
+				.nav-item-link:after {
+					@extend %iconMoonSettings;
+					content: '\e600';
+					padding-left: $half-spacing;
+				}
+			}
+
+			&.current > a {
+				color: $white;	// overwrite object definition
+			}
 		}
 
-		.nav-item-link {
-			float: right;
-		}
+			.nav-item-link {
+				display: block;
+				width: 100%;
+//				padding-bottom: $quart-spacing;
+			}
+	}
 }

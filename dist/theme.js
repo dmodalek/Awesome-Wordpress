@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 10.02.2014 at 14:43:43
+ * Generated with Grunt on 11.02.2014 at 10:09:24
  */
 
 !function(a, b) {
@@ -4213,13 +4213,15 @@ Tc.$ = $, function() {
             });
         }
     });
-}(Tc.$), function() {
+}(Tc.$), function(a) {
     Tc.Module.LangMenu = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);
         },
-        on: function(a) {
-            a();
+        on: function(b) {
+            a(".nav-item-link", this.$ctx).first().on("click", function(a) {
+                a.preventDefault();
+            }), b();
         },
         after: function() {}
     });

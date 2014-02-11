@@ -11,7 +11,7 @@
 
 	cursor: pointer;
 	display: inline-block;
-	padding: $quarter-spacing $half-spacing;
+	padding: $quart-spacing $half-spacing;
 	user-select: none; // prevents text selection while clicking
 
 	&.active {

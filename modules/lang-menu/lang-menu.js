@@ -14,7 +14,9 @@
 
 		on: function (callback) {
 
-//			$('.dropdown', this.$ctx).dropdown();
+			$('.nav-item-link', this.$ctx).first().on('click', function(e) {
+				e.preventDefault();
+			});
 
 			// callback
 			callback();
