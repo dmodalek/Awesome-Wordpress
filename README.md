@@ -28,3 +28,4 @@ Tipps & Tricks
 
 Features
 - .editorconfig for consistent coding style (editorstyle.org)
+- .jshintrc for consistent js hinting
