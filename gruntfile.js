@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
 			// Styles
 			styles: [
-				'css/*.scss',
+				'frontend/css/*.scss',
 				'modules/*/*.scss',
 				'modules/*/skins/*.scss',
 				'layout/*.scss',
@@ -22,12 +22,12 @@ module.exports = function (grunt) {
 			],
 
 			sass: [
-				'css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
+				'frontend/css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
 			],
 
 			// Scripts
 			scripts: [
-				'js/*.js',
+				'frontend/js/*.js',
 				'modules/*/*.js',
 				'modules/*/skins/*.js',
 				'layout/*.js',
@@ -117,16 +117,6 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-
-		connect: {
-			server: {
-				options: {
-					port: 8000,
-					base: './'
-				}
-			}
-		},
-
 
 		watch: {
 			options: {
