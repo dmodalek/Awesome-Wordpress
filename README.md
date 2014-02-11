@@ -1,6 +1,8 @@
 Wordpress-Awesome-Theme
 =======================
 
+![alt text]https://github.com/dmodalek/wordpress-awesome-theme/screenshot.png "Awesome Theme")
+
 A starter theme for wordpress. Based on:
 
 - twentyfourteen and __s Wordpress Theme
@@ -50,7 +52,7 @@ Features
 
 ### Environment detection
 APP__ENV is automatically set to __dev__ or __prod__ depending on your virtual host name. If your virtual host name contains __.loc__, APP__ENV is set to __dev__.
-In the __dev" environment, non-minified assets are referenced and Wordpress debugging is activated. See __debug.log__ for PHP Errors.
+In the __dev__ environment, non-minified assets are referenced and Wordpress debugging is activated. See __debug.log__ for PHP Errors.
 
 ### Frontend Helper
 Press __G__ to see the Grid Helper in the Frontend.
