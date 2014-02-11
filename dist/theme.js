@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 11.02.2014 at 13:36:12
+ * Generated with Grunt on 11.02.2014 at 14:06:52
  */
 
 !function(a, b) {
@@ -4332,7 +4332,7 @@ Tc.$ = $, function() {
         this.on = function(c) {
             var d = this.$ctx, e = a('<div class="badge" title="— Press G for Grid Helper\n— Press C for CSS Hint">DEV</div>');
             this.$ctx.prepend(e), d.on("keydown", function(a) {
-                67 == a.keyCode, 71 == a.keyCode && d.toggleClass("grid-debug");
+                67 == a.keyCode && d.toggleClass("css-debug"), 71 == a.keyCode && d.toggleClass("grid-debug");
             }), b.on(c);
         };
     };
