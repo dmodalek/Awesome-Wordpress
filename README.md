@@ -1,7 +1,7 @@
 Wordpress-Awesome-Theme
 =======================
 
-A starter theme for wordpress. Based on...
+A starter theme for wordpress. Based on:
 
 - twentyfourteen and _s Wordpress Theme
 - Inuit CSS (https://github.com/csswizardry/inuit.css)
@@ -10,14 +10,13 @@ A starter theme for wordpress. Based on...
 - Mobile Boilerplate
 
 
-Dependencies:
+# Quickstart
 
-- SASS ~ 3.3
-
-
-Quickstart
-
-- Download Wordpress: http://wordpress.org/download
+- Download Wordpress from http://wordpress.org/download or via command line
+```
+$ curl -O http://wordpress.org/latest.tar.gz
+$ tar -xvzf latest.tar.gz
+```
 - Change directory to /themes dir
 ```
 $ cd my-project/public/wp-content/themes
@@ -26,6 +25,13 @@ $ cd my-project/public/wp-content/themes
 ```
 $ git clone git@github.com:dmodalek/wordpress-awesome-theme.git my-theme-name
 ```
+- Rename wp-config-sample.php to wp-config.php
+```
+$ cp wp-config-sample.php wp-config.php
+```
+
+# Build Frontend Files
+
 - Install dependencies
 ```
 $ npm install
@@ -35,19 +41,13 @@ $ npm install
 $ grunt
 ```
 
-Next steps
+# Next steps
 
-- Rename wp-config-sample.php to wp-config.php
 - Search for "awesome-textdomain" and replace it with your own text domain
 
 
-Helper
-
+# Cool Stuff
 - See debug.log for PHP Errors
 - Press G to see the Grid Helper in the Frontend
-
-
-Features
-
 - .editorconfig for consistent coding style (editorstyle.org)
 - .jshintrc for consistent js hinting
