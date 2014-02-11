@@ -1,4 +1,4 @@
-Wordpress-Awesome-Theme
+Wordpress Awesome Theme
 =======================
 
 ![Awesome Theme](https://raw.github.com/dmodalek/wordpress-awesome-theme/master/screenshot.png)
