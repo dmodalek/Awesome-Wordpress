@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'dist/<%= pkg.name %>.css': '<%=dirs.sass%>'
+					'built/<%= pkg.name %>.css': '<%=dirs.sass%>'
 				}
 			},
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'dist/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
+					'built/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
 				}
 			}
 		},
@@ -93,13 +93,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'dist/<%= pkg.name %>.map.js',
+					sourceMap: 'built/<%= pkg.name %>.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.map.js'
 				},
 
 				files: {
-					'dist/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
+					'built/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
 				}
 			},
 
@@ -107,13 +107,13 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'dist/<%= pkg.name %>.min.map.js',
+					sourceMap: 'built/<%= pkg.name %>.min.map.js',
 					sourceMapRoot: '../',
 					sourceMappingURL: '<%= pkg.name %>.min.map.js'
 				},
 
 				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
+					'built/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
 				}
 			}
 		},
