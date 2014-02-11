@@ -1,7 +1,7 @@
 Wordpress-Awesome-Theme
 =======================
 
-![alt text]https://github.com/dmodalek/wordpress-awesome-theme/screenshot.png "Awesome Theme")
+![alt text]https://github.com/dmodalek/wordpress-awesome-theme/blob/master/screenshot.png "Awesome Theme")
 
 A starter theme for wordpress. Based on:
 
