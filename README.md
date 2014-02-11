@@ -25,3 +25,6 @@ Tipps & Tricks
 
 - See debug.log for PHP Errors
 - Press G to see the Grid Helper in the Frontend
+
+Features
+- .editorconfig for consistent coding style (editorstyle.org)
