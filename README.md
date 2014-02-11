@@ -17,20 +17,20 @@ Dependencies:
 
 Quickstart
 
-1. Download Wordpress: http://wordpress.org/download
-2. Change directory to /themes dir
+- Download Wordpress: http://wordpress.org/download
+- Change directory to /themes dir
 ```
 $ cd my-project/public/wp-content/themes
 ```
-3. Clone Awesome Theme
+- Clone Awesome Theme
 ```
 $ git clone git@github.com:dmodalek/wordpress-awesome-theme.git my-theme-name
 ```
-4. Install dependencies
+- Install dependencies
 ```
 $ npm install
 ```
-5. Start Grunt
+- Start Grunt
 ```
 $ grunt
 ```
