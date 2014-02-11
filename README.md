@@ -45,11 +45,11 @@ $ grunt
 ## Features
 
 ### Environment detection
-APP_ENV is automatically set to *dev* or *prod* depending on your virtual host name. If your virtual host name contains *.loc*, APP_ENV is set to *dev*.
-In the *dev" environment, non-minified assets are referenced and Wordpress debugging is activated. See *debug.log* for PHP Errors.
+APP_ENV is automatically set to _dev_ or _prod_ depending on your virtual host name. If your virtual host name contains _.loc_, APP_ENV is set to _dev_.
+In the _dev" environment, non-minified assets are referenced and Wordpress debugging is activated. See _debug.log_ for PHP Errors.
 
 ### Frontend Helper
-Press *G* to see the Grid Helper in the Frontend.
+Press _G_ to see the Grid Helper in the Frontend.
 
 ### Coding Style
-*.editorconfig* defines consistent coding styles for your IDE. You need to install a plugin for your IDE, see http://www.editorstyle.org.
+_.editorconfig_ defines consistent coding styles for your IDE. You need to install a plugin for your IDE, see http://www.editorstyle.org.
