@@ -33,16 +33,22 @@ In your IDE, search for "awesome-textdomain" and replace it with your own text d
 
 ## Build Frontend Files
 
-- Install dependencies
+Install dependencies
 ```
 $ npm install
 ```
-- Start Grunt
+Start Grunt
 ```
 $ grunt
 ```
 
-## Cool Stuff
-- See debug.log for PHP Errors
-- Press G to see the Grid Helper in the Frontend
-- .editorconfig for consistent coding style (editorstyle.org)
+## Features
+
+### Environment detection
+APP_ENV is automatically set to 'dev' or 'prod' depending on your virtual host name. If it contains '.loc' the APP_ENV is set to 'dev'. If APP_ENV is 'dev', non-minified assets are referenced and Wordpress debugging is activated, see debug.log for PHP Errors.
+
+### Frontend Helper
+Press G to see the Grid Helper in the Frontend.
+
+### Coding Style
+.editorconfig defines consistent coding styles for your IDE. You need to install a plugin for your IDE, see http://www.editorstyle.org.
