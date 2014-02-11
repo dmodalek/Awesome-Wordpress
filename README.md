@@ -3,13 +3,12 @@ Wordpress-Awesome-Theme
 
 ![Awesome Theme](https://raw.github.com/dmodalek/wordpress-awesome-theme/master/screenshot.png)
 
-A starter theme for wordpress. Based on:
+A wordpress boilerplate theme which is based on:
 
-- twentyfourteen and __s Wordpress Theme
-- Inuit CSS (https://github.com/csswizardry/inuit.css)
-- Terrific Micro Wordpress Integration (https://github.com/Epicuri0us/terrific-micro-integration-wordpress)
-- Terrific JS (https://github.com/brunschgi/terrificjs)
-- Mobile Boilerplate
+- The Terrific Concept (https://github.com/brunschgi/terrificjs)
+- The official Wordpress Starter Theme (https://github.com/Automattic/_s/)
+- HTML5 Mobile Boilerplate (http://html5boilerplate.com/mobile)
+- Grunt (https://github.com/gruntjs/grunt)
 
 
 Quickstart
@@ -51,11 +50,11 @@ Features
 ------
 
 ### Environment detection
-APP__ENV is automatically set to __dev__ or __prod__ depending on your virtual host name. If your virtual host name contains __.loc__, APP__ENV is set to __dev__.
+APP_ENV is automatically set to __dev__ or __prod__ depending on your virtual host name. If your virtual host name contains __.loc__, APP_ENV is set to __dev__.
 In the __dev__ environment, non-minified assets are referenced and Wordpress debugging is activated. See __debug.log__ for PHP Errors.
 
 ### Frontend Helper
 Press __G__ to see the Grid Helper in the Frontend.
 
 ### Coding Style
-__.editorconfig__ defines consistent coding styles for your IDE. You need to install a plugin for your IDE, see http://www.editorstyle.org.
+__.editorconfig__ defines consistent coding styles for your IDE. You need to install a plugin for your IDE. For more info, see http://www.editorstyle.org.
