@@ -31,8 +31,11 @@ Rename wp-config-sample.php to wp-config.php
 ```
 $ cp wp-config-sample.php wp-config.php
 ```
+Start the famous Wordpress 5 Minute Install
+```
+$ open http://your-project.loc/wp-admin/install.php
+```
 In your IDE, search for "awesome-textdomain" and replace it with your own text domain
-
 
 Build Frontend Files
 ------
