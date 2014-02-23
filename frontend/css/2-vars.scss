@@ -29,11 +29,11 @@ $font-families: 'Open Sans', sans-serif;
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/iconmoon/icomoon.eot?rofuzr');
-	src:url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'),
-		url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'),
-		url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'),
-		url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
+	src:url('../frontend/fonts/iconmoon/icomoon.eot?rofuzr');
+	src:url('../frontend/fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'),
+		url('../frontend/fonts/iconmoon/icomoon.woff?rofuzr') format('woff'),
+		url('../frontend/fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'),
+		url('../frontend/fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
