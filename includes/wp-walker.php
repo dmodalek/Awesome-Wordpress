@@ -16,6 +16,7 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
 		if (!has_nav_menu( $locationId)) {
 
 			echo sprintf('<a href="%2$s">Click to define menu "%1$s"</a>', $locationId, get_admin_url() . 'nav-menus.php?action=locations');
+			return false;
 		}
 
 		return wp_nav_menu(array_merge(
