@@ -9,7 +9,7 @@ class Fact {
 	public function __construct() {
 
 		register_post_type(
-			'facts',
+			'fact',
 			array(
 				'labels' => array(
 					'name' 				=> __('Facts', 'awesome-textdomain' ),
@@ -30,17 +30,14 @@ class Fact {
 				'menu_position'       	=> 50,
 				'supports' => array(
 					'title',
-					'editor',
-					'thumbnail',
-					'page-attributes',
 					'revisions',
 				),
 				'show_in_nav_menus'   	=> true,
-				'capability_type'     	=> array('icelab_fact', 'icelab_facts'),
+				'capability_type'     	=> array('icelab_fact', 'facts'),
 
 				// Capabilities
 				'map_meta_cap'        	=> false,
-				'capability_type'     	=> array('icelab_fact', 'icelab_facts'),
+				'capability_type'     	=> array('icelab_fact', 'facts'),
 
 				// Fronted
 				'public' => true,

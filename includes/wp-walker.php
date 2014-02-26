@@ -25,7 +25,7 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
 					'container'		=> false,
 					'menu_class'	=> 'nav-list nav-list-l1',
 					'depth'         => (int) $depth,
-					'walker'        => new $walker(),
+					'walker'        => new $walker()
 			),
 			$params
 		));
