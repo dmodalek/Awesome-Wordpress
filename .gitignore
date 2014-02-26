@@ -19,7 +19,6 @@ wp-config.php
 #
 # Other
 
-built/
 .htaccess
 .DS_Store
 /node_modules/
