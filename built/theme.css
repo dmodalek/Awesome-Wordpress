@@ -533,9 +533,9 @@ h1, .alpha {
   font-weight: normal; }
 
 h2, .beta {
-  font-size: 28px;
-  font-size: 2rem;
-  line-height: 1.71429;
+  font-size: 26px;
+  font-size: 1.85714rem;
+  line-height: 1.84615;
   font-weight: normal; }
 
 h3, .gamma, .mod-main-menu .nav-item-l1 > .nav-item-link {
@@ -972,7 +972,7 @@ img.alignnone {
   color: #213249; }
 .mod-map .map-canvas {
   background: transparent;
-  min-height: 300px; }
+  min-height: 400px; }
 
 .mod-social {
   margin-left: 1.75439%;
@@ -982,6 +982,8 @@ img.alignnone {
   .mod-social .share-item {
     display: inline-block;
     float: right; }
+  .mod-social .share-item-twitter {
+    margin-top: 4px; }
 
 .mod-test .container {
   width: 960px;
@@ -1061,6 +1063,8 @@ img.alignnone {
 
 .skin-map-contact + .skin-map-contact {
   margin-top: 24px; }
+.skin-map-contact .map-canvas {
+  min-height: 300px; }
 
 .skin-map-icelabs {
   margin-bottom: 24px; }

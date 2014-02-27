@@ -18,37 +18,31 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
-#, fuzzy
 msgid "Oops! That page can't be found."
 msgstr "Oops! Dies Seite wurde nicht gefunden."
 
 #: 404.php:21
-#, fuzzy
 msgid "It looks like nothing was found at this location."
 msgstr "Es wurde nichts gefunden unter dieser URL."
 
 #: functions.php:35
-#, fuzzy
 msgid "Main Menu"
 msgstr "Hauptmenu"
 
 #: functions.php:36
-#, fuzzy
 msgid "Lang Menu"
 msgstr "Sprachwahl"
 
 #: functions.php:37
-#, fuzzy
 msgid "Footer Menu"
 msgstr "Footermenu"
 
 #: functions.php:193
-#, fuzzy, php-format
+#, php-format
 msgid "Page %s"
 msgstr "Seite %s"
 
 #: includes/wp-posttypes.php:15 includes/wp-posttypes.php:16
-#, fuzzy
 msgid "Facts"
 msgstr "Fakten"
 
@@ -68,17 +62,14 @@ msgid "Update Facts"
 msgstr "Fakten"
 
 #: includes/wp-posttypes.php:27
-#, fuzzy
 msgid "/facts"
-msgstr "Fakten"
+msgstr "/fakten"
 
 #: includes/wp-posttypes.php:60
-#, fuzzy
 msgid "Profiles"
 msgstr "Profile"
 
 #: includes/wp-posttypes.php:61 modules/icelab-list/icelab-list.phtml:9
-#, fuzzy
 msgid "Profile"
 msgstr "Profil"
 
@@ -98,9 +89,8 @@ msgid "Update Profile"
 msgstr "Profil"
 
 #: includes/wp-posttypes.php:72
-#, fuzzy
 msgid "profiles"
-msgstr "Profile"
+msgstr "profile"
 
 #: search.php:18
 #, fuzzy, php-format
@@ -108,57 +98,46 @@ msgid "Search Results for: %s"
 msgstr "Suche nach \"%s\" ergab %s Treffer"
 
 #: modules/content/content-profile.phtml:24
-#, fuzzy
 msgid "Description"
 msgstr "Bechreibung"
 
 #: modules/content/content-profile.phtml:25
-#, fuzzy
 msgid "In English"
 msgstr "In Englisch"
 
 #: modules/content/content-profile.phtml:119
-#, fuzzy
 msgid "Contact"
 msgstr "Kontakt"
 
 #: modules/content/content-profile.phtml:145
-#, fuzzy
 msgid "Calculate Route with Google Maps"
 msgstr "Route mit Google Maps berechnen"
 
 #: modules/icelab-list/icelab-list.phtml:4
-#, fuzzy
 msgid "Name"
 msgstr "Name"
 
 #: modules/icelab-list/icelab-list.phtml:5 modules/map/map-icelabs.phtml:22
-#, fuzzy
 msgid "Wellness"
-msgstr "Wellnss"
+msgstr "Wellness"
 
 #: modules/icelab-list/icelab-list.phtml:6 modules/map/map-icelabs.phtml:23
-#, fuzzy
 msgid "Sport"
 msgstr "Sport"
 
 #: modules/icelab-list/icelab-list.phtml:7 modules/map/map-icelabs.phtml:24
-#, fuzzy
 msgid "Medical"
-msgstr "Medizin"
+msgstr "Medizinisch"
 
 #: modules/icelab-list/icelab-list.phtml:8
-#, fuzzy
 msgid "Country"
 msgstr "Land"
 
 #: modules/map/map-contact.phtml:8
-#, fuzzy
 msgid "Areas"
 msgstr "Bereich"
 
 #: modules/map/map-contact.phtml:8
-#, fuzzy
 msgid "Address"
 msgstr "Adresse"
 

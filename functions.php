@@ -87,7 +87,7 @@ function theme_setup() {
 	/*
 	 * Theme Frontend Languages
 	 */
-	load_theme_textdomain('theme', get_template_directory() . '/languages');
+	load_theme_textdomain('awesome-textdomain', get_template_directory() . '/languages');
 
 
 	/*
@@ -209,6 +209,7 @@ require get_template_directory() . '/includes/wp-posttypes.php';
 require get_template_directory() . '/includes/wp-taxonomies.php';
 require get_template_directory() . '/includes/wp-walker.php';
 require get_template_directory() . '/includes/wp-filter.php';
+require get_template_directory() . '/includes/wp-acf.php';
 
 require get_template_directory() . '/includes/terrific.php';
 require get_template_directory() . '/includes/helper.php';

@@ -21,8 +21,8 @@
 		<div class="col-right">
 		<?php if (get_field('profile_description_en')): ?>
 			<ul class="lang-switch-box">
-				<li class="lang-switch-item active">Landessprache</li>
-				<li class="lang-switch-item">English</li>
+				<li class="lang-switch-item active"><?= __('Description', 'awesome-textdomain') ?></li>
+				<li class="lang-switch-item"><?= __('In English', 'awesome-textdomain') ?></li>
 			</ul>
 			<div class="desc-box">
 				<div class="desc-item">
@@ -116,7 +116,7 @@
 
 		<div class="bd richtext section">
 
-			<h2>Kontakt</h2>
+			<h2><?= __('Contact', 'awesome-textdomain') ?></h2>
 
 			<?php
 
@@ -142,7 +142,7 @@
 
 				?>
 
-				<p><a target="_blank" href="http://maps.google.com/maps?saddr=%20&daddr=<?= implode('%20', $address) ?>">Route berechnen</a></p>
+				<p><a target="_blank" href="http://maps.google.com/maps?saddr=%20&daddr=<?= implode('%20', $address) ?>"><?= __('Calculate Route with Google Maps', 'awesome-textdomain') ?></a></p>
 
 				<?= module('map')->template('contact')->skin('contact')->data($fact)->attribs(array('role' => 'aside'))->data(array('fact' => $fact)); ?>
 

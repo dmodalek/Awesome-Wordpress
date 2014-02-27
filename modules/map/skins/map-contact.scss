@@ -3,4 +3,8 @@
 	& + .skin-map-contact {
 		margin-top: $base-spacing;
 	}
+
+	.map-canvas {
+		min-height: 300px;
+	}
 }

@@ -9,7 +9,7 @@ class Fact {
 	public function __construct() {
 
 		register_post_type(
-			'fact',
+			'facts',
 			array(
 				'labels' => array(
 					'name' 				=> __('Facts', 'awesome-textdomain' ),
