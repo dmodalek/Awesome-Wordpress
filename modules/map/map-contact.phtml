@@ -2,10 +2,4 @@
 	<?= json_encode($data); ?>
 </script>
 
-<?
-	// Popover Content
-	$title = '<h2>' . $data->post_title . '</h2>';
-	$body = '<div class="row"><label>' . __('Areas', 'awesome-textdomain') . '</label>' . join(', ', get_field('fact_areas', $data->ID)). '</div><div class="row"><label>' . __('Address', 'awesome-textdomain') . '</label>' . get_field('fact_street', $data->ID) . '<br/>' . get_field('fact_plz_city', $data->ID) . '</div></div>';
-?>
-
 <div class="map-canvas"></div>
