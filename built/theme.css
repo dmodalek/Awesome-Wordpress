@@ -706,7 +706,8 @@ label[for] {
 html .mceContentBody {
   font-size: 100%;
   max-width: 604px;
-  background-image: none; }
+  color: white;
+  padding: 12px; }
 
 /*
  * Styling for Wordpress specific classes (Frontend and Backend)
