@@ -56,11 +56,11 @@ class Profile {
 			'profiles',
 			array(
 				'labels' => array(
-					'name'               => __( 'Profiles', 'awesome-textdomain' ),
-					'singular_name'      => __( 'Profile', 'awesome-textdomain' ),
-					'add_new'            => __( 'Add New', 'awesome-textdomain' ),
-					'add_new_item'       => __( 'Add New Profile', 'awesome-textdomain' ),
-					'edit_item'          => __( 'Edit Profile', 'awesome-textdomain' ),
+					'name'               => __('Profiles', 'awesome-textdomain' ),
+					'singular_name'      => __('Profile', 'awesome-textdomain' ),
+					'add_new'            => __('Add New', 'awesome-textdomain' ),
+					'add_new_item'       => __('Add New Profile', 'awesome-textdomain' ),
+					'edit_item'          => __('Edit Profile', 'awesome-textdomain' ),
 				),
 
 				// Backend

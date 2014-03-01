@@ -117,6 +117,30 @@ function theme_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
 	));
+
+
+
+	/**
+	 * Include all files from the /inc directory
+	 */
+
+	require get_template_directory() . '/includes/wp-shortcodes.php';
+	require get_template_directory() . '/includes/wp-posttypes.php';
+	require get_template_directory() . '/includes/wp-taxonomies.php';
+	require get_template_directory() . '/includes/wp-walker.php';
+	require get_template_directory() . '/includes/wp-filter.php';
+	require get_template_directory() . '/includes/wp-acf.php';
+
+	require get_template_directory() . '/includes/terrific.php';
+	require get_template_directory() . '/includes/helper.php';
+
+
+	/*
+	 * Constructor
+	 */
+
+	new Theme\PostType\Fact();
+	new Theme\PostType\Profile();
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
@@ -197,29 +221,5 @@ function theme_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
 
-
-
-
-/**
- * Include all files from the /inc directory
- */
-
-require get_template_directory() . '/includes/wp-shortcodes.php';
-require get_template_directory() . '/includes/wp-posttypes.php';
-require get_template_directory() . '/includes/wp-taxonomies.php';
-require get_template_directory() . '/includes/wp-walker.php';
-require get_template_directory() . '/includes/wp-filter.php';
-require get_template_directory() . '/includes/wp-acf.php';
-
-require get_template_directory() . '/includes/terrific.php';
-require get_template_directory() . '/includes/helper.php';
-
-
-/*
- * Constructor
- */
-
-new Theme\PostType\Fact();
-new Theme\PostType\Profile();
 
 ?>
