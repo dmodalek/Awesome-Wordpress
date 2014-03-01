@@ -129,6 +129,7 @@ function theme_setup() {
 	require get_template_directory() . '/includes/wp-taxonomies.php';
 	require get_template_directory() . '/includes/wp-walker.php';
 	require get_template_directory() . '/includes/wp-filter.php';
+	require get_template_directory() . '/includes/wp-actions.php';
 	require get_template_directory() . '/includes/wp-acf.php';
 
 	require get_template_directory() . '/includes/terrific.php';

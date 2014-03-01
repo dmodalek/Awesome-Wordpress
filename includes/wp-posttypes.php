@@ -12,7 +12,7 @@ class Fact {
 			'facts',
 			array(
 				'labels' => array(
-					'name'               => __( 'Facts', 'awesome-textdomain' ),
+					'name'               => __( 'Icelab Facts', 'awesome-textdomain' ),
 					'singular_name'      => __( 'Fact', 'awesome-textdomain' ),
 					'add_new'            => __( 'Add New', 'awesome-textdomain' ),
 					'add_new_item'       => __( 'Add New Fact', 'awesome-textdomain' ),
@@ -32,11 +32,9 @@ class Fact {
 					'revisions',
 				),
 				'show_in_nav_menus'   	=> true,
-				'capability_type'     	=> array('icelab_fact', 'facts'),
 
 				// Capabilities
-				'map_meta_cap'        	=> false,
-				'capability_type'     	=> array('icelab_fact', 'facts'),
+				'map_meta_cap'        	=> true,
 
 				// Fronted
 				'public' => true,
@@ -56,7 +54,7 @@ class Profile {
 			'profiles',
 			array(
 				'labels' => array(
-					'name'               => __('Profiles', 'awesome-textdomain' ),
+					'name'               => __('Icelab Profiles', 'awesome-textdomain' ),
 					'singular_name'      => __('Profile', 'awesome-textdomain' ),
 					'add_new'            => __('Add New', 'awesome-textdomain' ),
 					'add_new_item'       => __('Add New Profile', 'awesome-textdomain' ),
@@ -77,11 +75,9 @@ class Profile {
 					'revisions'
 				),
 				'show_in_nav_menus'   	=> true,
-				'capability_type'     	=> array('icelab_profile', 'icelab_profiles'),
 
 				// Capabilities
-				'map_meta_cap'        	=> false,
-				'capability_type'     	=> array('icelab_profile', 'icelab_profiles'),
+				'map_meta_cap'        	=> true,
 
 				// Fronted
 				'public' => true,
