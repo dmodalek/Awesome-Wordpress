@@ -736,33 +736,6 @@ img.alignnone {
 .mceTemp + ol {
   list-style-position: inside; }
 
-.mapp-layout {
-  margin: 0; }
-
-.mapp-ib {
-  border: 1px solid white;
-  box-shadow: 0 0 0 white; }
-  .mapp-ib .mapp-title h2 {
-    color: #213249;
-    margin-bottom: 12px; }
-  .mapp-ib .mapp-body label {
-    display: block;
-    font-size: 12px; }
-  .mapp-ib .mapp-body .row {
-    margin-bottom: 12px; }
-    .mapp-ib .mapp-body .row:last-child {
-      margin-bottom: 0; }
-  .mapp-ib .mapp-body .profile-link {
-    color: #213249;
-    font-weight: bold; }
-  .mapp-ib .mapp-links {
-    border: none;
-    height: 0;
-    overflow: hidden; }
-
-.mapp-map-links {
-  border: none; }
-
 .css-debug {
   /**
    * Debug
@@ -973,6 +946,8 @@ img.alignnone {
 .mod-map .map-canvas {
   background: transparent;
   min-height: 400px; }
+  .mod-map .map-canvas h3, .mod-map .map-canvas p {
+    margin-bottom: 0; }
 
 .mod-social {
   margin-left: 1.75439%;

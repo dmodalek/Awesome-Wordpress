@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Swisscom ITC Blog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-27 20:57+0100\n"
-"PO-Revision-Date: 2014-02-27 20:57+0100\n"
+"POT-Creation-Date: 2014-02-27 21:35+0100\n"
+"PO-Revision-Date: 2014-02-27 21:35+0100\n"
 "Last-Translator: Dominic Modalek <dominic@modalek.ch>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -42,60 +42,54 @@ msgstr "Footermenu"
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: includes/wp-posttypes.php:15 includes/wp-posttypes.php:16
+#: includes/wp-posttypes.php:15
 msgid "Facts"
 msgstr "Fakten"
 
-#: includes/wp-posttypes.php:17 includes/wp-posttypes.php:20
-#, fuzzy
-msgid "Add Facts"
-msgstr "Fakten"
+#: includes/wp-posttypes.php:16
+msgid "Fact"
+msgstr "Fakt"
+
+#: includes/wp-posttypes.php:17 includes/wp-posttypes.php:61
+msgid "Add New"
+msgstr ""
 
 #: includes/wp-posttypes.php:18
-#, fuzzy
-msgid "Edit Facts"
-msgstr "Fakten"
+msgid "Add New Fact"
+msgstr "Neue Fakten hinzufügen"
 
 #: includes/wp-posttypes.php:19
-#, fuzzy
-msgid "Update Facts"
-msgstr "Fakten"
+msgid "Edit Fact"
+msgstr "Fakt bearbeiten"
 
-#: includes/wp-posttypes.php:27
-msgid "/facts"
+#: includes/wp-posttypes.php:26
+msgid "facts"
 msgstr "/fakten"
 
-#: includes/wp-posttypes.php:60
+#: includes/wp-posttypes.php:59
 msgid "Profiles"
 msgstr "Profile"
 
-#: includes/wp-posttypes.php:61 modules/icelab-list/icelab-list.phtml:9
+#: includes/wp-posttypes.php:60 modules/icelab-list/icelab-list.phtml:9
 msgid "Profile"
 msgstr "Profil"
 
-#: includes/wp-posttypes.php:62 includes/wp-posttypes.php:65
-#, fuzzy
-msgid "Add Profile"
-msgstr "Profil"
+#: includes/wp-posttypes.php:62
+msgid "Add New Profile"
+msgstr "Neues Profil hinzufügen"
 
 #: includes/wp-posttypes.php:63
-#, fuzzy
 msgid "Edit Profile"
 msgstr "Profil"
 
-#: includes/wp-posttypes.php:64
-#, fuzzy
-msgid "Update Profile"
-msgstr "Profil"
-
-#: includes/wp-posttypes.php:72
+#: includes/wp-posttypes.php:70
 msgid "profiles"
 msgstr "profile"
 
 #: search.php:18
-#, fuzzy, php-format
+#, php-format
 msgid "Search Results for: %s"
-msgstr "Suche nach \"%s\" ergab %s Treffer"
+msgstr ""
 
 #: modules/content/content-profile.phtml:24
 msgid "Description"
@@ -140,6 +134,23 @@ msgstr "Bereich"
 #: modules/map/map-contact.phtml:8
 msgid "Address"
 msgstr "Adresse"
+
+#~ msgctxt "post type singular name"
+#~ msgid "Profile"
+#~ msgstr "Profil"
+
+#~ msgctxt "book"
+#~ msgid "Add New"
+#~ msgstr "Hinzufügen"
+
+#~ msgid "Update Facts"
+#~ msgstr "/fakten"
+
+#~ msgid "Update Profile"
+#~ msgstr "Profil"
+
+#~ msgid "tests"
+#~ msgstr "test"
 
 #~ msgid "Lade mehr Inhalte"
 #~ msgstr "Load more posts"

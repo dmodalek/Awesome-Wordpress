@@ -35,7 +35,7 @@
 		 * Load Google Maps API
 		 */
 
-		loadMapAPI: function() {
+		loadMapAPI: function () {
 
 			var apiKey = 'AIzaSyCHfBbGLxR4PCDV_OCaqcF20AzV2KADA1Y',
 				script = document.createElement('script');
@@ -64,7 +64,8 @@
 
 			$.each(markers, function (index, marker) {
 
-				var custom_fields = marker.custom_fields;
+				var custom_fields = marker.custom_fields,
+					infoWindowConent;
 
 				// Async
 				geocoder.geocode({ 'address': custom_fields.fact_plz_city + ' ' + custom_fields.fact_country }, function (results, status) {
@@ -77,8 +78,13 @@
 							custom_fields: marker.custom_fields
 						}));
 
+						infoWindowConent = '<h3>' + marker.post_title + '</h3>' +
+							'<p>' + marker.custom_fields.fact_street + '</p>' +
+							'<p>' + marker.custom_fields.fact_plz_city + '</p>' +
+							'<p>' + marker.custom_fields.fact_country + '</p>';
+
 						self.markers[self.markers.length - 1].infoWindow = new google.maps.InfoWindow({
-							content: marker.post_content
+							content: infoWindowConent
 						});
 
 						self.addMarker(self.markers[self.markers.length - 1]);
@@ -103,7 +109,7 @@
 			});
 		},
 
-		addMarker: function(marker) {
+		addMarker: function (marker) {
 
 			var self = this;
 
@@ -111,7 +117,13 @@
 				marker.setMap(self.map);
 
 				google.maps.event.addListener(marker, 'click', function () {
-					marker.infoWindow.open(self.map, marker);
+
+					var currentInfoWindowOpen = marker.infoWindow.getMap();
+
+					self.closeAllInfoWindows();
+					if(! currentInfoWindowOpen) {
+						marker.infoWindow.open(self.map, marker);
+					}
 				});
 			}
 		},
@@ -122,7 +134,7 @@
 		 * Remove Marker
 		 */
 
-		removeMarkers: function(markers) {
+		removeMarkers: function (markers) {
 
 			var self = this;
 			$.each(markers, function (index, marker) {
@@ -135,10 +147,15 @@
 			if (marker.getMap() !== undefined) {
 				marker.setMap(undefined);
 			}
-		}
+		},
 
 		//////////////////////////////////////////////////////////////////////////////
 
+		closeAllInfoWindows: function() {
+			$.each(this.markers, function (index, marker) {
+				marker.infoWindow.close();
+			});
+		}
 	});
 
 })(Tc.$);

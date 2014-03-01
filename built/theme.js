@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 26.02.2014 at 21:29:36
+ * Generated with Grunt on 01.03.2014 at 12:56:56
  */
 
 !function(a, b) {
@@ -4247,16 +4247,17 @@ Tc.$ = $, function() {
             this.map = new google.maps.Map(document.getElementsByClassName("map-canvas")[0], {
                 zoom: 4
             }), a.each(d, function(a, d) {
-                var e = d.custom_fields;
+                var e, f = d.custom_fields;
                 c.geocode({
-                    address: e.fact_plz_city + " " + e.fact_country
+                    address: f.fact_plz_city + " " + f.fact_country
                 }, function(a, c) {
                     c == google.maps.GeocoderStatus.OK && (b.markers.push(new google.maps.Marker({
                         position: a[0].geometry.location,
                         title: d.post_title,
                         custom_fields: d.custom_fields
-                    })), b.markers[b.markers.length - 1].infoWindow = new google.maps.InfoWindow({
-                        content: d.post_content
+                    })), e = "<h3>" + d.post_title + "</h3><p>" + d.custom_fields.fact_street + "</p><p>" + d.custom_fields.fact_plz_city + "</p><p>" + d.custom_fields.fact_country + "</p>", 
+                    b.markers[b.markers.length - 1].infoWindow = new google.maps.InfoWindow({
+                        content: e
                     }), b.addMarker(b.markers[b.markers.length - 1]), b.map.setCenter(b.markers[0].position));
                 });
             });
@@ -4270,7 +4271,8 @@ Tc.$ = $, function() {
         addMarker: function(a) {
             var b = this;
             void 0 === a.getMap() && (a.setMap(b.map), google.maps.event.addListener(a, "click", function() {
-                a.infoWindow.open(b.map, a);
+                var c = a.infoWindow.getMap();
+                b.closeAllInfoWindows(), c || a.infoWindow.open(b.map, a);
             }));
         },
         removeMarkers: function(b) {
@@ -4281,6 +4283,11 @@ Tc.$ = $, function() {
         },
         removeMarker: function(a) {
             void 0 !== a.getMap() && a.setMap(void 0);
+        },
+        closeAllInfoWindows: function() {
+            a.each(this.markers, function(a, b) {
+                b.infoWindow.close();
+            });
         }
     });
 }(Tc.$), window.mapsReadyCallback = function() {

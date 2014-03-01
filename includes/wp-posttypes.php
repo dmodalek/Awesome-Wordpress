@@ -12,19 +12,18 @@ class Fact {
 			'facts',
 			array(
 				'labels' => array(
-					'name' 				=> __('Facts', 'awesome-textdomain' ),
-					'singular_name' 	=> __('Facts', 'awesome-textdomain' ),
-					'add_new_item'  	=> __('Add Facts', 'awesome-textdomain'),
-					'edit_item'     	=> __('Edit Facts', 'awesome-textdomain'),
-					'update_item'		=> __('Update Facts', 'awesome-textdomain'),
-					'add_new'			=> __('Add Facts', 'awesome-textdomain'),
+					'name'               => __( 'Facts', 'awesome-textdomain' ),
+					'singular_name'      => __( 'Fact', 'awesome-textdomain' ),
+					'add_new'            => __( 'Add New', 'awesome-textdomain' ),
+					'add_new_item'       => __( 'Add New Fact', 'awesome-textdomain' ),
+					'edit_item'          => __( 'Edit Fact', 'awesome-textdomain' ),
 				),
 
 				// Backend
 				'show_ui'             	=> true,
 				'show_in_menu'        	=> true,
 				'rewrite' => array(
-					'slug' 				=> __('/facts', 'awesome-textdomain'),
+					'slug' 				=> __('facts', 'awesome-textdomain'),
 					'with_front' 		=> false
 				),
 				'menu_position'       	=> 50,
@@ -57,12 +56,11 @@ class Profile {
 			'profiles',
 			array(
 				'labels' => array(
-					'name' 				=> __('Profiles', 'awesome-textdomain' ),
-					'singular_name' 	=> __('Profile', 'awesome-textdomain' ),
-					'add_new_item'  	=> __('Add Profile', 'awesome-textdomain'),
-					'edit_item'     	=> __('Edit Profile', 'awesome-textdomain'),
-					'update_item'   	=> __('Update Profile', 'awesome-textdomain'),
-					'add_new'       	=> __('Add Profile', 'awesome-textdomain'),
+					'name'               => __( 'Profiles', 'awesome-textdomain' ),
+					'singular_name'      => __( 'Profile', 'awesome-textdomain' ),
+					'add_new'            => __( 'Add New', 'awesome-textdomain' ),
+					'add_new_item'       => __( 'Add New Profile', 'awesome-textdomain' ),
+					'edit_item'          => __( 'Edit Profile', 'awesome-textdomain' ),
 				),
 
 				// Backend
