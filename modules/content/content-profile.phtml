@@ -124,18 +124,18 @@
 
 				<?php
 
-				$address = [];
+				$address = array();
 
 				if($fact->fact_street !== false) {
-					$address[] = $fact->fact_street;
+					array_push($address, $fact->fact_street);
 				}
 
 				if($fact->fact_plz_city !== false) {
-					$address[] = $fact->fact_plz_city;
+					array_push($address, $fact->fact_plz_city);
 				}
 
 				if($fact->fact_country !== false) {
-					$address[] = $fact->fact_country;
+					array_push($address, $fact->fact_country);
 				}
 
 				echo '<p>' . implode('<br/>', $address) . '</p>';
