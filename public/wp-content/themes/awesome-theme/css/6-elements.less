@@ -1,0 +1,100 @@
+/**
+ * Global Elements
+ */
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	min-height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	.font-size(14);
+	font-family: @font-default;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	color: @c-copy;
+
+}
+
+/*
+ * Block Elements: Margin Bottom only, for vertical rythm
+ */
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl, hr,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre {
+	.cf();
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: (@spacing / @base-font-size)*1rem;
+}
+
+/*
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+
+hr {
+	margin-bottom: ((@spacing - 2px) / @base-font-size)*1rem;
+}
+
+/*
+ * Links
+ */
+
+a {
+	&,
+	&:active,
+	&:focus {
+		color: @c-link;
+		text-decoration: none;
+	}
+	&:hover {
+
+	}
+}
+
+/*
+ * Images
+ */
+
+img {
+	height: auto;
+}
+
+/*
+ * Forms
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: @spacing / 2;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}

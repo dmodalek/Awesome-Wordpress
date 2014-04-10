@@ -1,0 +1,48 @@
+.skin-layout-dev {
+	
+	@dev-color: #F08921;
+	@dev-font-family: Arial, sans-serif;
+
+	.debug-badges {
+		position: fixed;
+		bottom: 1rem;
+		left: 1rem;
+		z-index: 1000;
+	}
+
+		.badge {
+			font-family: @dev-font-family;
+			.font-size(12);
+			user-select: none;
+			cursor: pointer;
+			color: @dev-color;
+			border: 1px solid @dev-color;
+			border-radius: 6px;
+			padding: 4px 12px;
+			background: fade(white, 80%);
+			margin-right: 1rem;
+
+			&.active {
+				color: white;
+				background: fade(@dev-color, 80%);
+			}
+		}
+
+	.terrific-module {
+		display: block;
+		padding: @spacing;
+		color: white;
+		text-transform: capitalize;
+		background-color: fade(@dev-color, 50%);
+	}
+
+	/*
+	 * Debug Vertical Rythm
+	 */
+
+	&.debug-va {
+  		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #efefef), to(#efefef));
+  		background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
+  		background-size: auto @base-line-height;
+	}
+}

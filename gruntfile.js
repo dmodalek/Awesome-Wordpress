@@ -1,90 +1,121 @@
+'use strict';
+
 module.exports = function (grunt) {
+
+	// Dynamically load npm tasks
+
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Banner
+
 		banner: '\n/*\n * Generated with Grunt on <%= grunt.template.today("dd.mm.yyyy") %> at <%= grunt.template.today("H:MM:ss") %>\n */\n',
 
-		////////////////////////////////////////////////////////////////////////////////
+
+		///////////////////////////////////////////////////////////
 
 		// Directories
 
-		dirs: {
+		project: {
 
-			// Styles
-			styles: [
-				'frontend/css/*.scss',
-				'modules/*/*.scss',
-				'modules/*/skins/*.scss',
-				'layout/*.scss',
-				'layout/skins/*.scss',
-			],
+			// Cache
 
-			sass: [
-				'frontend/css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
-			],
+			cache: 'public/wp-content/themes/awesome-theme/cache',
 
 			// Scripts
+
 			scripts: [
-				'frontend/js/*.js',
-				'modules/*/*.js',
-				'modules/*/skins/*.js',
-				'layout/*.js',
-				'layout/skins/*.js'
+				'public/wp-content/themes/awesome-theme/js/*.js',
+				'public/wp-content/themes/awesome-theme/modules/*/*.js',
+				'public/wp-content/themes/awesome-theme/modules/*/skins/*.js'
 			],
 
 			scriptsLint: [
-				'modules/*/*.js',
-				'modules/*/skins/*.js',
-				'layout/*.js',
-				'layout/skins/*.js'
+				'public/wp-content/themes/awesome-theme/modules/*/*.js',
+				'public/wp-content/themes/awesome-theme/modules/*/skins/*.js'
+			],
+
+			// Styles
+
+			styles: [
+				'public/wp-content/themes/awesome-theme/css/*.less',
+				'public/wp-content/themes/awesome-theme/modules/*/*.less',
+				'public/wp-content/themes/awesome-theme/modules/*/skins/*.less'
 			],
 
 			// Markup
+
 			markup: [
-				'*.php',
-				'modules/*/*.phtml',
-				'inc/*.php'
+				'public/wp-content/themes/awesome-theme/*.php',
+				'public/wp-content/themes/awesome-theme/modules/*/*.php'
 			]
 		},
 
-		sass: {
 
-			dev: {
-				options: {
-					style: 'nested',
-					sourcemap: true,
-					require: 'sass-globbing'
-				},
-				files: {
-					'built/<%= pkg.name %>.css': '<%=dirs.sass%>'
-				}
+		///////////////////////////////////////////////////////////
+
+		// Styles
+
+		less_imports: {
+			all: {
+				src : '<%= project.styles %>',
+				dest : '<%= project.cache %>/less-imports.less'
+			}
+		},
+
+		less: {
+			options: {
+				sourceMap: true,
+				sourceMapFilename: '<%= project.cache %>/styles.css.map',
+				sourceMapRootpath: '../',
+				sourceMapBasepath: 'public'
+			}
+
+			,all: {
+				src : '<%= project.cache %>/less-imports.less',
+				dest : '<%= project.cache %>/styles.css'
+			}
+		},
+
+		/**
+		 * https://github.com/nDmitry/grunt-autoprefixer
+		 */
+		autoprefixer: {
+			options: {
+				cascade: true
 			},
+			all: {
+				src: '<%= project.cache %>/styles.css',
+				dest: '<%= project.cache %>/styles.css'
+			}
+		},
 
-			prod: {
+		/**
+		 * CSSMin
+		 * CSS minification
+		 * https://github.com/gruntjs/grunt-contrib-cssmin
+		 */
+		cssmin: {
+			min: {
 				options: {
-					style: 'compressed',
-					sourcemap: true,
-					require: 'sass-globbing'
+					banner: '<%= banner %>'
 				},
 				files: {
-					'built/<%= pkg.name %>.min.css': '<%=dirs.sass%>'
+					'<%= project.cache %>/styles.css': '<%= project.cache %>/styles.css'
 				}
 			}
 		},
 
+
+		///////////////////////////////////////////////////////////
+
+		// Scripts
+
 		jshint: {
-			files: ['gruntfile.js', '<%=dirs.scriptsLint%>'],
-			options: {
-				// options here to override JSHint defaults
-				globals: {
-					jQuery: true,
-					console: false,
-					module: true,
-					document: true
-				}
-			}
+			files: '<%=project.scriptsLint%>'
 		},
 
 		uglify: {
@@ -93,49 +124,103 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: 'built/<%= pkg.name %>.map.js',
+					sourceMap: '<%=project.cache%>/scripts.map.js',
 					sourceMapRoot: '../',
-					sourceMappingURL: '<%= pkg.name %>.map.js'
+					sourceMappingURL: 'scripts.map.js'
 				},
 
 				files: {
-					'built/<%= pkg.name %>.js': ['<%=dirs.scripts%>']
+					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
 				}
 			},
 
-			prod: {
+			min: {
 				options: {
 					banner: '<%= banner %>',
-					beautify: true,
-					sourceMap: 'built/<%= pkg.name %>.min.map.js',
+					sourceMap: '<%=project.cache%>/scripts.map.js',
 					sourceMapRoot: '../',
-					sourceMappingURL: '<%= pkg.name %>.min.map.js'
+					sourceMappingURL: 'scripts.map.js'
 				},
 
 				files: {
-					'built/<%= pkg.name %>.min.js': ['<%=dirs.scripts%>']
+					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
 				}
 			}
 		},
 
+
+
+		///////////////////////////////////////////////////////////
+
+		// Watch
+
 		watch: {
-			options: {
-				livereload: true
+			scripts: {
+				files: ['Gruntfile.js', '<%= project.scripts %>'],
+				tasks: ['scripts-dev']
 			},
-			files: ['gruntfile.js', '<%= dirs.styles %>', '<%= dirs.scripts %>', '<%= dirs.markup %>'],
-			tasks: ['dev']
+			styles: {
+				files: '<%= project.styles %>',
+				tasks: ['styles-dev']
+			},
+			livereload: {
+				options: {
+					livereload: 35729
+				},
+				files: [
+					'Gruntfile.js',
+					'<%= project.scripts %>',
+					'<%= project.styles %>',
+					'<%= project.markup %>',
+				]
+			}
 		}
 	});
 
-	// load all grunt tasks matching the `grunt-*` pattern
-	require('load-grunt-tasks')(grunt);
 
-	// Default
-	grunt.registerTask('default', ['dev', 'watch']);
+	///////////////////////////////////////////////////////////
+	
+	// Default - Dev Task
 
-	// Dev
-	grunt.registerTask('dev', ['sass:dev', 'jshint', 'uglify:dev']);
+	grunt.registerTask('default', [
+		'styles-dev',
+		'scripts-dev',
+		'watch'
+	]);
 
-	// Prod
-	grunt.registerTask('prod', ['sass:prod', 'jshint', 'uglify:prod']);
+
+	// Min - Build Task
+	
+	grunt.registerTask('min', [
+		'styles-min',
+		'scripts-min'
+	]);
+
+
+	///////////////////////////////////////////////////////////
+
+	// Sub Tasks
+
+	grunt.registerTask('styles-dev', [
+		'less_imports',
+		'less',
+//		'autoprefixer'
+	]);
+
+	grunt.registerTask('styles-min', [
+		'less_imports',
+		'less',
+		'autoprefixer',
+		'cssmin'
+	]);
+
+	grunt.registerTask('scripts-dev', [
+		'jshint',
+		'uglify:dev'
+	]);
+
+	grunt.registerTask('scripts-min', [
+		'jshint',
+		'uglify:min'
+	]);
 };

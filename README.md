@@ -1,63 +1,39 @@
-Wordpress Awesome Theme
-=======================
+# Awesome Wordpress
 
-![Awesome Theme](https://raw.github.com/dmodalek/wordpress-awesome-theme/master/screenshot.png)
+![Awesome Wordpress](https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png)
 
-A wordpress boilerplate theme which is based on:
+A Kickstart for your next Wordpress Project using Terrific, LESS and Grunt.
 
-- The Terrific Concept (https://github.com/brunschgi/terrificjs)
-- The official Wordpress Starter Theme (https://github.com/Automattic/_s/)
-- HTML5 Mobile Boilerplate (http://html5boilerplate.com/mobile)
-- Grunt (https://github.com/gruntjs/grunt)
+- Based on [github.com/dmodalek/awesome-kickstart](http://github.com/dmodalek/awesome-kickstart)
 
 
 Quickstart
 ------
 
-Download Wordpress from http://wordpress.org/download or via command line
+## Getting started
+
+* Clone this repo in your project folder
+```bash
+  $ git clone git@github.com:dmodalek/Awesome-Wordpress.git .
 ```
-$ curl -O http://wordpress.org/latest.tar.gz
-$ tar -xvzf latest.tar.gz
+* Install dependencies
+```bash
+  $ npm install
 ```
-Change directory to /themes dir
+* Build with Grunt
+```bash
+  $ grunt
 ```
-$ cd my-project/public/wp-content/themes
+* Point your vHost to the project public folder
+```bash
+# Your project
+<VirtualHost *:80>
+    ServerName your-project.loc
+    DocumentRoot "/Users/You/Sites/Your-Project/git"
+</VirtualHost>
 ```
-Clone Awesome Theme
-```
-$ git clone git@github.com:dmodalek/wordpress-awesome-theme.git my-theme-name
-```
-Rename wp-config-sample.php to wp-config.php
-```
+* Rename wp-config-sample.php to wp-config.php
+```bash
 $ cp wp-config-sample.php wp-config.php
 ```
-Start the famous Wordpress 5 Minute Install
-```
-$ open http://your-project.loc/wp-admin/install.php
-```
-In your IDE, search for "awesome-textdomain" and replace it with your own text domain
-
-Build Frontend Files
-------
-
-Install dependencies
-```
-$ npm install
-```
-Start Grunt
-```
-$ grunt
-```
-
-Features
-------
-
-### Environment detection
-APP_ENV is automatically set to __dev__ or __prod__ depending on your virtual host name. If your virtual host name contains __.loc__, APP_ENV is set to __dev__.
-In the __dev__ environment, non-minified assets are referenced and Wordpress debugging is activated. See __debug.log__ for PHP Errors.
-
-### Frontend Helper
-Press __G__ to see the Grid Helper in the Frontend.
-
-### Coding Style
-__.editorconfig__ defines consistent coding styles for your IDE. You need to install a plugin for your IDE. For more info, see http://www.editorstyle.org.
+* Open your browser and start the Wordpress install
