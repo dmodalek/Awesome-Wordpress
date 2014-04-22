@@ -138,8 +138,7 @@ function theme_setup() {
 	 * Constructor
 	 */
 
-	new Theme\PostType\Fact();
-	new Theme\PostType\Profile();
+	new Theme\PostType\Example();
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
