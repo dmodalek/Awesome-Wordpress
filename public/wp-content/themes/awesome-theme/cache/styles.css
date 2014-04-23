@@ -1214,6 +1214,52 @@ img.alignnone {
   padding-left: 12px;
   padding-right: 12px;
 }
+@media (min-width: 860px) {
+  .mod-mainnav {
+    margin-left: 0.87719298%;
+    margin-right: 0.87719298%;
+    float: left;
+    width: 64.9122807%;
+    width: 8;
+  }
+  .debug-grid .mod-mainnav:before,
+  .debug-grid .mod-mainnav:after {
+    display: block !important;
+    text-align: center;
+    color: grey;
+    font-size: 12px;
+  }
+  .debug-grid .mod-mainnav:before {
+    content: 'col-8' !important;
+  }
+  .debug-grid .mod-mainnav:after {
+    clear: both;
+    content: "_";
+    color: transparent;
+    height: 10px;
+  }
+  .debug-grid .mod-mainnav:after:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .debug-grid .mod-mainnav:before {
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+  }
+  .debug-grid .mod-mainnav:before,
+  .debug-grid .mod-mainnav:after {
+    margin: 10px 0 10px 0;
+    background-color: rgba(128, 128, 128, 0.2);
+  }
+  .mod-mainnav li {
+    padding-top: 24px;
+    margin-right: 24px;
+  }
+  .mod-mainnav li:last-child {
+    margin-right: 0;
+  }
+}
 .skin-example-woot .text {
   color: blue;
 }

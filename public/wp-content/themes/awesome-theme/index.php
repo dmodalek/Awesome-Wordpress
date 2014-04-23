@@ -2,7 +2,6 @@
 
 <main class="main richtext" role="main">
 
-	<h1>Awesome Kickstart</h1>
 	<h2>Heading H2</h2>
 	<h3>Heading H3</h3>
 	<h4>Heading H4</h4>

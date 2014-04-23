@@ -29,5 +29,7 @@
 		<div class=container">
 
 			<header class="header" role="banner">
+				<h1>Awesome Kickstart</h1>
 				<?php echo module('logo') ?>
+				<?php echo module('mainnav') ?>
 			</header>

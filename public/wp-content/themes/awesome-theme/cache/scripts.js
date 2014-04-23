@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 22.04.2014 at 20:32:34
+ * Generated with Grunt on 23.04.2014 at 13:33:02
  */
 
 var Tc = Tc || {};
@@ -265,6 +265,18 @@ function() {
         },
         on: function(a) {
             console.log("Layout Module loaded"), a();
+        },
+        after: function() {}
+    });
+}(Tc.$), function() {
+    "use strict";
+    Tc.Module.Example = Tc.Module.extend({
+        init: function(a, b, c) {
+            this._super(a, b, c);
+        },
+        on: function(a) {
+            this.$ctx;
+            a();
         },
         after: function() {}
     });
