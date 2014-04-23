@@ -755,28 +755,32 @@ function wp_print_media_templates() {
 						</select>
 						<input type="text" class="link-to-custom" data-setting="linkUrl" />
 					</div>
-					<div class="advanced">
+					<div class="advanced-section">
 						<h3><a class="advanced-toggle" href="#"><?php _e('Advanced Options'); ?></a></h3>
-						<div class="hidden">
-							<label class="setting title-text">
-								<span><?php _e('Image Title Attribute'); ?></span>
-								<input type="text" data-setting="title" value="{{ data.model.title }}" />
-							</label>
-							<label class="setting extra-classes">
-								<span><?php _e('Image CSS Class'); ?></span>
-								<input type="text" data-setting="extraClasses" value="{{ data.model.extraClasses }}" />
-							</label>
-							<div class="setting link-target">
-								<label><input type="checkbox" data-setting="linkTargetBlank" value="_blank" <# if ( data.model.linkTargetBlank ) { #>checked="checked"<# } #>><?php _e( 'Open link in a new window/tab' ); ?></label>
+						<div class="advanced-settings hidden">
+							<div class="advanced-image">
+								<label class="setting title-text">
+									<span><?php _e('Image Title Attribute'); ?></span>
+									<input type="text" data-setting="title" value="{{ data.model.title }}" />
+								</label>
+								<label class="setting extra-classes">
+									<span><?php _e('Image CSS Class'); ?></span>
+									<input type="text" data-setting="extraClasses" value="{{ data.model.extraClasses }}" />
+								</label>
 							</div>
-							<label class="setting link-rel">
-								<span><?php _e('Link Rel'); ?></span>
-								<input type="text" data-setting="linkRel" value="{{ data.model.linkClassName }}" />
-							</label>
-							<label class="setting link-class-name">
-								<span><?php _e('Link CSS Class'); ?></span>
-								<input type="text" data-setting="linkClassName" value="{{ data.model.linkClassName }}" />
-							</label>
+							<div class="advanced-link">
+								<div class="setting link-target">
+									<label><input type="checkbox" data-setting="linkTargetBlank" value="_blank" <# if ( data.model.linkTargetBlank ) { #>checked="checked"<# } #>><?php _e( 'Open link in a new window/tab' ); ?></label>
+								</div>
+								<label class="setting link-rel">
+									<span><?php _e('Link Rel'); ?></span>
+									<input type="text" data-setting="linkRel" value="{{ data.model.linkClassName }}" />
+								</label>
+								<label class="setting link-class-name">
+									<span><?php _e('Link CSS Class'); ?></span>
+									<input type="text" data-setting="linkClassName" value="{{ data.model.linkClassName }}" />
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -997,7 +1001,7 @@ function wp_print_media_templates() {
 				<# } ); #>
 			</div>
 		<# } else { #>
-			<div class="gallery-error">
+			<div class="wpview-error">
 				<div class="dashicons dashicons-format-gallery"></div><p><?php _e( 'No items found.' ); ?></p>
 			</div>
 		<# } #>
@@ -1028,17 +1032,23 @@ function wp_print_media_templates() {
 			<div class="dashicons dashicons-edit edit"></div>
 			<div class="dashicons dashicons-no-alt remove"></div>
 		</div>
-		<div class="wp-playlist wp-{{ data.type }}-playlist wp-playlist-{{ data.style }}">
-			<# if ( 'audio' === data.type ){ #>
-			<div class="wp-playlist-current-item"></div>
-			<# } #>
-			<{{ data.type }} controls="controls" preload="none" <#
-				if ( data.width ) { #> width="{{ data.width }}"<# }
-				#><# if ( data.height ) { #> height="{{ data.height }}"<# } #>></{{ data.type }}>
-			<div class="wp-playlist-next"></div>
-			<div class="wp-playlist-prev"></div>
-		</div>
-		<div class="wpview-overlay"></div>
+		<# if ( data.tracks ) { #>
+			<div class="wp-playlist wp-{{ data.type }}-playlist wp-playlist-{{ data.style }}">
+				<# if ( 'audio' === data.type ){ #>
+				<div class="wp-playlist-current-item"></div>
+				<# } #>
+				<{{ data.type }} controls="controls" preload="none" <#
+					if ( data.width ) { #> width="{{ data.width }}"<# }
+					#><# if ( data.height ) { #> height="{{ data.height }}"<# } #>></{{ data.type }}>
+				<div class="wp-playlist-next"></div>
+				<div class="wp-playlist-prev"></div>
+			</div>
+			<div class="wpview-overlay"></div>
+		<# } else { #>
+			<div class="wpview-error">
+				<div class="dashicons dashicons-video-alt3"></div><p><?php _e( 'No items found.' ); ?></p>
+			</div>
+		<# } #>
 	</script>
 
 	<script type="text/html" id="tmpl-crop-content">

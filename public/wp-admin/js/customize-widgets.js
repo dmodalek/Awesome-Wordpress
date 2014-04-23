@@ -722,7 +722,7 @@
 			}, 250 );
 
 			// Trigger widget form update when hitting Enter within an input
-			this.container.find( '.widget-content' ).on( 'keydown', 'input', function( e ) {
+			$widgetContent.on( 'keydown', 'input', function( e ) {
 				if ( 13 === e.which ) { // Enter
 					e.preventDefault();
 					self.updateWidget( { ignoreActiveElement: true } );
@@ -942,6 +942,7 @@
 			params.action = 'update-widget';
 			params.wp_customize = 'on';
 			params.nonce = api.Widgets.data.nonce;
+			params.theme = api.settings.theme.stylesheet;
 
 			data = $.param( params );
 			$inputs = this._getInputs( $widgetContent );
@@ -1614,7 +1615,7 @@
 				widgetNumber = widget.get( 'multi_number' );
 			}
 
-			controlHtml = $( '#widget-tpl-' + widget.get( 'id' ) ).html();
+			controlHtml = $.trim( $( '#widget-tpl-' + widget.get( 'id' ) ).html() );
 			if ( widget.get( 'is_multi' ) ) {
 				controlHtml = controlHtml.replace( /<[^<>]+>/g, function( m ) {
 					return m.replace( /__i__|%i%/g, widgetNumber );

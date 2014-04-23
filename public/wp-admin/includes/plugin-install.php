@@ -53,7 +53,7 @@ function plugins_api($action, $args = null) {
 	 *
 	 * @since 2.7.0
 	 *
-	 * @param bool|object         The result object. Default is false.
+	 * @param bool|object $result The result object. Default false.
 	 * @param string      $action The type of information being requested from the Plugin Install API.
 	 * @param object      $args   Plugin API arguments.
 	 */
@@ -74,7 +74,7 @@ function plugins_api($action, $args = null) {
 		$request = wp_remote_post( $url, $args );
 
 		if ( $ssl && is_wp_error( $request ) ) {
-			trigger_error( __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>.' ) . ' ' . '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)', headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE );
+			trigger_error( __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>.' ) . ' ' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ), headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE );
 			$request = wp_remote_post( $http_url, $args );
 		}
 
