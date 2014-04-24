@@ -1259,6 +1259,10 @@ img.alignnone {
   .mod-mainnav li:last-child {
     margin-right: 0;
   }
+  .mod-mainnav .current_page_item a,
+  .mod-mainnav .current-menu-item a {
+    color: #f08921;
+  }
 }
 .skin-example-woot .text {
   color: blue;

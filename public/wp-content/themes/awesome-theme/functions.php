@@ -96,9 +96,9 @@ function theme_setup() {
 	 */
 
 	if(APP_ENV == 'dev') {
-		add_editor_style(BUILT_DIR . '/theme.css');
+		add_editor_style(BUILT_DIR . '/styles.css');
 	} else {
-		add_editor_style(BUILT_DIR . '/theme.min.css');
+		add_editor_style(BUILT_DIR . '/styles.min.css');
 	}
 
 
