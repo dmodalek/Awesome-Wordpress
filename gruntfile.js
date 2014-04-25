@@ -121,12 +121,12 @@ module.exports = function (grunt) {
 		uglify: {
 
 			dev: {
+
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: '<%=project.cache%>/scripts.map.js',
-					sourceMapRoot: '../',
-					sourceMappingURL: 'scripts.map.js'
+					sourceMap: true,
+				    sourceMapName: '<%=project.cache%>/scripts.js.map'
 				},
 
 				files: {
@@ -137,9 +137,9 @@ module.exports = function (grunt) {
 			min: {
 				options: {
 					banner: '<%= banner %>',
-					sourceMap: '<%=project.cache%>/scripts.map.js',
+					sourceMap: '<%=project.cache%>/scripts.js.map',
 					sourceMapRoot: '../',
-					sourceMappingURL: 'scripts.map.js'
+					sourceMappingURL: 'scripts.min.js.map'
 				},
 
 				files: {
