@@ -71,7 +71,7 @@ module.exports = function (grunt) {
 				sourceMap: true,
 				sourceMapFilename: '<%= project.cache %>/styles.css.map',
 				sourceMapRootpath: '../',
-				sourceMapBasepath: 'public'
+				sourceMapBasepath: 'public/wp-content/themes/awesome-theme/'
 			}
 
 			,all: {
