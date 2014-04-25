@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 23.04.2014 at 14:02:18
+ * Generated with Grunt on 25.04.2014 at 16:28:53
  */
 
 var Tc = Tc || {};
@@ -270,18 +270,6 @@ function() {
     });
 }(Tc.$), function() {
     "use strict";
-    Tc.Module.Example = Tc.Module.extend({
-        init: function(a, b, c) {
-            this._super(a, b, c);
-        },
-        on: function(a) {
-            this.$ctx;
-            a();
-        },
-        after: function() {}
-    });
-}(Tc.$), function() {
-    "use strict";
     Tc.Module.Example.Woot = function(a) {
         this.on = function(b) {
             this.$ctx;
@@ -313,8 +301,9 @@ function() {
                 a = $(".badge-" + e, d), c.toggleState(a);
             }));
         }, this.toggleState = function(a) {
-            var b = this.$ctx, c = a.attr("href").replace("#", "");
-            a.toggleClass("active"), b.toggleClass("debug-" + c), "mod" == c && this.addModOutline();
+            var b = $("html"), c = this.$ctx, d = a.attr("href").replace("#", "");
+            a.toggleClass("active"), "va" == d && c.toggleClass("debug-" + d), "mod" == d && (b.toggleClass("debug-" + d), 
+            this.addModOutline()), "grid" == d && b.toggleClass("debug-" + d);
         }, this.toggleHash = function(a) {
             var b, c = window.location.hash;
             if (-1 === c.indexOf(a)) b = 0 === c.length ? a : c + "+" + a; else {
@@ -324,7 +313,7 @@ function() {
             }
             window.location.hash = b;
         }, this.addModOutline = function() {
-            var a = this.$ctx;
+            var a = $("html");
             a.hasClass("debug-mod") ? $(".mod:not(.mod-layout):visible").each(function() {
                 var a = $(this), b = a.offset(), c = {
                     height: a.outerHeight(),
@@ -348,4 +337,4 @@ function() {
         };
     };
 }(Tc.$);
-//# sourceMappingURL=scripts.map
+//# sourceMappingURL=scripts.js.map

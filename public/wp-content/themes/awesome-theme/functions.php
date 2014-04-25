@@ -20,19 +20,13 @@ function theme_setup() {
 		define(APP_ENV, 'prod');
 	}
 
-	/**
-	 * Define Paths
-	 *
-	 * The same paths are defined for Javascript in terrific-bootstrap.js
-	 */
-
 	/*
 	 * Register Nav Menus
 	 */
 	register_nav_menus( array(
-		'main-menu'   => __( 'Main Menu', 'awesome-textdomain' ),
-		'lang-menu' => __( 'Lang Menu', 'awesome-textdomain' ),
-		'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' ),
+		'main-menu'   => __( 'Main Menu', 'awesome-textdomain' )
+//		'lang-menu' => __( 'Lang Menu', 'awesome-textdomain' ),
+//		'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' ),
 	));
 
 	/*
@@ -96,9 +90,9 @@ function theme_setup() {
 	 */
 
 	if(APP_ENV == 'dev') {
-		add_editor_style(BUILT_DIR . '/styles.css');
+		add_editor_style(get_template_directory() . '/cache/styles.css');
 	} else {
-		add_editor_style(BUILT_DIR . '/styles.min.css');
+		add_editor_style(get_template_directory() . '/cache/styles.min.css');
 	}
 
 

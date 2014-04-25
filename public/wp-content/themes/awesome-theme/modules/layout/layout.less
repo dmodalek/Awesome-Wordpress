@@ -1,15 +1,21 @@
 .mod-layout {
 
-	.container {
-		max-width: @grid-fixed-width;
+	.page-wrapper {
+		.cf();
+		.center();
 	}
 
-		.header {
-			padding: @spacing/2;
+		.page-header {
+			.cf();
+			margin-bottom: @spacing;
 		}
 
-		.main {
-			padding-left: @spacing/2;
-			padding-right: @spacing/2;
+		.page-main {
+			.col(12);
+			margin-bottom: @spacing;
+		}
+
+		.page-footer {
+			.cf();
 		}
 }

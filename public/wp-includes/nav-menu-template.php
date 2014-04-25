@@ -226,6 +226,7 @@ class Walker_Nav_Menu extends Walker {
  * @return mixed Menu output if $echo is false, false if there are no items or no menu was found.
  */
 function wp_nav_menu( $args = array() ) {
+
 	static $menu_id_slugs = array();
 
 	$defaults = array( 'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
@@ -306,10 +307,10 @@ function wp_nav_menu( $args = array() ) {
 
 	if ( ! $menu || is_wp_error( $menu ) )
 		return false;
-
 	$nav_menu = $items = '';
 
 	$show_container = false;
+
 	if ( $args->container ) {
 		/**
 		 * Filter the list of HTML tags that are valid for use as menu containers.

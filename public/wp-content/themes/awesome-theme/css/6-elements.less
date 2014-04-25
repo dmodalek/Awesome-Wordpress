@@ -18,7 +18,7 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	color: @c-copy;
+	color: @color-copy;
 
 }
 
@@ -38,6 +38,10 @@ pre {
 	margin-bottom: (@spacing / @base-font-size)*1rem;
 }
 
+h1, h2, h3, h4 {
+	color: @color-heading;
+}
+
 /*
  * `hr` elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
@@ -55,12 +59,29 @@ a {
 	&,
 	&:active,
 	&:focus {
-		color: @c-link;
+		color: @color-link;
 		text-decoration: none;
 	}
 	&:hover {
 
 	}
+}
+
+/*
+ * Lists
+ */
+
+ul, li {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+ul, ol, dd {
+	margin-left: (2 * @spacing / @base-font-size) * 1rem;
+}
+
+li {
+	padding-left: @spacing / 2;
 }
 
 /*

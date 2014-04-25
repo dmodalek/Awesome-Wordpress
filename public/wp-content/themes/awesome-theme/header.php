@@ -25,10 +25,11 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<div class=container">
+		<div class=page-wrapper">
 
-			<header class="header" role="banner">
-				<h1>Awesome Kickstart</h1>
+			<header class="page-header" role="banner">
 				<?php echo module('logo') ?>
-				<?php echo module('mainnav') ?>
+				<?php echo module('main-nav') ?>
 			</header>
+
+			<main class="page-main base" role="main">
