@@ -307,6 +307,7 @@ function wp_nav_menu( $args = array() ) {
 
 	if ( ! $menu || is_wp_error( $menu ) )
 		return false;
+
 	$nav_menu = $items = '';
 
 	$show_container = false;
