@@ -2,16 +2,23 @@
 
 <h1>Awesome Kickstart</h1>
 
+<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
+	some more text.</p>
+
 <h2>Heading H2</h2>
 
+<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
+	some more text.</p>
+
 <h3>Heading H3</h3>
+
+<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
+	some more text.</p>
+
 <h4>Heading H4</h4>
 
 <p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text. A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a
-	<a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and some more text.
-	A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text. A paragraph with a <a href="#">Link</a> and some more text.</p>
+	some more text.</p>
 
 <ul>
 	<li>List Item</li>
@@ -25,7 +32,7 @@
 
 <h4>Grid Example</h4>
 
-<p>Use the grid via .row and .col mixins or directly in the Markup as HTML classes.</p>
+<p>Use the grid via .row and .col mixins or as HTML classes in the Markup.</p>
 
 <div class="debug-grid">
 	<div class="row">

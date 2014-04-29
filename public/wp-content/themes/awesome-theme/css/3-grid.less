@@ -4,14 +4,14 @@
 
 // Vars
 
+@grid-columns: 12;
 @grid-fixed-width: 1140px;
-@grid-fixed-gutter: 20px;
-@grid-max-cols: 12;
+@grid-fixed-gutter: 100px;
 
 // Calculations
 
 @grid-fluid-gutter: percentage((100 / (@grid-fixed-width / @grid-fixed-gutter)) / 100);
-@grid-one-col: (100% - (@grid-fluid-gutter * @grid-max-cols)) / @grid-max-cols;
+@grid-one-col: (100% - (@grid-fluid-gutter * @grid-columns)) / @grid-columns;
 
 // Mixins
 
@@ -19,7 +19,7 @@
 	.cf();
 	margin-left: -@grid-fluid-gutter/2;
 	margin-right: -@grid-fluid-gutter/2;
-	.debug-grid(row, @grid-max-cols);
+	.debug-grid(row, @grid-columns);
 }
 
 .col(@cols: 12) {
@@ -33,12 +33,12 @@
 
 .push(@cols: 1) {
 	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols + 1)) !important;
-	.debug-grid(push, @cols);
+//	.debug-grid(push, @cols);
 }
 
 .pull(@cols: 1) {
-	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
-	.debug-grid(pull, @cols);
+	margin-left: -(@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
+//	.debug-grid(pull, @cols);
 }
 
 
@@ -59,7 +59,7 @@
 	.loop(@counter - 1);
 }
 
-.loop (@grid-max-cols);
+.loop (@grid-columns);
 
 
 ///////////////////////////////////////////////////////////

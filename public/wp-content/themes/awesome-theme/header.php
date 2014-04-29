@@ -37,8 +37,9 @@
 		<div class="page-wrapper">
 
 			<header class="page-header" role="banner">
-				<?php echo module('logo') ?>
-				<?php echo module('main-nav') ?>
+					<?php echo module('main-nav')->template('toggle')->skin('toggle') ?>
+					<?php echo module('logo') ?>
+					<?php echo module('main-nav')->template('items')->skin('items') ?>
 			</header>
 
 			<div class="page-main base" role="main">

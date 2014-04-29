@@ -36,6 +36,15 @@ pre {
 	.cf();
 	padding: 0;
 	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul, ol, dl, hr,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre {
+	margin-bottom: @half-spacing;
 }
 
 /*
@@ -67,14 +76,15 @@ a {
  * Lists
  */
 
-ul, li {
+ul, ol, dd {
+	margin-left: (2 * @spacing / @base-font-size) * 1rem;
+}
+
+li {
 	padding-left: 0;
 	margin-left: 0;
 }
 
-ul, ol, dd {
-	margin-left: (2 * @spacing / @base-font-size) * 1rem;
-}
 
 
 /*

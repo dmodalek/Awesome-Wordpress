@@ -1,0 +1,54 @@
+.skin-main-nav-items {
+
+		//
+		// @ Mobile
+
+		.col(12);
+
+		.nav-list-l1 {
+			.cf();
+			.nav-list();
+			width: 100%;
+			display: none;
+
+			> li {
+				display: block;
+				padding: @half-spacing 0;
+
+				> a {
+					.h3();
+				}
+			}
+		}
+
+
+		//
+		// @ Desktop
+
+		@media (min-width: @desktop-min) {
+
+			.col(8);
+
+			.inner {
+				height: @pageHeaderHeightDesktop;
+			}
+
+			.nav-list-l1 {
+				.vertical-align();
+				.nav-list();
+
+				> li {
+
+					&.current_page_item a,
+					&.current-menu-item a,
+					&:hover a {
+						color: @color-hover;
+					}
+				}
+			}
+		}
+}
+
+
+
+

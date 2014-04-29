@@ -1,0 +1,34 @@
+.skin-main-nav-toggle {
+
+	.col(3);
+
+	.mobile-toggle {
+		line-height: @pageHeaderHeightMobile;
+
+		&.active {
+			.icon {
+				fill: @color-hover;
+			}
+		}
+
+		.icon-bars {
+			outline: none;
+			fill: @color-copy;
+
+			&:hover {
+				fill: @color-hover;
+			}
+		}
+	}
+
+	//
+	// @ Tablet
+
+	@media (min-width: @desktop-min) {
+		display: none;
+	}
+}
+
+
+
+
