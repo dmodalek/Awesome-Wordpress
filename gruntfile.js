@@ -148,7 +148,9 @@ module.exports = function (grunt) {
 			}
 		},
 
+		///////////////////////////////////////////////////////////
 
+		clean: ['<%=project.cache%>/less-imports.less'],
 
 		///////////////////////////////////////////////////////////
 
@@ -204,13 +206,15 @@ module.exports = function (grunt) {
 	grunt.registerTask('styles-dev', [
 		'less_imports',
 		'less',
-		'autoprefixer'
+		'autoprefixer',
+		'clean'
 	]);
 
 	grunt.registerTask('styles-min', [
 		'less_imports',
 		'less',
 		'autoprefixer',
+		'clean',
 		'cssmin'
 	]);
 
