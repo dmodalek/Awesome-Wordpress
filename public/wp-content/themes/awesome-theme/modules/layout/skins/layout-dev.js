@@ -172,8 +172,6 @@
 					}
 
 					var $overlay = $('<span class="terrific-module">' + name + '</span>').css({
-						'zIndex': ($this.css('zIndex') + 1),
-						'position': positioning,
 						'width': dimension.width,
 						'height': dimension.height,
 						'top': position.top,
