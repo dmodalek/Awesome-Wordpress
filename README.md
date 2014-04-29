@@ -37,3 +37,16 @@ Quickstart
 $ cp wp-config-sample.php wp-config.php
 ```
 * Open your browser and start the Wordpress install
+
+
+Fronend Architecture
+------
+
+1-normalize.less - cross browser default styles (http://necolas.github.io/normalize.css)
+2-vars.less - define variables like colors or font-sizes
+3-grid.less - grid  classes and mixins
+4-helper.less - classes and mixins to use in every project like clearfix or vertical align
+5-typo.less - typography and font families
+6-elements.less - default styles for html elements like link color or paragraph margins
+7-objects.less - reusable code snippets for UI objects like navigations or flyouts
+8-wordpress.less - wordpress specific classes for the rich text editor

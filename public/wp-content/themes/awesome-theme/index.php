@@ -1,5 +1,7 @@
 <? get_header(); ?>
 
+<h1>Awesome Kickstart</h1>
+
 <h2>Heading H2</h2>
 
 <h3>Heading H3</h3>
@@ -13,8 +15,7 @@
 
 <ul>
 	<li>List Item</li>
-	<li>List Item</li>
-	<li>
+	<li>List Item
 		<ul>
 			<li>Nested List Item</li>
 			<li>Nested List Item</li>
