@@ -1,16 +1,27 @@
 .mod-logo {
 
-	.col(4);
+	//
+	// @ Mobile
+
+	.col(9);
 
 	.inner {
-		height: @pageHeaderHeight;
+		height: @pageHeaderHeightMobile;
 	}
 
-	///////////////////////////////////////////////////////////
+	//
+	// @ Desktop
+
+	@media (min-width: @desktop-min) {
+
+		.col(4);
+
+		.inner {
+			height: @pageHeaderHeightDesktop;
+		}
 
 		.logo-link {
 			.vertical-align();
-			display: inline-block;
 		}
-
+	}
 }

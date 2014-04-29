@@ -1,0 +1,62 @@
+{
+	"metadata": {
+		"name": "Awesome Wordpress",
+		"lastOpened": 1398760796167,
+		"created": 1398760642783
+	},
+	"iconSets": [
+		{
+			"selection": [
+				{
+					"id": 177,
+					"order": 2,
+					"prevSize": 28
+				}
+			],
+			"id": 1,
+			"metadata": {
+				"name": "Awesome Wordpress"
+			},
+			"height": 1024,
+			"prevSize": 28,
+			"icons": [
+				{
+					"id": 0,
+					"paths": [
+						"M877.714 768v73.143q0 14.857-10.857 25.714t-25.714 10.857h-804.571q-14.857 0-25.714-10.857t-10.857-25.714v-73.143q0-14.857 10.857-25.714t25.714-10.857h804.571q14.857 0 25.714 10.857t10.857 25.714zM877.714 475.429v73.143q0 14.857-10.857 25.714t-25.714 10.857h-804.571q-14.857 0-25.714-10.857t-10.857-25.714v-73.143q0-14.857 10.857-25.714t25.714-10.857h804.571q14.857 0 25.714 10.857t10.857 25.714zM877.714 182.857v73.143q0 14.857-10.857 25.714t-25.714 10.857h-804.571q-14.857 0-25.714-10.857t-10.857-25.714v-73.143q0-14.857 10.857-25.714t25.714-10.857h804.571q14.857 0 25.714 10.857t10.857 25.714z"
+					],
+					"tags": [
+						"bars"
+					],
+					"defaultCode": 61641,
+					"grid": 14
+				}
+			],
+			"invisible": false
+		}
+	],
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {},
+			"metrics": {
+				"emSize": 512,
+				"baseline": 6.25,
+				"whitespace": 50
+			}
+		},
+		"imagePref": {
+			"color": 0,
+			"height": 32,
+			"columns": 16,
+			"margin": 16,
+			"sprites": true
+		},
+		"historySize": 100,
+		"showCodes": true,
+		"search": ""
+	},
+	"externalSets": []
+}

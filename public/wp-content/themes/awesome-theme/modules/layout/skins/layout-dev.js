@@ -22,6 +22,9 @@
 			// Activate a badge on page load
 			this.activateBadges();
 
+			// Resize
+			this.onResize();
+
 			// call parent constructor
 			parent.on(callback);
 		};
@@ -80,6 +83,15 @@
 					self.toggleState($badge);
 				});
 			}
+		};
+
+		this.onResize = function() {
+
+			var self = this;
+
+			$(window).resize(function() {
+				self.updateModOutline();
+			});
 		};
 
 		///////////////////////////////////////////////////////////
@@ -183,6 +195,15 @@
 				$('.terrific-module').remove();
 			}
 		};
+
+		///////////////////////////////////////////////////////////
+
+		this.updateModOutline = function () {
+			$('.terrific-module').remove();
+			this.addModOutline();
+		};
+
+		///////////////////////////////////////////////////////////
 	};
 
 

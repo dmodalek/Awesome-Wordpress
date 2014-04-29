@@ -3,16 +3,23 @@
 	.page-wrapper {
 		.cf();
 		.center();
+
+		//
+		// @ Mobile
+
+		@media (max-width: @mobile-max) {
+			padding: @half-spacing @half-spacing - @grid-fluid-gutter;
+		}
 	}
 
 		.page-header {
 			.cf();
-			margin-bottom: @spacing;
+			margin-bottom: @half-spacing;
 		}
 
 		.page-main {
 			.col(12);
-			margin-bottom: @spacing;
+			margin-bottom: @half-spacing;
 		}
 
 		.page-footer {

@@ -25,11 +25,20 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<div class=page-wrapper">
+		<!-- Icon Moon SVG Definition !-->
+		<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+			<defs>
+				<g id="icon-bars">
+					<path class="path1" d="M27.429 24v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804zM27.429 14.857v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804zM27.429 5.714v2.286q0 0.464-0.339 0.804t-0.804 0.339h-25.143q-0.464 0-0.804-0.339t-0.339-0.804v-2.286q0-0.464 0.339-0.804t0.804-0.339h25.143q0.464 0 0.804 0.339t0.339 0.804z" />
+				</g>
+			</defs>
+		</svg>
+
+		<div class="page-wrapper">
 
 			<header class="page-header" role="banner">
 				<?php echo module('logo') ?>
 				<?php echo module('main-nav') ?>
 			</header>
 
-			<main class="page-main base" role="main">
+			<div class="page-main base" role="main">
