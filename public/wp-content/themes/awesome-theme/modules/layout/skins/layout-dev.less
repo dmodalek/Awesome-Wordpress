@@ -15,14 +15,14 @@
 			cursor: pointer;
 			color: @color-dev;
 			border: 1px solid @color-dev;
-			border-radius: 6px;
 			padding: 4px 12px;
-			background: fade(white, 80%);
+			background: white;
 			margin-right: 1rem;
 
+			&:hover,
 			&.active {
 				color: white;
-				background: fade(@color-dev, 80%);
+				background: @color-dev;
 			}
 		}
 
@@ -33,6 +33,7 @@
 		pointer-events: none;
 		padding-left: @spacing/4;
 		color: white;
+		text-shadow: 0px 0px 1px black;
 		background-color: fade(@color-dev, 50%);
 		z-index: 9999;
 	}

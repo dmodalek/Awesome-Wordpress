@@ -63,6 +63,9 @@
 
 				// Toggle Hash
 				self.toggleHash(type);
+
+				// Update Mod Outlines
+				self.updateModOutline();
 			});
 		};
 
