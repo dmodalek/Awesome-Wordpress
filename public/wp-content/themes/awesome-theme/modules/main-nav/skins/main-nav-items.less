@@ -43,7 +43,6 @@
 			.nav-list();
 
 			> li {
-				line-height: @heightLogoDesktop;
 				margin-right: @spacing;
 
 				&.current_page_item a,
@@ -68,6 +67,14 @@
 
 	@media (min-width: @desktop-min) {
 		.col(8);
+
+		.nav-list-l1 {
+			.nav-list();
+
+			> li {
+				line-height: @heightLogoDesktop;
+			}
+		}
 	}
 }
 
