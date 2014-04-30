@@ -1,7 +1,20 @@
 .skin-main-nav-items {
 
-		//
-		// @ Mobile
+	//
+	// @ All Viewports
+
+	.nav-list-l1 {
+
+		a {
+			.h3();
+		}
+
+	}
+
+	//
+	// @ Mobile
+
+	@media (max-width: @mobile-max) {
 
 		.col(12);
 
@@ -14,39 +27,48 @@
 			> li {
 				display: block;
 				padding: @half-spacing 0;
+			}
+		}
+	}
 
-				> a {
-					.h3();
+
+	//
+	// @ Tablet and up
+
+	@media (min-width: @tablet-min) {
+
+		.col(12);
+
+		.nav-list-l1 {
+			.nav-list();
+
+			> li {
+				line-height: @heightLogoDesktop;
+				margin-right: @spacing;
+
+				&.current_page_item a,
+				&.current-menu-item a,
+				&:hover a {
+					color: @color-hover;
 				}
 			}
 		}
+	}
+
+	//
+	// @ Tablet Med and up
+
+	@media (min-width: @tablet-med) {
+		.col(9);
+	}
 
 
-		//
-		// @ Desktop
+	//
+	// @ Desktop and up
 
-		@media (min-width: @desktop-min) {
-
-			.col(8);
-
-			.inner {
-				height: @pageHeaderHeightDesktop;
-			}
-
-			.nav-list-l1 {
-				.vertical-align();
-				.nav-list();
-
-				> li {
-
-					&.current_page_item a,
-					&.current-menu-item a,
-					&:hover a {
-						color: @color-hover;
-					}
-				}
-			}
-		}
+	@media (min-width: @desktop-min) {
+		.col(8);
+	}
 }
 
 

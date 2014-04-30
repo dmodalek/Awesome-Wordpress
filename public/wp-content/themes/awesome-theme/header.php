@@ -37,9 +37,12 @@
 		<div class="page-wrapper">
 
 			<header class="page-header" role="banner">
+				<div class="inner">
 					<?php echo module('main-nav')->template('toggle')->skin('toggle') ?>
 					<?php echo module('logo') ?>
 					<?php echo module('main-nav')->template('items')->skin('items') ?>
+				</div>
 			</header>
 
 			<div class="page-main base" role="main">
+				<div class="inner">

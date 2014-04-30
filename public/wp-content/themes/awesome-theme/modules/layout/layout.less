@@ -2,25 +2,34 @@
 
 	.page-wrapper {
 		.cf();
-		.center();
 	}
 
 		.page-header {
-			.cf();
 			background: @color-grey-light;
-			margin-bottom: @half-spacing;
-			padding: @spacing/4 0;
 			border-bottom: 1px solid @color-border;
+
+			> .inner {
+				.center();
+				.padbox();
+			}
 		}
 
 		.page-main {
-			.col(12);
 			margin-bottom: @half-spacing;
+			.center();
+			.padbox();
+
+			> .inner {
+				.col();
+			}
 		}
 
 		.page-footer {
-			.cf();
-			padding-top: @half-spacing;
 			background: @color-grey-light;
+
+			> .inner {
+				.center();
+				.padbox();
+			}
 		}
 }

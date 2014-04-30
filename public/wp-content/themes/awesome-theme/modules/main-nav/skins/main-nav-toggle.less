@@ -1,30 +1,36 @@
 .skin-main-nav-toggle {
 
-	.col(3);
+	//
+	// @ Mobile
 
-	.mobile-toggle {
-		line-height: @pageHeaderHeightMobile;
+	@media (max-width: @tablet-max) {
 
-		&.active {
-			.icon {
-				fill: @color-hover;
+		.col(2);
+
+		.mobile-toggle {
+			line-height: @heightLogoMobile;
+
+			&.active {
+				.icon {
+					fill: @color-hover;
+				}
 			}
-		}
 
-		.icon-bars {
-			outline: none;
-			fill: @color-copy;
+			.icon-bars {
+				outline: none;
+				fill: @color-copy;
 
-			&:hover {
-				fill: @color-hover;
+				&:hover {
+					fill: @color-hover;
+				}
 			}
 		}
 	}
 
 	//
-	// @ Tablet
+	// @ Tablet & Desktop
 
-	@media (min-width: @desktop-min) {
+	@media (min-width: @tablet-min) {
 		display: none;
 	}
 }

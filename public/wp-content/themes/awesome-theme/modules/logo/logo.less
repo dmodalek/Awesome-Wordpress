@@ -3,27 +3,44 @@
 	//
 	// @ Mobile
 
-	.col(9);
+	@media (max-width: @mobile-max) {
 
-	.inner {
-		text-align: right;
-		height: @pageHeaderHeightMobile;
-		line-height: @pageHeaderHeightMobile;
+		.col(10);
+
+		.inner {
+			text-align: right;
+		}
+
+			.logo {
+				width: 200px;
+				height: @heightLogoMobile;
+			}
 	}
 
 	//
-	// @ Desktop
+	// @ Tablet
+
+	@media (min-width: @tablet-min) and (max-width: @tablet-max) {
+
+		.col(4);
+		margin-bottom: @half-spacing;
+
+			.logo {
+				width: 200px;
+				height: @heightLogoMobile;
+			}
+	}
+
+	//
+	// @ Desktop and up
 
 	@media (min-width: @desktop-min) {
 
 		.col(4);
 
-		.inner {
-			height: @pageHeaderHeightDesktop;
-		}
-
-		.logo-link {
-			.vertical-align();
+		.logo {
+			width: 300px;
+			height: @heightLogoDesktop;
 		}
 	}
 }

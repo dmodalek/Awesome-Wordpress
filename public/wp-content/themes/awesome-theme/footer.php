@@ -1,7 +1,10 @@
+				</div>
 			</div>
 
 			<footer class="page-footer" role="contentinfo">
-				<?php echo module('footer-links') ?>
+				<div class="inner">
+					<?php echo module('footer-links') ?>
+				</div>
 			</footer>
 
 		</div>
