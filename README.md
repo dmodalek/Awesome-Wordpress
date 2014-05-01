@@ -1,12 +1,10 @@
 # Awesome Wordpress
 
-A Kickstart for your next Wordpress Project using Terrific, LESS and Grunt.
+A Boilerplate Theme for your next Wordpress Project.
 
 <img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440">
 
-
-Quickstart
-------
+## Quickstart
 
 * Clone this repo in your project folder
 ```bash
@@ -33,3 +31,26 @@ Quickstart
 $ cp wp-config-sample.php wp-config.php
 ```
 * Open your browser and start the Wordpress install
+
+
+## Features
+
+* Livereloading the browser and file injection upon changes in CSS, JS or HTML
+* Sourcemaps for CSS and JS
+* Automatic CSS Vendor prefixes
+* Debug Helper for your Grid System
+* Baseline HTML5 template and features, DNS prefetching, responsive meta
+* Encourages one-file CSS/JS in the view (HTML) for performance
+* Includes jQuery CDN and relative fallback
+* Includes Modernizr and HTML5 Shiv
+* Google Universal Analytics snippet
+* Open source workflow with Grunt.js running on Node.js
+* Includes .editorconfig for consistent coding styles in IDEs
+* Standard .gitignore to ignore standard ignorables such as .DS_Store
+* JSHint .jshintrc file for configuring JavaScript linting
+
+
+## Based on
+* Grunt [http://gruntjs.com](http://gruntjs.com)
+* Terrific [https://github.com/brunschgi/terrificjs](https://github.com/brunschgi/terrificjs)
+* Fireshell [github.com/toddmotto/fireshell](https://github.com/toddmotto/fireshell)
