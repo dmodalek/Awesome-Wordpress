@@ -34,7 +34,7 @@
 		this.addDebugBadges = function () {
 
 			var $ctx = this.$ctx,
-				$badgeContainer = $('<div class="debug-badges"></div>'),
+				$badgeContainer = $('<div class="awesome-debug"></div>'),
 				badgeNames = ['Grid', 'Mod', 'VA'];
 
 			$ctx.prepend($badgeContainer);
@@ -42,8 +42,11 @@
 			$.each(badgeNames, function (index, element) {
 
 				var $badge = $('<a href="#' + element.toLowerCase() + '" class="badge badge-' + element.toLowerCase() + '">' + element + '</a>');
-				$badgeContainer.prepend($badge);
+				$badgeContainer.append($badge);
 			});
+
+			// Add viewport info
+			$badgeContainer.append('<span class="viewport-info">@</span>');
 		};
 
 		this.onBadgeClick = function() {

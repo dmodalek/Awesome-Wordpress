@@ -1,8 +1,8 @@
 .skin-layout-dev {
 	
-	@color-dev: #F08921;
+	@color-dev: #EB4A4B;
 
-	.debug-badges {
+	.awesome-debug {
 		position: fixed;
 		bottom: 1rem;
 		left: 1rem;
@@ -23,6 +23,26 @@
 			&.active {
 				color: white;
 				background: @color-dev;
+			}
+		}
+
+		.viewport-info {
+			.font-size(12);
+			user-select: none;
+			color: grey;
+			padding: 4px 12px;
+			background: white;
+			border: 1px solid grey;
+
+			&:after {
+				content: ' Mobile';
+
+				@media (min-width: @tablet-min) {
+					content: ' Tablet'
+				}
+				@media (min-width: @desktop-min) {
+					content: ' Desktop'
+				}
 			}
 		}
 
