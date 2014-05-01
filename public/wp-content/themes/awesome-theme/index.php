@@ -10,26 +10,6 @@
 <p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
 	some more text.</p>
 
-<h3>Heading H3</h3>
-
-<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text.</p>
-
-<h4>Heading H4</h4>
-
-<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text.</p>
-
-<ul>
-	<li>List Item</li>
-	<li>List Item
-		<ul>
-			<li>Nested List Item</li>
-			<li>Nested List Item</li>
-		</ul>
-	</li>
-</ul>
-
 <h4>Grid Example</h4>
 
 <p>Use the grid via .row and .col mixins or as HTML classes in the Markup.</p>

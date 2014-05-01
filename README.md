@@ -1,6 +1,6 @@
 # Awesome Wordpress
 
-![Awesome Wordpress](https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png)
+<img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440">
 
 A Kickstart for your next Wordpress Project using Terrific, LESS and Grunt.
 
