@@ -28,37 +28,70 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <p><img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440"></p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<h2>
+<a name="quickstart" class="anchor" href="#quickstart"><span class="octicon octicon-link"></span></a>Quickstart</h2>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<ul>
+<li>Clone this repo in your project folder</li>
+</ul><div class="highlight highlight-bash"><pre>  <span class="nv">$ </span>git clone git@github.com:dmodalek/Awesome-Wordpress.git .
+</pre></div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>Install dependencies</li>
+</ul><div class="highlight highlight-bash"><pre>  <span class="nv">$ </span>npm install
+</pre></div>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<ul>
+<li>Build with Grunt</li>
+</ul><div class="highlight highlight-bash"><pre>  <span class="nv">$ </span>grunt
+</pre></div>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ul>
+<li>Point your vHost to the project public folder</li>
+</ul><div class="highlight highlight-bash"><pre><span class="c"># Your project</span>
+&lt;VirtualHost *:80&gt;
+    ServerName your-project.loc
+    DocumentRoot <span class="s2">"/Users/You/Sites/Your-Project/git"</span>
+&lt;/VirtualHost&gt;
+</pre></div>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<ul>
+<li>Rename wp-config-sample.php to wp-config.php</li>
+</ul><div class="highlight highlight-bash"><pre><span class="nv">$ </span>cp wp-config-sample.php wp-config.php
+</pre></div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<ul>
+<li>Open your browser and start the Wordpress install</li>
+</ul><h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<ul>
+<li>Livereloading the browser and file injection upon changes in CSS, JS or HTML</li>
+<li>Sourcemaps for CSS and JS</li>
+<li>Automatic CSS Vendor prefixes</li>
+<li>Debug Helper for your Grid System</li>
+<li>Baseline HTML5 template and features, DNS prefetching, responsive meta</li>
+<li>Encourages one-file CSS/JS in the view (HTML) for performance</li>
+<li>Includes jQuery CDN and relative fallback</li>
+<li>Includes Modernizr and HTML5 Shiv</li>
+<li>Google Universal Analytics snippet</li>
+<li>Open source workflow with Grunt.js running on Node.js</li>
+<li>Includes .editorconfig for consistent coding styles in IDEs</li>
+<li>Standard .gitignore to ignore standard ignorables such as .DS_Store</li>
+<li>JSHint .jshintrc file for configuring JavaScript linting</li>
+</ul><h2>
+<a name="technology" class="anchor" href="#technology"><span class="octicon octicon-link"></span></a>Technology</h2>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+<li>Grunt <a href="http://gruntjs.com">http://gruntjs.com</a>
+</li>
+<li>Terrific <a href="https://github.com/brunschgi/terrificjs">https://github.com/brunschgi/terrificjs</a>
+</li>
+<li>Fireshell <a href="https://github.com/toddmotto/fireshell">github.com/toddmotto/fireshell</a>
+</li>
+</ul>
         </section>
 
         <aside id="sidebar">
