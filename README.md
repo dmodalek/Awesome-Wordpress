@@ -1,6 +1,6 @@
 # Awesome Wordpress
 
-A Boilerplate Theme for your next Wordpress Project.
+An opinionated Boilerplate for your next Wordpress Project.
 
 <img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440">
 
@@ -50,7 +50,7 @@ $ cp wp-config-sample.php wp-config.php
 * JSHint .jshintrc file for configuring JavaScript linting
 
 
-## Based on
+## Technology
 * Grunt [http://gruntjs.com](http://gruntjs.com)
 * Terrific [https://github.com/brunschgi/terrificjs](https://github.com/brunschgi/terrificjs)
 * Fireshell [github.com/toddmotto/fireshell](https://github.com/toddmotto/fireshell)
