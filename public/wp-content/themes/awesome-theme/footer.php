@@ -1,7 +1,7 @@
 				</div>
 			</div>
 
-			<footer class="page-footer" role="contentinfo">
+			<footer class="site-footer" role="contentinfo">
 				<div class="inner">
 					<?php echo module('footer-links') ?>
 				</div>

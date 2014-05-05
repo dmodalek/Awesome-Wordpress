@@ -34,9 +34,9 @@
 			</defs>
 		</svg>
 
-		<div class="page-wrapper">
+		<div class="site-wrapper">
 
-			<header class="page-header" role="banner">
+			<header class="site-header" role="banner">
 				<div class="inner">
 					<?php echo module('main-nav')->template('toggle')->skin('toggle') ?>
 					<?php echo module('logo') ?>
@@ -44,5 +44,5 @@
 				</div>
 			</header>
 
-			<div class="page-main base" role="main">
+			<div class="site-main" role="main">
 				<div class="inner">
