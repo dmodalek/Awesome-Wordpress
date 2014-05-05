@@ -2,37 +2,32 @@
 
 <h1>Awesome Kickstart</h1>
 
-<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text.</p>
+<?php
+	// Start the Loop.
+	while ( have_posts() ) : the_post(); ?>
 
-<h2>Heading H2</h2>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php
+			the_title( '<header class="entry-header"><h2 class="entry-title">', '</h2></header><!-- .entry-header -->' );
+		?>
 
-<p>A paragraph with a <a href="#">Link</a> and some more text. A paragraph with a <a href="#">Link</a> and
-	some more text.</p>
-
-<h4>Grid Example</h4>
-
-<p>Use the grid via .row and .col mixins or as HTML classes in the Markup.</p>
-
-<div class="debug-grid">
-	<div class="row">
-		<div class="col-6">
-			<div class="row">
-				<div class="col-3"></div>
-				<div class="col-3"></div>
-				<div class="col-3"></div>
-				<div class="col-3"></div>
-			</div>
+		<div class="entry-content">
+			<?php
+				the_content();
+				wp_link_pages( array(
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+					'after'       => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+				) );
+			?>
 		</div>
-		<div class="col-6">
-			<div class="row">
-				<div class="col-4"></div>
-				<div class="col-4"></div>
-				<div class="col-4"></div>
-			</div>
-		</div>
-	</div>
-</div>
+	</article>
+<?
+	endwhile;
+?>
+
+<?= module('example') ?>
 
 <? get_sidebar(); ?>
 
