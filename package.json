@@ -11,11 +11,10 @@
     "url": "https://github.com/dmodalek/awesome-kickstart"
   },
   "devDependencies": {
-    "grunt": "~0.4.4",
+    "grunt": "~0.4.5",
     "matchdep": "~0.3.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-sass": "~0.7.3",
     "grunt-autoprefixer": "~0.7.3",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-less-imports": "~0.9.1",
