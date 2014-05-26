@@ -3,6 +3,9 @@
 
 namespace Theme\PostType;
 
+//
+// Initialized in functions.php
+// - new Theme\PostType\Example();
 
 class Example {
 

@@ -1,3 +1,21 @@
 .mod-example {
 
+	.debug-grid {
+		margin-bottom: @spacing;
+	}
+
+	.helper-display-table {
+		.display-table();
+		width: 100%;
+
+		> div {
+			padding: @half-spacing;
+			background: @color-grey-light;
+
+			&:first-child {
+				border-right: 1px solid @color-border;
+			}
+		}
+	}
+
 }
