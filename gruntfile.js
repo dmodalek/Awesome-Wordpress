@@ -50,7 +50,8 @@ module.exports = function (grunt) {
 
 			markup: [
 				'public/wp-content/themes/awesome-theme/*.php',
-				'public/wp-content/themes/awesome-theme/modules/*/*.php'
+				'public/wp-content/themes/awesome-theme/*.phtml',
+				'public/wp-content/themes/awesome-theme/modules/*/*.phtml'
 			]
 		},
 
