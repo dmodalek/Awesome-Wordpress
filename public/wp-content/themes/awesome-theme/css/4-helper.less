@@ -101,6 +101,20 @@
 
 ///////////////////////////////////////////////////////////
 
+/*
+ * Use Div's as table for layout
+ */
+
+.display-table() {
+	overflow: hidden;
+	display: table;
+	border-collapse: collapse;
+
+	> div {
+		display: table-cell;
+	}
+}
+
 /**
  * truncate
  * - Truncate overly long text with ...
