@@ -127,23 +127,3 @@
 	display: inline-block;
 	text-overflow: ellipsis;
 }
-
-/**
- * Font size with line-height
- * - Create font-sizes with appropriate line heights
- */
-
-.font-size(@font-size: @base-font-size) {
-
-	@line-height-ratio: @base-line-height / @base-font-size;
-
-	font-size: @font-size * 1px;
-	line-height: @font-size * @line-height-ratio * 1px;
-
-
-	@font-size-for-rem: (@font-size / 10);
-	@line-height-for-rem: (@font-size * @line-height-ratio / 10);
-
-	font-size: ~"@{font-size-for-rem}rem";
-	line-height: ~"@{line-height-for-rem}rem";
-}
