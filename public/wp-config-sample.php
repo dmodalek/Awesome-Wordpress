@@ -14,6 +14,13 @@
  * @package WordPress
  */
 
+// APP ENV
+if (strpos($_SERVER['SERVER_NAME'], '.loc')) {
+	define('APP_ENV', 'dev');
+} else {
+	define('APP_ENV', 'prod');
+}
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
@@ -78,7 +85,11 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define( 'WP_DEBUG',         true );
+define( 'WP_DEBUG_LOG',     true );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'SCRIPT_DEBUG',     false );
+define( 'SAVEQUERIES',      false );
 
 /* That's all, stop editing! Happy blogging. */
 
