@@ -32,7 +32,10 @@ $ cp wp-config-sample.php wp-config.php
 ```
 * Open your browser and start the Wordpress install
 
-* Rename the "awesome-theme" Folder and search / replace all occurences of "awesome-textdomain"
+* Rename everything
+
+	* Rename the Theme Folder "awesome-theme"
+	* Search & replace all occurences of "awesome-textdomain" and "awesome-theme"
 
 ## Features
 
