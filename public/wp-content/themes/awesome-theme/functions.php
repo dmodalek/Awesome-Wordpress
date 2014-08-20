@@ -44,17 +44,12 @@ function theme_setup() {
 	update_option('large_size_h', 300);
 
 	// Update default alignment and size
-	update_option('image_default_align', 'left');
+	update_option('image_default_align', 'none');
 	update_option('image_default_size', 'medium');
 
 	// Add additional image sizes
 	add_image_size('theme-sidebar', 298, 200, false);
 	add_image_size('theme-content-header', 880, 400, false);
-
-	add_image_size('theme-profile-header', 767, 178, true);
-	add_image_size('theme-profile-medium', 200, 200, false);
-	add_image_size('theme-profile-media', 200, 65, false);
-	add_image_size('theme-page-media', 200, 65, false);
 
 
 	// Add multiple Post Thumbnails
