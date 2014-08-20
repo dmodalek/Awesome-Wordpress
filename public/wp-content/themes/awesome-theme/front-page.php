@@ -1,6 +1,6 @@
 <? get_header(); ?>
 
-<h1>Awesome Kickstart</h1>
+<h1>Awesome</h1>
 
 <?php
 	// Start the Loop.
