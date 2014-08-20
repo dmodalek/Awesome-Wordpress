@@ -14,16 +14,16 @@
 /**
  * Include all files from the /include directory
  */
-require get_template_directory() . '/includes/wp-theme.php';
-require get_template_directory() . '/includes/wp-shortcodes.php';
-require get_template_directory() . '/includes/wp-posttypes.php';
-require get_template_directory() . '/includes/wp-taxonomies.php';
-require get_template_directory() . '/includes/wp-walker.php';
-require get_template_directory() . '/includes/wp-filter.php';
-require get_template_directory() . '/includes/wp-actions.php';
+require get_template_directory() . '/php/wp-theme.php';
+require get_template_directory() . '/php/wp-shortcodes.php';
+require get_template_directory() . '/php/wp-posttypes.php';
+require get_template_directory() . '/php/wp-taxonomies.php';
+require get_template_directory() . '/php/wp-walker.php';
+require get_template_directory() . '/php/wp-filter.php';
+require get_template_directory() . '/php/wp-actions.php';
 
-require get_template_directory() . '/includes/terrific.php';
-require get_template_directory() . '/includes/helper.php';
+require get_template_directory() . '/php/terrific.php';
+require get_template_directory() . '/php/helper.php';
 
 /*
  * Init / Setup Theme
