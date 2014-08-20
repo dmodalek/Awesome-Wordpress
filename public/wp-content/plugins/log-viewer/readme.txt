@@ -4,8 +4,8 @@ Contributors: mfisc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CDNHTJWQEP5S2
 Tested up to: 3.9
 Requires at least: 3.4
-Stable Tag: 14.04.22
-Latest Version: 14.04.22-1502
+Stable Tag: 14.05.04
+Latest Version: 14.05.04-1559
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Log-Viewer is also listed on the excellent [Developer Plugin](http://wordpress.o
 * Message if WP_DEBUG not set ( on activation? )
 
 == Changelog ==
+
+= 14.05.04 =
+* Fixed : error calling method static
 
 = 14.04.22 =
 * Added first Debug Bar integration
@@ -135,3 +138,4 @@ The options are only displayed if the file is writeable. Check your permissions.
 
 1. Screenshot shows the file view screen ( with MP6 / WordPress > 3.8 )
 2. Screenshot shows the file view screen
+3. Screenshot shows Debug Bar integration

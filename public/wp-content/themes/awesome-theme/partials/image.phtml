@@ -1,0 +1,14 @@
+<div class="image">
+	<!-- Picturefill !-->
+	 <span data-picture data-alt="<?= $data->images_alt ?>">
+		 <? foreach($data->images as $image): ?>
+			 <!-- <? echo $image['source'] ?> !-->
+		<span class="<?= $data->images_classes ?>" data-src="<?= $image['source'] ?>" data-media="<?= Theme::$MEDIA_QUERY[$image['size']] ?>"></span>
+		 <? endforeach; ?>
+
+		<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+		<noscript>
+			<img src="<?= $data->images['small']['source'] ?>" alt="<?= $data->images_alt ?>">
+		</noscript>
+	</span>
+</div>

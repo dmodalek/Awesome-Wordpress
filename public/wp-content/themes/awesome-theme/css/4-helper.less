@@ -25,6 +25,7 @@
  */
 
 .flex {
+	height: auto;
 	max-width:100%;
     max-height:100%;
 	image-rendering: optimizeQuality;
@@ -82,6 +83,18 @@
 	width: 1px;
 }
 
+/*
+ * Hide only text
+ */
+.th {
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background-color: transparent;
+	text-rendering: auto; // prevent webkit ghost text if text rendering is set to optimizeLegibility
+}
+
 /**
  * Break out of the parent div and expand full width
  */
@@ -126,4 +139,8 @@
 	overflow: hidden;
 	display: inline-block;
 	text-overflow: ellipsis;
+}
+
+.text-shadow() {
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
 }

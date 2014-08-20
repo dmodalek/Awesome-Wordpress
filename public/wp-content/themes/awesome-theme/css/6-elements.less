@@ -83,13 +83,40 @@ li {
  * Forms
  */
 
-input[type="checkbox"],
-input[type="radio"] {
-	margin-right: @spacing / 2;
-}
 
-label[for] {
-	cursor: pointer;
+form {
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin-right: @spacing / 2;
+	}
+
+	input, textarea {
+		border: 1px solid #ccc;
+	}
+
+	input, textarea, select {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	input[type=submit] {
+
+		// @ Tablet and up
+		@media (min-width: @tablet-min) {
+			margin-left: 100px;
+		}
+	}
+
+	label[for] {
+		display: block;
+		cursor: pointer;
+
+		@media (min-width: @tablet-min) {
+			float: left;
+			width: 100px;
+		}
+	}
 }
 
 

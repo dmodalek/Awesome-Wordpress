@@ -10,9 +10,9 @@
  * Plugin Name:       Log Viewer
  * Plugin URI:        http://wordpress.org/extend/plugins/log-viewer/
  * Description:       This plugin provides an easy way to view log files directly in the admin panel.
- * Version:           14.04.22
- * Tag:               14.04.22
- * Timestamp:         14.04.22-1502
+ * Version:           14.05.04
+ * Tag:               14.05.04
+ * Timestamp:         14.05.04-1559
  * Author:            Markus Fischbacher
  * Author URI:        https://plus.google.com/+MarkusFischbacher
  * License:           GPL-2.0+

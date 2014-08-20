@@ -24,7 +24,7 @@ class Log_Viewer_Admin
 	 *
 	 * @var     string
 	 */
-	const VERSION = '14.04.22-1502';
+	const VERSION = '14.05.04-1559';
 
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
@@ -33,7 +33,7 @@ class Log_Viewer_Admin
 	 *
 	 * @var     string
 	 */
-	const VERSION_SHORT = '14.04.22';
+	const VERSION_SHORT = '14.05.04';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -117,6 +117,8 @@ class Log_Viewer_Admin
 	 *
 	 * Function will die if if you are not allowed to edit the file
 	 *
+	 * ToDo: pasted from wordpress core. other solution?
+	 *
 	 * @since 14.04.21
 	 *
 	 * @param        $file
@@ -124,7 +126,7 @@ class Log_Viewer_Admin
 	 *
 	 * @return mixed
 	 */
-	public function validate_file_to_edit( $file, $allowed_files = '' ) {
+	public static function validate_file_to_edit( $file, $allowed_files = '' ) {
 		$code = validate_file( $file, $allowed_files );
 
 		if (!$code )

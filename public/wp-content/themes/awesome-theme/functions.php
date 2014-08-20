@@ -11,198 +11,24 @@
  *
  */
 
-function theme_setup() {
-
-	/*
-	 * APP Env
-	 */
-	if(defined(APP_ENV) == false) {
-		define(APP_ENV, 'prod');
-	}
-
-	/*
-	 * Register Nav Menus
-	 */
-	register_nav_menus( array(
-		'main-menu'   => __( 'Main Menu', 'awesome-textdomain' )
-//		'lang-menu' => __( 'Lang Menu', 'awesome-textdomain' ),
-//		'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' ),
-	));
-
-	/*
-	 * Register Post Thumbnails
-	 */
-
-	add_theme_support('post-thumbnails' );
-
-	// Update default sizes
-	update_option('thumbnail_size_w',140);
-	update_option('thumbnail_size_h', 140);
-	update_option('medium_size_w', 298);
-	update_option('medium_size_h', 200);
-	update_option('large_size_w', 400);
-	update_option('large_size_h', 300);
-
-	// Update default alignment and size
-	update_option('image_default_align', 'none');
-	update_option('image_default_size', 'medium');
-
-	// Add additional image sizes
-	add_image_size('theme-sidebar', 298, 200, false);
-	add_image_size('theme-content-header', 880, 400, false);
-
-
-	// Add multiple Post Thumbnails
-	if (class_exists('MultiPostThumbnails')) {
-		$types = array('page');
-		foreach($types as $type) {
-			new MultiPostThumbnails(array(
-				'label' => 'Secondary Image',
-				'id' => 'secondary-image',
-				'post_type' => $type
-				)
-			);
-			new MultiPostThumbnails(array(
-				'label' => 'Third Image',
-				'id' => 'third-image',
-				'post_type' => $type
-				)
-			);
-		}
-	}
-
-	/*
-	 * Theme Frontend Languages
-	 */
-	load_theme_textdomain('awesome-textdomain', get_template_directory() . '/languages');
-
-
-	/*
-	 * Editor Styles
-	 *
-	 * Add theme.css to include frontend styles in tiny mce
-	 * Overwrite any styles via wordpress.scss
-	 */
-
-	if(APP_ENV == 'dev') {
-		add_editor_style(get_template_directory() . '/cache/styles.css');
-	} else {
-		add_editor_style(get_template_directory() . '/cache/styles.min.css');
-	}
-
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments to output valid HTML5
-	 */
-	add_theme_support('html5', array(
-		'search-form', 'comment-form', 'comment-list',
-	));
-
-	/*
-	 * Enable support for Post Formats, see http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-	));
-
-
-
-	/**
-	 * Include all files from the /inc directory
-	 */
-
-	require get_template_directory() . '/includes/wp-shortcodes.php';
-	require get_template_directory() . '/includes/wp-posttypes.php';
-	require get_template_directory() . '/includes/wp-taxonomies.php';
-	require get_template_directory() . '/includes/wp-walker.php';
-	require get_template_directory() . '/includes/wp-filter.php';
-	require get_template_directory() . '/includes/wp-actions.php';
-
-	require get_template_directory() . '/includes/terrific.php';
-	require get_template_directory() . '/includes/helper.php';
-
-
-	/*
-	 * Constructor
-	 */
-
-	new Theme\PostType\Example();
-}
-add_action( 'after_setup_theme', 'theme_setup' );
-
 /**
- * Enqueue scripts and styles for front end.
- *
- * @return void
+ * Include all files from the /include directory
  */
-function theme_scripts() {
+require get_template_directory() . '/includes/wp-theme.php';
+require get_template_directory() . '/includes/wp-shortcodes.php';
+require get_template_directory() . '/includes/wp-posttypes.php';
+require get_template_directory() . '/includes/wp-taxonomies.php';
+require get_template_directory() . '/includes/wp-walker.php';
+require get_template_directory() . '/includes/wp-filter.php';
+require get_template_directory() . '/includes/wp-actions.php';
 
-	wp_deregister_script('jquery');
+require get_template_directory() . '/includes/terrific.php';
+require get_template_directory() . '/includes/helper.php';
 
-	switch(APP_ENV) {
-
-		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.js', array(), false, true);
-					break;
-		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.min.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.min.js', array(), false, true);
-	}
-
-	wp_enqueue_style('theme-styles');
-	wp_enqueue_script('theme');
-}
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
-
-
-/**
- * Extend the default WordPress body classes.
- *
- * @param array $classes A list of existing body class values.
- * @return array The filtered body class list.
+/*
+ * Init / Setup Theme
  */
-function theme_body_classes( $classes ) {
-
-	$classes[] = 'mod mod-layout';
-
-	if(APP_ENV == 'dev') { $classes[] = 'skin-layout-dev'; }
-
-	return $classes;
-}
-add_filter( 'body_class', 'theme_body_classes' );
-
-
-/**
- * Create a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function theme_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'theme' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
-
+add_action('after_setup_theme', 'Theme::after_setup_theme');
+add_action('admin_init',        'Theme::admin_init');
 
 ?>

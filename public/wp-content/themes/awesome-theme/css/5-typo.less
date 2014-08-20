@@ -46,12 +46,12 @@ h4, .h4 {
 
 .small {
 	font-size: @small-size;
-	line-height: @h4-size * @line-height-ratio;
+	line-height: @small-size * @line-height-ratio;
 }
 
 .micro {
 	font-size: @micro-size;
-	line-height: @h4-size * @line-height-ratio;
+	line-height: @micro-size * @line-height-ratio;
 }
 
 /*
@@ -67,7 +67,7 @@ small {
  */
 
 ::selection {
-	background: @color-copy;
+	background: fade(@color-copy, 20%);
 }
 
 /**
