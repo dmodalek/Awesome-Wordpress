@@ -86,7 +86,7 @@ small {
 
 // Icon Moon
 
-font-face {
+@font-face {
 	font-family: 'Icon Moon';
 	src: url('../fonts/iconmoon/icomoon.eot?rofuzr');
 	src: url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'), url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'), url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'), url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
@@ -99,12 +99,20 @@ font-face {
  * Icon Moon Classes
  */
 
-.icon {
-	display: inline-block;
-	width: 32px;
-	height: 32px;
-	fill: #000000;
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'Icon Moon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	font-size: @icon-size;
+	text-transform: none;
+	line-height: 1;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-.icon-bars {
-	fill: #000000;
+
+.icon-paragraph-left:before {
+	content: "\e601";
 }
