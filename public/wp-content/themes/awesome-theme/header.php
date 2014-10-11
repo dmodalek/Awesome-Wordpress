@@ -6,7 +6,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<meta name="description" content="">
+		<meta name="description" content="<?= bloginfo('description') ?>">
+		<meta name="keywords" content="keyword1, keyword2, keyword3">
 
 		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon-precomposed.png">
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
