@@ -2,7 +2,6 @@
 # Wordpress
 # Based on https://github.com/github/gitignore
 
-.htaccess
 public/wp-content/uploads/
 public/wp-content/blogs.dir/
 public/wp-content/upgrade/
