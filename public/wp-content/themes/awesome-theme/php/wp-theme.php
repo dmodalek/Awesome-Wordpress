@@ -106,9 +106,9 @@ class Theme {
 		 * Overwrite any styles via wordpress.less
 		 */
 		if(APP_ENV == 'dev') {
-			add_editor_style(get_template_directory() . '/cache/styles.css');
+			add_editor_style(get_template_directory_uri() . '/cache/styles.css');
 		} else {
-			add_editor_style(get_template_directory() . '/cache/styles.min.css');
+			add_editor_style(get_template_directory_uri() . '/cache/styles.min.css');
 		}
 
 		/**
