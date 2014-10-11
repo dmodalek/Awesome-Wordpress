@@ -19,7 +19,6 @@ body {
 	margin: 0;
 	overflow: hidden;
 	color: @color-copy;
-	background-color: @color-background;
 
 }
 
@@ -39,6 +38,38 @@ pre {
 	margin-bottom: @half-spacing;
 }
 
+ul, ol, dl, hr,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre {
+	margin-bottom: @half-spacing;
+}
+
+
+/*
+ * Blockquote
+ */
+
+blockquote {
+	border-left: @spacing / 4 solid @color-grey-medium;
+	margin: @spacing;
+	padding: @half-spacing;
+}
+
+blockquote:before {
+	color: @color-grey-medium;
+	content: '”';
+	font-size: @mega-size;
+	line-height: @base-line-height / @giga-size;
+	margin-right: @half-spacing;
+	vertical-align: -0.5em;
+}
+
+blockquote p {
+	display: inline;
+}
+
 
 /*
  * `hr` elements only take up a few pixels, so we need to give them special
@@ -46,7 +77,9 @@ pre {
  */
 
 hr {
+	clear: both;
 	margin-bottom: ((@spacing - 2px) / @base-font-size)*1rem;
+	border: 1px solid @color-border;
 }
 
 /*
@@ -91,30 +124,30 @@ form {
 		margin-right: @spacing / 2;
 	}
 
-	input, textarea {
+	input, button, textarea {
 		border: 1px solid #ccc;
 	}
 
-	input, textarea, select {
+	input, button, textarea, select {
 		width: 100%;
+		line-height: 30px;
+		padding: 0 @half-spacing;
 		max-width: 300px;
 	}
 
-	input[type=submit] {
-
-		// @ Tablet and up
-		@media (min-width: @tablet-min) {
-			margin-left: 100px;
-		}
+	select {
+		padding-top: 4px;
+		padding-bottom: 4px;
 	}
 
 	label[for] {
 		display: block;
 		cursor: pointer;
+		line-height: 30px;
 
 		@media (min-width: @tablet-min) {
 			float: left;
-			width: 100px;
+			width: 140px;
 		}
 	}
 }

@@ -7,14 +7,29 @@
  * on your WordPress site will use a different template.
  *
  */
+?>
 
-get_header();
+<? get_header(); ?>
 
-	while (have_posts()) :
-		the_post();
+<?php
+	// Start the Loop.
+	while ( have_posts() ) : the_post(); ?>
 
-		echo module('content');
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php
+			the_title( '<header class="entry-header"><h2 class="entry-title">', '</h2></header><!-- .entry-header -->' );
+		?>
 
+		<div class="entry-content">
+			<?php
+				the_content();
+			?>
+		</div>
+	</article>
+<?
 	endwhile;
+?>
 
-get_footer();
+<? get_sidebar(); ?>
+
+<? get_footer(); ?>

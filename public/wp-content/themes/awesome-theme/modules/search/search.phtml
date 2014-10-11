@@ -1,0 +1,5 @@
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label for="search" class="vh">Suche</label>
+	<input id="search" type="search" class="search-field" placeholder="Suche" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+	<button type="submit" class="submit">Suchen</button>
+</form>

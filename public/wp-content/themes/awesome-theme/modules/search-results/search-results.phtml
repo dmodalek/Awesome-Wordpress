@@ -1,0 +1,25 @@
+<?	global $wp_query;
+		$results_found = $wp_query->found_posts; ?>
+
+<h2>Ihre Suche ergab <?= sprintf('%1$s Resultate', $results_found); ?></h2>
+
+<?= module('search'); ?>
+
+<?
+
+	while ( have_posts() ) : the_post(); ?>
+
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<a href="<? the_permalink() ?>"><?php
+				the_title('<h3>', '</h3>' );
+			?></a>
+
+			<div class="entry-content">
+				<?php
+					the_excerpt();
+				?>
+			</div>
+		</article>
+<?
+	endwhile;
+?>

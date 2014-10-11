@@ -1,6 +1,6 @@
 <? get_header(); ?>
 
-<h1>Awesome</h1>
+<h1>Frontpage Template</h1>
 
 <?php
 	// Start the Loop.
@@ -14,12 +14,6 @@
 		<div class="entry-content">
 			<?php
 				the_content();
-				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-				) );
 			?>
 		</div>
 	</article>
