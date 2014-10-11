@@ -102,9 +102,12 @@ class Theme {
 		/**
 		 * Add Styles to TinyMCE
 		 *
-		 * Add Stylehseet to include frontend styles in tiny mce
-		 * Overwrite any styles via wordpress.less
+		 * Adds Theme Styles to the Wordpress Editor
+		 * Styles must be wrapped with .richtext
+		 *
+		 * @see 9-wordpress.less
 		 */
+
 		if(APP_ENV == 'dev') {
 			add_editor_style(get_template_directory_uri() . '/cache/styles.css');
 		} else {
@@ -112,9 +115,10 @@ class Theme {
 		}
 
 		/**
-		 * Post Types
+		 * Register Custom Post Types
 		 */
-	//	new Theme\PostType\Example();
+
+//		new Theme\PostType\Example();
 
 	}
 
