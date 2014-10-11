@@ -7,4 +7,5 @@
  * @package nxtheme
  */
 ?>
-<?= module('search'); ?>
+
+<?= module('search') ?>
