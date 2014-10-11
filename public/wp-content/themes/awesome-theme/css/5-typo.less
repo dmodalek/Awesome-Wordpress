@@ -72,20 +72,25 @@ small {
 
 /**
  * Fonts
- * - Give each font a name
  */
 
-@font-default: 'Varela Round', sans-serif;
-@font-icons: 'Ico Moon';
-
-
 // Valera round
-
+@font-default: 'Varela Round', sans-serif;
 @import url(http://fonts.googleapis.com/css?family=Varela+Round);
 
 
-// Icon Moon
+/**
+ * Icon Moon
+ * @link: http://icomoon.io/app
+ *
+ * - Use the Ico Moon App to bundle your icons.
+ * - Download them as font or SVG and use them with HTML classes or mixins
+ *
+ */
 
+// Font Definition
+
+@font-icons: 'Ico Moon';
 @font-face {
 	font-family: 'Ico Moon';
 	src: url('../fonts/icomoon/icomoon.eot?rofuzr');
@@ -95,11 +100,9 @@ small {
 }
 
 
-/**
- * Icon Moon Classes
- */
+// HTML Classes
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .mixin-icon-font {
 	font-family: 'Ico Moon';
 	speak: none;
 	font-style: normal;
@@ -115,4 +118,13 @@ small {
 
 .icon-paragraph-left:before {
 	content: "\e601";
+}
+
+// Mixins
+
+.icon-paragraph-left {
+	&:before {
+		.mixin-icon-font();
+		content: "\e601";
+	}
 }
