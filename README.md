@@ -31,6 +31,7 @@ An opinionated Boilerplate for your next Wordpress Project.
 $ cp wp-config-sample.php wp-config.php
 ```
 * Open your browser and start the Wordpress install
+ — or use the MySQL Dump from the res folder (user: dmodalek / pw: local)
 
 * Rename everything
 
