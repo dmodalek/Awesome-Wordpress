@@ -117,10 +117,12 @@ add_filter( 'body_class', 'theme_body_classes' );
 
 /**
  * Tiny MCE customisations
+ *
+ * @link http://www.kathyisawesome.com/506/custom-styles-for-wordpress-3-9
+ * 
  * @param array $opts
  * @return array
  */
-
 function theme_tiny_mce_before_init(array $opts) {
 
 	// Add .richtext class to tiny mce
