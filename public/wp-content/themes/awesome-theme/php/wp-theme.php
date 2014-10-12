@@ -102,9 +102,9 @@ class Theme {
 		/**
 		 * Add Styles to TinyMCE
 		 *
-		 * Adds Theme Styles to the Wordpress Editor
-		 * Styles must be wrapped with .richtext
+		 * Adds element styles and Styles wrapped with .richtext
 		 *
+		 * @see 6-elements.less
 		 * @see 9-wordpress.less
 		 */
 

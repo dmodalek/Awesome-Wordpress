@@ -19,8 +19,7 @@ require get_template_directory() . '/php/wp-shortcodes.php';
 require get_template_directory() . '/php/wp-posttypes.php';
 require get_template_directory() . '/php/wp-taxonomies.php';
 require get_template_directory() . '/php/wp-walker.php';
-require get_template_directory() . '/php/wp-filter.php';
-require get_template_directory() . '/php/wp-actions.php';
+require get_template_directory() . '/php/wp-hooks.php';
 
 require get_template_directory() . '/php/terrific.php';
 require get_template_directory() . '/php/helper.php';

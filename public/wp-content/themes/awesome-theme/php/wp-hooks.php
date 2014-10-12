@@ -1,6 +1,93 @@
 <?php
 
 /**
+ * Enqueue scripts and styles for front end.
+ *
+ * @return void
+ */
+
+function theme_scripts() {
+
+//	wp_deregister_script('jquery');
+
+	switch(APP_ENV) {
+
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.js', array(), false, true);
+					break;
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.min.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.min.js', array(), false, true);
+	}
+
+	wp_enqueue_style('theme-styles');
+	wp_enqueue_script('theme');
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+
+/**
+ * Removes stylesheets added by plugins
+ *
+ * @static
+ *
+ */
+
+function remove_plugin_stylesheets() {
+	wp_deregister_style('contact-form-7');
+}
+
+add_action('wp_enqueue_scripts', 'remove_plugin_stylesheets', 1000);
+
+
+/**
+ * Register our sidebars and widgetized areas.
+ */
+
+function widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Promo Homepage',
+		'id' => 'promo-homepage',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	));
+
+	register_sidebar( array(
+		'name' => 'Footer',
+		'id' => 'footer',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	));
+}
+
+add_action('widgets_init', 'widgets_init');
+
+
+/**
+ * Remove some admin pages for authors
+ */
+
+function my_remove_menu_pages() {
+
+    global $user_ID;
+
+    if ( current_user_can( 'author' ) ) {
+		remove_menu_page('index.php'); 			// Dashboard
+		remove_menu_page('edit.php'); 			// Posts
+		remove_menu_page('upload.php'); 		// Media
+		remove_menu_page('edit-comments.php'); 	// Comments
+		remove_menu_page('tools.php'); 			// Tools
+    }
+}
+
+add_action( 'admin_init', 'my_remove_menu_pages' );
+
+/**
  * Remove Admin Toolbar for all Users
  */
 
@@ -26,6 +113,41 @@ function theme_body_classes( $classes ) {
 }
 
 add_filter( 'body_class', 'theme_body_classes' );
+
+
+/**
+ * Tiny MCE customisations
+ * @param array $opts
+ * @return array
+ */
+
+function theme_tiny_mce_before_init(array $opts) {
+
+	// Add .richtext class to tiny mce
+	$opts['body_class'] = 'richtext';
+
+	// Define Styles in Dropdown
+	$opts['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
+
+	// Add custom Format for Format Button, see next Function
+	$style_formats = array (
+    	array( 'title' => 'Intro Text', 'block' => 'p', 'classes' => 'intro' ),
+	);
+    $opts['style_formats'] = json_encode( $style_formats );
+    $opts['style_formats_merge'] = false;
+
+	return $opts;
+}
+
+add_filter('tiny_mce_before_init', 'theme_tiny_mce_before_init');
+
+// Add Format Button to Tiny MCE
+function theme_mce_buttons_2( $buttons ){
+    array_splice( $buttons, 1, 0, 'styleselect' );
+    return $buttons;
+}
+
+add_filter( 'mce_buttons_2', 'theme_mce_buttons_2' );
 
 
 /**
