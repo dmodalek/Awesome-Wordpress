@@ -32,7 +32,7 @@ function module($name) {
  * @param $name
  * @return Terrific
  */
-function partial($name, $options) {
+function partial($name, $options = array()) {
 	$template = sprintf('%s/%s.phtml', get_template_directory().'/partials', $name);
 
 	if(file_exists($template)) {

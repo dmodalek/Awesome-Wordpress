@@ -109,9 +109,9 @@ class Theme {
 		 */
 
 		if(APP_ENV == 'dev') {
-			add_editor_style(get_template_directory_uri() . '/cache/styles.css');
+			add_editor_style(get_template_directory_uri() . '/built/styles.css');
 		} else {
-			add_editor_style(get_template_directory_uri() . '/cache/styles.min.css');
+			add_editor_style(get_template_directory_uri() . '/built/styles.min.css');
 		}
 
 		/**

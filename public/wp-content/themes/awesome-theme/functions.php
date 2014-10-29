@@ -14,15 +14,15 @@
 /**
  * Include all files from the /include directory
  */
-require get_template_directory() . '/php/wp-theme.php';
-require get_template_directory() . '/php/wp-shortcodes.php';
-require get_template_directory() . '/php/wp-posttypes.php';
-require get_template_directory() . '/php/wp-taxonomies.php';
-require get_template_directory() . '/php/wp-walker.php';
-require get_template_directory() . '/php/wp-hooks.php';
+require get_template_directory() . '/inc/wp-theme.php';
+require get_template_directory() . '/inc/wp-shortcodes.php';
+require get_template_directory() . '/inc/wp-posttypes.php';
+require get_template_directory() . '/inc/wp-taxonomies.php';
+require get_template_directory() . '/inc/wp-walker.php';
+require get_template_directory() . '/inc/wp-hooks.php';
 
-require get_template_directory() . '/php/terrific.php';
-require get_template_directory() . '/php/helper.php';
+require get_template_directory() . '/inc/terrific.php';
+require get_template_directory() . '/inc/helper.php';
 
 /*
  * Init / Setup Theme

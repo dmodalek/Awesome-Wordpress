@@ -1,6 +1,7 @@
 <?php
+
 /*
- * Template Name: Media
+ * Template Name: Example Page Template
  */
 
 get_header();
@@ -8,8 +9,10 @@ get_header();
 	while (have_posts()) :
 		the_post();
 
-		echo module('content')->template('media');
+		the_title();
 
 	endwhile;
 
 get_footer();
+
+?>

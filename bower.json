@@ -1,0 +1,22 @@
+{
+  "name": "Awesome-Wordpress",
+  "version": "1.0.0",
+  "authors": [
+    "Dominic Modalek <dominic@modalek.ch>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "latest",
+    "terrificjs": "latest",
+    "terrificjs-extensions": "https://github.com/MarcDiethelm/terrificjs-extensions.git",
+    "picturefill": "latest",
+    "modernizr": "latest"
+  }
+}

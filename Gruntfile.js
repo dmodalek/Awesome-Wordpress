@@ -21,13 +21,19 @@ module.exports = function (grunt) {
 
 		project: {
 
-			// Cache
+			// built
 
-			cache: 'public/wp-content/themes/awesome-theme/cache',
+			built: 'public/wp-content/themes/awesome-theme/built',
 
 			// Scripts
 
 			scripts: [
+				'bower_components/jquery/dist/jquery.js',
+				'bower_components/modernizr/modernizr.js',
+				'bower_components/terrificjs/dist/terrific.js',
+				'bower_components/terrific-extensions/terrific-extensions.js',
+				'bower_components/picturefill/dist/picturefill.js',
+
 				'public/wp-content/themes/awesome-theme/js/*.js',
 				'public/wp-content/themes/awesome-theme/modules/*/*.js',
 				'public/wp-content/themes/awesome-theme/modules/*/skins/*.js'
@@ -41,6 +47,7 @@ module.exports = function (grunt) {
 			// Styles
 
 			styles: [
+				'bower_components/normalize.css/normalize.css',
 				'public/wp-content/themes/awesome-theme/css/*.less',
 				'public/wp-content/themes/awesome-theme/modules/*/*.less',
 				'public/wp-content/themes/awesome-theme/modules/*/skins/*.less'
@@ -63,21 +70,21 @@ module.exports = function (grunt) {
 		less_imports: {
 			all: {
 				src : '<%= project.styles %>',
-				dest : '<%= project.cache %>/less-imports.less'
+				dest : '<%= project.built %>/less-imports.less'
 			}
 		},
 
 		less: {
 			options: {
 				sourceMap: true,
-				sourceMapFilename: '<%= project.cache %>/styles.css.map',
+				sourceMapFilename: '<%= project.built %>/styles.css.map',
 				sourceMapRootpath: '../',
 				sourceMapBasepath: 'public/wp-content/themes/awesome-theme/'
 			}
 
 			,all: {
-				src : '<%= project.cache %>/less-imports.less',
-				dest : '<%= project.cache %>/styles.css'
+				src : '<%= project.built %>/less-imports.less',
+				dest : '<%= project.built %>/styles.css'
 			}
 		},
 
@@ -89,8 +96,8 @@ module.exports = function (grunt) {
 				cascade: true
 			},
 			all: {
-				src: '<%= project.cache %>/styles.css',
-				dest: '<%= project.cache %>/styles.css'
+				src: '<%= project.built %>/styles.css',
+				dest: '<%= project.built %>/styles.css'
 			}
 		},
 
@@ -105,7 +112,7 @@ module.exports = function (grunt) {
 					banner: '<%= banner %>'
 				},
 				files: {
-					'<%= project.cache %>/styles.min.css': '<%= project.cache %>/styles.css'
+					'<%= project.built %>/styles.min.css': '<%= project.built %>/styles.css'
 				}
 			}
 		},
@@ -127,31 +134,31 @@ module.exports = function (grunt) {
 					banner: '<%= banner %>',
 					beautify: true,
 					sourceMap: true,
-				    sourceMapName: '<%=project.cache%>/scripts.js.map'
+				    sourceMapName: '<%=project.built%>/scripts.js.map'
 				},
 
 				files: {
-					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
+					'<%=project.built%>/scripts.js': ['<%=project.scripts%>']
 				}
 			},
 
 			min: {
 				options: {
 					banner: '<%= banner %>',
-					sourceMap: '<%=project.cache%>/scripts.js.map',
+					sourceMap: '<%=project.built%>/scripts.js.map',
 					sourceMapRoot: '../',
 					sourceMappingURL: 'scripts.min.js.map'
 				},
 
 				files: {
-					'<%=project.cache%>/scripts.min.js': ['<%=project.scripts%>']
+					'<%=project.built%>/scripts.min.js': ['<%=project.scripts%>']
 				}
 			}
 		},
 
 		///////////////////////////////////////////////////////////
 
-		clean: ['<%=project.cache%>/less-imports.less'],
+		clean: ['<%=project.built%>/less-imports.less'],
 
 		///////////////////////////////////////////////////////////
 
