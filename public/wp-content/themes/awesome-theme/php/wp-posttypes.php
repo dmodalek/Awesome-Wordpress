@@ -32,7 +32,15 @@ class Example {
 				'menu_position'       	=> 50,
 				'supports' => array(
 					'title',
-					'revisions',
+					'editor', 			// content
+					'author',
+					'thumbnail',		// featured image, current theme must also support post-thumbnails
+					'excerpt',
+					'custom-fields',
+					'comments',			// also will see comment count balloon on edit screen
+					'revisions', 		// will store revisions
+					'page-attributes', 	// menu order, hierarchical must be true to show Parent option
+					'post-formats',		// add post formats, see Post Formats
 				),
 				'show_in_nav_menus'   	=> true,
 
