@@ -12,11 +12,11 @@ function theme_scripts() {
 
 	switch(APP_ENV) {
 
-		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/built/styles.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/built/scripts.js', array(), false, true);
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.js', array(), false, true);
 					break;
-		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/built/styles.min.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/built/scripts.min.js', array(), false, true);
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.min.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.min.js', array(), false, true);
 	}
 
 	wp_enqueue_style('theme-styles');
