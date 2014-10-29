@@ -20,7 +20,7 @@ wp-config.php
 
 /bower_components/
 /node_modules/
-built
+cache
 
 #
 # Other
