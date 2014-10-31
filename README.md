@@ -11,22 +11,12 @@ Clone this repo in your project folder
 $ git clone git@github.com:dmodalek/Awesome-Wordpress.git .
 ```
 
-Install Wordpress dependencies
+Install dependencies
 
 ```
 $ bower install
 $ npm install
 $ gulp install
-```
-
-Install Theme Dependencies
-
-```
-cd /public/wp-content/themes/awesome-theme
-
-$ bower install
-$ npm install
-$ grunt
 ```
 
 Point your vHost to the project public folder
@@ -49,17 +39,12 @@ Add this vHost to your hosts file
 ## Whats next
 
 * Open your browser and start the Wordpress install
- — or use the MySQL Dump from the awesome-theme/res folder (user: dmodalek / pw: local)
+ — or use the MySQL Dump from the /res folder (user: dmodalek / pw: local)
 
 * Activate the Theme and the Plugins
 
-* Search & replace all occurences of "awesome-textdomain" and "awesome-theme"
+* Read the Awesome Theme Readme.md
 
-* Rename the Theme Folder 
-
-```
-$ mv awesome-theme my-theme
-```
 
 
 
