@@ -39,7 +39,6 @@ Add this vHost to your hosts file
 ## Whats next
 
 * Open your browser and start the Wordpress install
- — or use the MySQL Dump from the /res folder (user: dmodalek / pw: local)
 
 * Activate the Theme and the Plugins
 
