@@ -13,6 +13,7 @@ An opinionated Boilerplate for your next Wordpress Project.
 * Install dependencies
 ```bash
   $ npm install
+  $ bower install
 ```
 * Build with Grunt
 ```bash
