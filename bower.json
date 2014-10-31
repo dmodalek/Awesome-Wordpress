@@ -16,7 +16,7 @@
   "dependencies": {
     "wordpress": "https://wordpress.org/latest.zip",
     "awesome-theme": "git@github.com:dmodalek/Awesome-Theme.git",
-	"advanced-custom-fields": "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
+    "advanced-custom-fields": "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
     "force-regenerate-thumbnails": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.zip",
     "contact-form-7": "https://downloads.wordpress.org/plugin/contact-form-7.zip",
     "really-simple-captcha": "https://downloads.wordpress.org/plugin/really-simple-captcha.zip"
