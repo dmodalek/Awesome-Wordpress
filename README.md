@@ -35,6 +35,12 @@ Add this vHost to your hosts file
 127.0.0.1 your-project.loc wwww.your-project.loc
 ```
 
+Create a new database
+
+```
+create database awesome_wordpress DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+```
+
 
 ## Whats next
 
