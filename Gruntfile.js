@@ -32,11 +32,11 @@ module.exports = function (grunt) {
 				'bower_components/modernizr/modernizr.js',
 				'bower_components/terrificjs/dist/terrific.js',
 				'bower_components/terrific-extensions/terrific-extensions.js',
-				'bower_components/picturefill/dist/picturefill.js',
+				'bower_components/picturefill/picturefill.js',
 
 				'public/wp-content/themes/awesome-theme/js/*.js',
 				'public/wp-content/themes/awesome-theme/modules/*/*.js',
-				'public/wp-content/themes/awesome-theme/modules/*/skins/*.js'
+				'public/wp-content/themes/awesome-theme/modules/*/skins/*.js',
 			],
 
 			scriptsLint: [

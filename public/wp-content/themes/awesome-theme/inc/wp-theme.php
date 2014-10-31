@@ -3,29 +3,49 @@
 class Theme {
 
 	/**
-	 * Default WordPress Media Sizes: [0] = max. width, [1] = max. height
+	 * Media Sizes
 	 *
-	 * @var array
+	 * Order must be from small to large because last picturefill MQ matches
+	 *
+	 * 	[0] = max. width
+	 * 	[1] = max. height
+	 * 	[2] = crop (thumbnail only)
+	 * 	[3] = media query (picturefill)
+	 *
+	 * 	Media Queries: When to switch an image with another size
+	 *
+	 * 	- Not the same as CSS Mediaqueries
+	 * 	- Define based on the image size  and the content width i.e.
+	 * 	  Image size + Difference Width of Content Area and Viewport
 	 */
+
+	// Used mainly for TinyMCE Editor and richtext in the frontend
 	public static $MEDIA_SIZES = array(
-		'thumb' => array(0, 0),
-		'medium'=> array(510, 510),
-		'large' => array(0, 0),
+		'thumbnail' => array(240, 240, false, '(min-width:1px)'),
+		'medium' => array(340, 340, false, '(min-width: 300px)'),
+		'large' => array(440, 440, false, '(min-width: 400px)'),
+		'full' => array('', '', false, '(min-width: 500px)')
 	);
 
+	// Used for places like teaser, outside of the content area
 	public static $MEDIA_SIZES_CUSTOM = array(
-		'content' => array(
-			'small' => array('Content Small', 340, 340, false),
-			'medium' => array('Content Medium', 510, 510, false),
-			'large' => array('Content Large', 900, 900, false),
+		'example' => array(
+			'small' => array(240, 240, false, '(min-width:1px)'),
+			'medium' => array(340, 340, false, '(min-width: 300px)'),
+			'large' => array(440, 440, false, '(min-width: 400px)')
 		)
 	);
 
-	public static $MEDIA_QUERY = array(
-		'small' => '(max-width: 21em)',
-		'medium' => '(min-width: 21.01em) and (max-width: 31em)',
-		'large' => '(min-width: 31.01em)',
-	);
+	public static $STANDARD_DPI = 72;
+	public static $HIGH_RES_FACTORS = array(2);
+	public static $HIGH_RES_MQ = '%1$s and (-webkit-min-device-pixel-ratio: %2$s), %1$s and (min-resolution: %3$sdpi)';
+
+
+	/**
+	 *
+	 * Setup the Theme
+	 *
+	 */
 
 	public static function after_setup_theme() {
 
@@ -58,46 +78,36 @@ class Theme {
 		));
 
 		/**
+		 *
+		 * Register image sizes, including custom and high-res
+		 *
+		 */
+
+		// default sizes
+		foreach(self::$MEDIA_SIZES as $size => $attribs) {
+			add_image_size($size, $attribs[0], $attribs[1], $attribs[2]);
+
+			foreach(self::$HIGH_RES_FACTORS as $highResFactor) {
+				add_image_size($size . '@' . $highResFactor . 'x', $attribs[0] * $highResFactor, $attribs[1] * $highResFactor, $attribs[2]);
+			}
+		}
+
+		// custom sizes
+		foreach(self::$MEDIA_SIZES_CUSTOM as $name => $sizes) {
+			foreach($sizes as $size => $attribs) {
+				add_image_size($name . '_' . $size, $attribs[0], $attribs[1], $attribs[2]);
+
+				foreach(self::$HIGH_RES_FACTORS as $highResFactor) {
+					add_image_size($name.'_'.$size . '@' . $highResFactor . 'x', $attribs[0] * $highResFactor, $attribs[1] * $highResFactor, $attribs[2]);
+				}
+
+			}
+		}
+
+		/**
 		 * Post Thumbnails
 		 */
 		add_theme_support('post-thumbnails' );
-
-		// Update default sizes
-		update_option('thumbnail_size_w',140);
-		update_option('thumbnail_size_h', 140);
-		update_option('medium_size_w', 298);
-		update_option('medium_size_h', 200);
-		update_option('large_size_w', 400);
-		update_option('large_size_h', 300);
-
-		// Update default alignment and size
-		update_option('image_default_align', 'none');
-		update_option('image_default_size', 'medium');
-
-		foreach(self::$MEDIA_SIZES_CUSTOM as $name => $sizes) {
-			foreach($sizes as $size => $attribs) {
-				add_image_size($name . '_' . $size, $attribs[1], $attribs[2], $attribs[3]);
-			}
-		}
-
-		// Add multiple Post Thumbnails (Plugin)
-		if (class_exists('MultiPostThumbnails')) {
-			$types = array('page');
-			foreach($types as $type) {
-				new MultiPostThumbnails(array(
-					'label' => 'Secondary Image',
-					'id' => 'secondary-image',
-					'post_type' => $type
-					)
-				);
-				new MultiPostThumbnails(array(
-					'label' => 'Third Image',
-					'id' => 'third-image',
-					'post_type' => $type
-					)
-				);
-			}
-		}
 
 		/**
 		 * Add Styles to TinyMCE
@@ -109,9 +119,9 @@ class Theme {
 		 */
 
 		if(APP_ENV == 'dev') {
-			add_editor_style(get_template_directory_uri() . '/cache/styles.css');
+			add_editor_style(get_template_directory_uri() . '/built/styles.css');
 		} else {
-			add_editor_style(get_template_directory_uri() . '/cache/styles.min.css');
+			add_editor_style(get_template_directory_uri() . '/built/styles.min.css');
 		}
 
 		/**
@@ -132,12 +142,15 @@ class Theme {
 	protected static function options() {
 
 		// Update default sizes
-		update_option('thumbnail_size_w', self::$MEDIA_SIZES['thumb'][0]);
-		update_option('thumbnail_size_h', self::$MEDIA_SIZES['thumb'][1]);
-		update_option('medium_size_w',    self::$MEDIA_SIZES['medium'][0]);
-		update_option('medium_size_h',    self::$MEDIA_SIZES['medium'][1]);
-		update_option('large_size_w',     self::$MEDIA_SIZES['large'][0]);
-		update_option('large_size_h',     self::$MEDIA_SIZES['large'][1]);
+		update_option('thumbnail_size_w', 	self::$MEDIA_SIZES['thumbnail'][0]);
+		update_option('thumbnail_size_h', 	self::$MEDIA_SIZES['thumbnail'][1]);
+		update_option('thumbnail_crop', 	self::$MEDIA_SIZES['thumbnail'][2]);
+
+		update_option('medium_size_w',    	self::$MEDIA_SIZES['medium'][0]);
+		update_option('medium_size_h',    	self::$MEDIA_SIZES['medium'][1]);
+
+		update_option('large_size_w',     	self::$MEDIA_SIZES['large'][0]);
+		update_option('large_size_h',     	self::$MEDIA_SIZES['large'][1]);
 
 		// Update default alignment and size
 		update_option('image_default_align', 		'none');

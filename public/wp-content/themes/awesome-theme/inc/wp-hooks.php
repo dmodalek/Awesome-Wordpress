@@ -12,11 +12,11 @@ function theme_scripts() {
 
 	switch(APP_ENV) {
 
-		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.js', array(), false, true);
+		case 'dev':	wp_register_style('theme-styles', get_template_directory_uri() . '/built/styles.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/built/scripts.js', array(), false, true);
 					break;
-		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/cache/styles.min.css', array(), false, 'all');
-					wp_register_script('theme', get_template_directory_uri() . '/cache/scripts.min.js', array(), false, true);
+		default:	wp_register_style('theme-styles', get_template_directory_uri() . '/built/styles.min.css', array(), false, 'all');
+					wp_register_script('theme', get_template_directory_uri() . '/built/scripts.min.js', array(), false, true);
 	}
 
 	wp_enqueue_style('theme-styles');
@@ -192,6 +192,8 @@ add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
 /**
  * Replaces content images with picturefill
  *
+ * Image sizes definitions must be from large to smaller sizes, because Picturefill chooses first MQ that matches
+ *
  * @param $content
  * @return mixed
  */
@@ -205,52 +207,86 @@ function picturefill_content($content) {
 	// - get the image id using (.*?)[\"| ]
 	// - terminate using [^>]+. which looks proceeds until > is found
 
-	$count = preg_match_all('/<img.*class="(.*wp-image-([0-9]+)[^"]+)[^>]+>/i', $content, $images);
+	$count = preg_match_all('/<img.*class="(.*wp-image-([0-9]*)[^"]*).*alt="([^"]*)".*width="([^"]*)"[^>]*>/i', $content, $images);
+
+	//	echo  'Markup: '.htmlentities($images[0][0]).'<br/>';
+	//	echo  'Classes: '.htmlentities($images[1][0]).'<br/>';
+	//	echo  'ID: '.htmlentities($images[2][0]).'<br/>';
+	//	echo  'Alt: '.htmlentities($images[3][0]).'<br/>';
+	//	echo  'Width: '.htmlentities($images[4][0]).'<br/>';
 
 	// Immediately return if $images is not as we expect it to be
-	// - $images[0] contains the <img> html markup
-	// - $images[1] contains the image classes
-	// - $images[2] contains the image id's
-
-	if (is_array($images) == false || count($images) !== 3) return $content;
+	if (is_array($images) == false || count($images) !== 5) return $content;
 
 	// Replace each image markup with picturefill markup
 	for ($i = 0; $i < $count; $i++) {
 
-		$image_markup = $images[0][$i];
-		$contentImagesClasses = $images[1][$i];
-		$image_id = $images[2][$i];
-		$contentImagesAlt = '';
+		// Original image
+		$orig_image_markup = $images[0][$i];
+		$orig_image_classes = $images[1][$i];
+		$orig_image_id = $images[2][$i];
+		$orig_image_alt = $images[3][$i];
+		$orig_image_width = $images[4][$i];
+		preg_match('/size-([a-z]*)/i', $orig_image_classes, $orig_image_name_match);
+		$orig_image_name = $orig_image_name_match[1];
 
-		// Get content images
-		$contentImages = array();
+		// Helper Vars
+		$allSizes = array();
+		$currentWidth = '';
+		$currentWidthHighRes = '';
 
-		foreach (Theme::$MEDIA_SIZES_CUSTOM['content'] as $size => $attribs) {
+		// Iterate over all media sizes and output the ones that make sense
+		foreach(Theme::$MEDIA_SIZES as $size_name => $attribs) {
 
-			$imgAttribs = wp_get_attachment_image_src($image_id, 'content' . '_' . $size);
+			$imgAttribs = wp_get_attachment_image_src($orig_image_id, $size_name);
 
-			if ($imgAttribs !== false) {
-				$contentImagesAlt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-				$contentImages[$size]['size'] = $size;
-				$contentImages[$size]['source'] = $imgAttribs[0];
-				$contentImages[$size]['width'] = $imgAttribs[1];
-				$contentImages[$size]['height'] = $imgAttribs[2];
-			} else {
-				return $content;
+			// Check if next iteration has a bigger version
+			if($currentWidth !== $imgAttribs[1]) {
+				$currentWidth = $imgAttribs[1];
+
+				// Does this image exist? Do not output images that are bigger than the original
+				if ($imgAttribs !== false && $orig_image_width >= $imgAttribs[1]) {
+
+					// Standard res version
+					$allSizes[$size_name]['size'] = $size_name;
+					$allSizes[$size_name]['source'] = $imgAttribs[0];
+					$allSizes[$size_name]['mq'] = Theme::$MEDIA_SIZES[$size_name][3];
+
+					// High res versions
+					foreach (Theme::$HIGH_RES_FACTORS as $highResFactor) {
+						$imgAttribsHighRes = wp_get_attachment_image_src($orig_image_id, $size_name.'@'.$highResFactor.'x');
+
+						// Check if next iteration has a bigger version as previous iteration
+						if ($currentWidthHighRes !== $imgAttribsHighRes[1] && $currentWidth !== $imgAttribsHighRes[1]) {
+							$currentWidthHighRes = $imgAttribs[1];
+
+							// Does this image exist? Do not output images that are bigger than the original
+							if ($imgAttribsHighRes !== false && $orig_image_width * $highResFactor >= $imgAttribsHighRes[1]) {
+								$allSizes[$size_name . '@' . $highResFactor . 'x']['size'] = $size_name;
+								$allSizes[$size_name . '@' . $highResFactor . 'x']['source'] = $imgAttribsHighRes[0];
+								$allSizes[$size_name . '@' . $highResFactor . 'x']['mq'] = sprintf(Theme::$HIGH_RES_MQ, Theme::$MEDIA_SIZES[$size_name][3], $highResFactor, $highResFactor * Theme::$STANDARD_DPI);
+							}
+						}
+					}
+				}
 			}
 		}
 
 		// Replace the normal <img> tag with the picturefill, based on template
 		$options = array('data' => array(
-			'images' => $contentImages,
-			'images_alt' => $contentImagesAlt,
-			'images_classes' => $contentImagesClasses
+			'images' => $allSizes,
+			'images_width' => $orig_image_width,
+			'images_classes' => $orig_image_classes,
+			'images_id' => $orig_image_id,
+			'images_alt' => $orig_image_alt,
+			'images_name' => $orig_image_name,
+			'images_fallback' => wp_get_attachment_image_src($orig_image_id, $orig_image_name)
 		));
 
 		$picturefill_markup = partial('picturefill-image', $options);
 
 		// Search the content for the image and replace it with the new markup
-		$content = str_replace($image_markup, $picturefill_markup, $content);
+		$content = str_replace($orig_image_markup, $picturefill_markup, $content);
 	}
 
 	return $content;

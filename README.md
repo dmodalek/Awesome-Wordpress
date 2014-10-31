@@ -40,6 +40,7 @@ $ cp wp-config-sample.php wp-config.php
 
 ## Features
 
+* Picturefill with High-Res Options for Content Images
 * Livereloading the browser and file injection upon changes in CSS, JS or HTML
 * Sourcemaps for CSS and JS
 * Automatic CSS Vendor prefixes
@@ -59,3 +60,14 @@ $ cp wp-config-sample.php wp-config.php
 * Grunt [http://gruntjs.com](http://gruntjs.com)
 * Terrific [https://github.com/brunschgi/terrificjs](https://github.com/brunschgi/terrificjs)
 * Fireshell [github.com/toddmotto/fireshell](https://github.com/toddmotto/fireshell)
+
+## Documentation
+
+### Picturefill
+
+- A modified version of picturefill 1.2.1 is used, see bower.json
+- Version 1.2.1 of Picturefill is used instead of 2.x, because the new version is still in beta, 
+high-res images do not work across mayor browsers and the No-JS degradation is only with Alt-Text instead
+of an image fallback
+
+To setup, define image sizes and Media Queries in inc/wp-theme.php. The filter in inc/wp-hooks.php does the rest.
