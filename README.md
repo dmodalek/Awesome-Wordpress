@@ -1,22 +1,13 @@
 # Awesome Wordpress
 
-A quickstart for your next Wordpress project. Installs Wordpress, Plugins and the Awesome Theme from the command line.
+Install Wordpress, Plugins and the Awesome Theme using Yo Wordpress, a Yeoman Generator for Wordpress.
 
+## Setup local machine
 
-## Quickstart
-
-Clone this repo in your project folder
- 
-```
-$ git clone git@github.com:dmodalek/Awesome-Wordpress.git .
-```
-
-Install dependencies
+Create a new database
 
 ```
-$ bower install
-$ npm install
-$ gulp install
+create database awesome_wordpress DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 ```
 
 Point your vHost to the project public folder
@@ -35,11 +26,34 @@ Add this vHost to your hosts file
 127.0.0.1 your-project.loc wwww.your-project.loc
 ```
 
-Create a new database
+
+## Install Wordpress, Theme and Plugins
+
+Go to your project folder
+ 
+```
+$ cd ~/Sites/My-Project/public
+```
+
+Start Yo Wordpress install and answer all the questions
 
 ```
-create database awesome_wordpress DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+$ yo wordpress
 ```
+
+Save the generated .yeopress file from the project to your user directory for future projects. Strip out project specific lines like the salt keys.
+
+```
+$ cp .yeopress ~/
+```
+
+Install your Wordpress plugins with Yo Wordpress
+
+```
+$ yo wordpress:plugin
+```
+
+i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected
 
 
 ## Whats next
