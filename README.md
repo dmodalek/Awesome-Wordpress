@@ -55,6 +55,12 @@ $ yo wordpress:plugin
 
 i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected
 
+Add wp-config.php to the .gitignore file
+
+```
+wp-config.php
+```
+
 
 ## Whats next
 
