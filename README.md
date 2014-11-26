@@ -53,13 +53,20 @@ Install your Wordpress plugins with Yo Wordpress
 $ yo wordpress:plugin
 ```
 
-i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected
+i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected,force-regenerate-thumbnails,wp-super-cache,simple-page-ordering
+
+Add your paid plugins i.e. Migrate DB Pro manually to the /plugins folder.
+
+
+## Details
 
 Add wp-config.php to the .gitignore file
 
 ```
 wp-config.php
 ```
+
+Remove all the official Wordpress themes from the /themes folder i.e. twentyfourteen
 
 
 ## Whats next
