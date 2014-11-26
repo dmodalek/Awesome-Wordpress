@@ -75,7 +75,7 @@ Remove all the official Wordpress themes from the /themes folder i.e. twentyfour
 
 * Activate the Theme and the Plugins
 
-* Read the Awesome Theme Readme.md
+* **Read the Awesome Theme Readme.md**
 
 
 
