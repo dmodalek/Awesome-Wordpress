@@ -57,6 +57,26 @@ i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protec
 
 Add your paid plugins i.e. Migrate DB Pro manually to the /plugins folder.
 
+Add the following to your .htaccess file:
+
+```
+## Leverage Browser Caching
+## - https://developers.google.com/speed/docs/insights/LeverageBrowserCaching
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg “access 1 year”
+    ExpiresByType image/jpeg “access 1 year”
+    ExpiresByType image/gif “access 1 year”
+    ExpiresByType image/png “access 1 year”
+    ExpiresByType text/css “access 1 month”
+    ExpiresByType application/pdf “access 1 month”
+    ExpiresByType text/x-javascript “access 1 month”
+    ExpiresByType application/x-shockwave-flash “access 1 month”
+    ExpiresByType image/x-icon “access 1 year”
+    ExpiresDefault “access 2 days”
+</IfModule>
+```
 
 ## Details
 
