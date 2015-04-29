@@ -53,7 +53,7 @@ Install your Wordpress plugins with Yo Wordpress
 $ yo wordpress:plugin
 ```
 
-i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected,force-regenerate-thumbnails,wp-super-cache,simple-page-ordering,responsify-wp,wp-editor-widget,duplicate-post
+i.e. advanced-custom-fields,contact-form-7,really-simple-captcha,password-protected,force-regenerate-thumbnails,wp-super-cache,simple-page-ordering,responsify-wp,wp-editor-widget,duplicate-post,wpremote
 
 Add your paid plugins i.e. Migrate DB Pro manually to the /plugins folder.
 
