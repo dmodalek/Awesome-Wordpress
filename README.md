@@ -16,7 +16,7 @@ Point your vHost to the project public folder
 # Your Project
 <VirtualHost *:80>
     ServerName your-project.loc
-    DocumentRoot "/Users/You/Sites/Your-Project/git"
+    DocumentRoot "/Users/You/Sites/Your-Project/public"
 </VirtualHost>
 ```
 
@@ -60,7 +60,7 @@ Add your paid plugins i.e. Migrate DB Pro manually to the /plugins folder.
 
 ## Details
 
-Add wp-config.php to the .gitignore file
+Add wp-config.php to the .gitignore file and untrack it from GIT.
 
 ```
 wp-config.php
